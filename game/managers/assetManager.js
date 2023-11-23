@@ -8,7 +8,7 @@ class AssetManager {
     }
 
     #loadImages() {
-        this.#images.set("diamond", loadImage("assets/images/diamond.svg"));
+        this.#images.set("diamond", loadImage("assets/images/cars/FastCar.png"));
     }
 
     getImage(assetname) {

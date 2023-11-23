@@ -12,6 +12,7 @@ function setup() {
 }
 
 function draw() {
+    imageMode(CENTER);
     background(0);
     noStroke();
     tileGrid.draw();
