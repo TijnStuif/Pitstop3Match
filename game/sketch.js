@@ -23,9 +23,9 @@ function touchStarted(event) {
 }
 
 function touchMoved(event) {
-    
+
 }
 
 function touchEnded(event) {
-    
+
 }
