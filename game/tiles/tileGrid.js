@@ -7,8 +7,8 @@ class TileGrid {
 
     constructor(width, height, tileSize) {
         this.#tileSize = tileSize;
-        this.#width = width;
-        this.#height = height;
+        this.#width = width + 4;
+        this.#height = height + 1;
         this.#generateTileGrid();
     }
 
