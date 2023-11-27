@@ -12,7 +12,7 @@ function setup() {
 }
 
 function draw() {
-    background(150);
+    background(0, 150, 0);
     noStroke();
     tileGrid.draw();
 }
