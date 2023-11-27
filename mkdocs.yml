@@ -37,9 +37,6 @@ theme:
     # See available fonts at https://fonts.google.com/
     text: Open Sans
     code: Ubuntu Mono
-  icon:
-    logo: material/diamond
-  favicon: images/diamond.svg
   features:
     - navigation.instant
     - content.code.annotate
