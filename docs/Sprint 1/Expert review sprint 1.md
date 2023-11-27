@@ -13,3 +13,5 @@ Wij vinden het lastig om deze te beschrijven aangezien deze kriteria vorige peri
 
 ## G6 Je gebruikt bronnen om antwoorden te vinden op een passende manier. 
 Wij hebben de UML gemaakt door middel van opzoeken op het internet van hoe een UML chart werkt ook heb ik(Rick) eerder al op mijn vorige opleiding met een UML bestand gewerkt. dit zorgde er voor dat de UML sneller werdt gemaakt omdat de vorige ervaring er mee erg hielp met de makkelijkheid van het maken.
+
+UML bestand van hoe wij het hebben geleerd: https://docs.staruml.io/working-with-uml-diagrams/use-case-diagram
