@@ -24,7 +24,7 @@ class TileGrid {
                 if (!this.#tiles[x]) {
                     this.#tiles[x] = new Array();
                 }
-                this.#tiles[x][y] = new NormalTile(gameManager.getImage("diamond"), this.#tileSize, x, y);
+                this.#tiles[x][y] = new NormalTile(gameManager.getImage("Wheel"), this.#tileSize, x, y);
             }
         }
     }
