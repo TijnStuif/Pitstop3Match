@@ -20,11 +20,30 @@ class TileGrid {
         //generate tile grid here and place tiles in the 2D #tile array.
         for (let x = 0; x < this.#width; x++) {
             for (let y = 0; y < this.#height; y++) {
-
                 if (!this.#tiles[x]) {
                     this.#tiles[x] = new Array();
                 }
-                this.#tiles[x][y] = new NormalTile(gameManager.getImage("Wheel"), this.#tileSize, x, y);
+
+                let assetPicker = Math.floor(Math.random() * 4) + 1;  // Random number between 1 and 4 (inclusive)
+                
+                // Use a switch statement for better readability
+                switch (assetPicker) {
+                    case 1:
+                        this.#tiles[x][y] = new NormalTile(gameManager.getImage("Wheel"), this.#tileSize, x, y);
+                        break;
+                    case 2:
+                        this.#tiles[x][y] = new NormalTile(gameManager.getImage("SteeringWheel"), this.#tileSize, x, y);
+                        break;
+                    case 3:
+                        this.#tiles[x][y] = new NormalTile(gameManager.getImage("JerryCan"), this.#tileSize, x, y);
+                        break;
+                    case 4:
+                        this.#tiles[x][y] = new NormalTile(gameManager.getImage("StopSign"), this.#tileSize, x, y);
+                        break;
+                    default:
+                        // Handle unexpected cases
+                        break;
+                }
             }
         }
     }

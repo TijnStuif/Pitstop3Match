@@ -14,6 +14,7 @@ class AssetManager {
         this.#images.set("JerryCan", loadImage("assets/images/car_parts/JerryCan.png"));
         this.#images.set("SteeringWheel", loadImage("assets/images/car_parts/SteeringWheel.png"));
         this.#images.set("Wheel", loadImage("assets/images/car_parts/Wheel.png"));
+        this.#images.set("StopSign", loadImage("assets/images/car_parts/StopSign.png"));
     }
 
     getImage(assetname) {
