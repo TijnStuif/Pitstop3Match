@@ -7,12 +7,12 @@ function preload() {
 }
 
 function setup() {
-    createCanvas(800, 600);
+    createCanvas(800, 560);
 
 }
 
 function draw() {
-    background(150);
+    background(0, 150, 0);
     noStroke();
     tileGrid.draw();
 }
