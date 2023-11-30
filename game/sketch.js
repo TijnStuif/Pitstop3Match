@@ -19,12 +19,10 @@ function draw() {
 
 function touchStarted(event) {
     const tile = tileGrid.getTileAtPosition(createVector(event.x, event.y));
-    tile.visible = false;
 }
 
 function touchMoved(event) {
 }
 
 function touchEnded(event) {
-
 }
