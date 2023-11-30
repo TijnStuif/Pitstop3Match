@@ -5,4 +5,8 @@ Wij hebben user stories toegevoegd aan de hand van een paar resultaten van het i
 
 ## K3 Je hebt de gebruikersinterface van jouw product aangepast door prototyping toe te passen 
 
-## K4 Je hebt een testplan geschreven en gebruikt om een gebruikerstest uit te voeren. 
+## K4 Je hebt een testplan geschreven en gebruikt om een gebruikerstest uit te voeren.
+
+Wij hebben een schets gemaakt op basis van de verschillende schermen van onze game. Deze schets zag er als volgt uit. 
+
+<img alt="sketch of our game" src="./../images/DrawingGame.png" width = 600> </br>
