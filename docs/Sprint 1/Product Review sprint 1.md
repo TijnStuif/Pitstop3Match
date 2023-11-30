@@ -10,4 +10,6 @@ Wij hebben user stories toegevoegd aan de hand van een paar resultaten van het i
 
 Wij hebben een schets gemaakt op basis van de verschillende schermen van onze game. Deze schets zag er als volgt uit. 
 
-<img alt="sketch of our game" src="./../images/DrawingGame.png" width = 600> </br>
+<img alt="sketch of our game" src="./../images/DrawingGame.png" width = 2000> </br>
+
+Op deze schets zijn 4 verschillende scenes te zien van onze game. Het eerste scherm is vrij simpel, met een startknop en een settings-knop. Het volgende scherm is onze 'world map', op basis van een autogarage. Hierin is de huidige auto van de speler te zien, nieuwe auto's die de speler kan kopen met coins, de levelprogressie en de start level-knop. Als er op de startknop wordt gedrukt, start het volgende scherm; het spelscherm. Hierop is nogmaals de huidige auto te zien, en daarnaast nog het speelscherm en informatie over het level, zoals aantal zetten, score en windoelen. In het level kan het spel op pauze gezet worden, waarin het level kan worden gerestart, gequit en gecontinued. Daarnaast kan het volumeniveau van muziek en sound effects aangepast worden.
