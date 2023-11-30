@@ -10,4 +10,4 @@ Wij hebben user stories toegevoegd aan de hand van een paar resultaten van het i
 
 Wij hebben een schets gemaakt op basis van de verschillende schermen van onze game. Deze schets zag er als volgt uit. 
 
-<img src="../docs/images/DrawingGame.png"> </br>
+<img src="./../images/DrawingGame.png"> </br>
