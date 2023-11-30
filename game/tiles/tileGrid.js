@@ -26,7 +26,6 @@ class TileGrid {
 
                 let assetPicker = Math.floor(Math.random() * 4) + 1;  // Random number between 1 and 4 (inclusive)
                 
-                // Use a switch statement for better readability
                 switch (assetPicker) {
                     case 1:
                         this.#tiles[x][y] = new NormalTile(gameManager.getImage("Wheel"), this.#tileSize, x, y);
