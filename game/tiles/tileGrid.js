@@ -80,4 +80,16 @@ class TileGrid {
         
         return this.#tiles[x][y];
     }
+
+    getDraggingTile() {
+        for (let x = 0; x < this.#width; x++) {
+            for (let y = 0; y < this.#height; y++) {
+                const tile = this.#tiles[x][y];
+                if (tile.isDragging()) {
+                    return tile;
+                }
+            }
+        }
+        return null;
+    }
 }
