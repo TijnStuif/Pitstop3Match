@@ -22,6 +22,6 @@ TIJN: Ik verwacht dat mijn werk partner zijn werk afmaakt wat is afgesproken in 
 RICK: Ik verwacht bijna het zelfde van Tijn als Tijn van mij verwacht. Dit zijn ook gewoon logische regels die wij met elkaar hebben besproken aan het begin van het blok.
 
 ### elkaar feedback gegeven:
-TIJN: 
+TIJN: Ondanks dat Rick en ik elkaar niet (goed) kenden aan het begin van dit blok, vind ik dat wij elkaar goed hebben kunnen vinden. Hij heeft zich goed gehouden aan het samenwerkingscontract en was aanwezig op alle contactmomenten. Door groffe ideeen met z'n tweeen uit te werken, zijn we op een mooi concept gekomen. Het brainstormen verliep goed, en de taakverdeling met betrekking tot het gebruikersonderzoek is goed gekomen. Rick heeft goed samengewerkt naar mijn mening, en het was makkelijk om een middenweg te vinden die ons allebei stond.
 
 RICK: Ik vind dat Tijn goed heeft gecommuniceerd in deze sprint. vooral aan het begin van de sprint toen wij aan het brainstormen waren over het project. Tijn kwam in deze tijd met erg goeie suggesties voor het spel, denk hierbij aan features en de style. De dingen die hij heeft verzonnen toen gebruiken wij nogsteeds.
