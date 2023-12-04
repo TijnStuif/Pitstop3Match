@@ -7,12 +7,21 @@ class TileGrid {
 
     constructor(width, height, tileSize) {
         this.#tileSize = tileSize;
-        this.#width = width + 4;
-        this.#height = height + 1;
+        this.#width = width
+        this.#height = height
         this.#generateTileGrid();
     }
 
     #generateTileGrid() {
+
+        const tileMap = [
+            [1, 4, 4, 2, 3, 3],
+            [4, 1, 1, 3, 2, 1],
+            [2, 2, 3, 4, 1, 3],
+            [3, 1, 1, 2, 3, 4],
+            [1, 3, 3, 4, 4, 2],
+            [2, 4, 3, 3, 1, 1]
+        ]
         //tiles is a 2D array, meaning that it is an array of arrays. 
         //see https://www.freecodecamp.org/news/javascript-2d-arrays/ for more information about 2D arrays.
         this.#tiles = new Array();
@@ -24,9 +33,9 @@ class TileGrid {
                     this.#tiles[x] = new Array();
                 }
 
-                let assetPicker = Math.floor(Math.random() * 4) + 1;  // Random number between 1 and 4
+                const tileValue = tileMap[x][y];
                 
-                switch (assetPicker) {
+                switch (tileValue) {
                     case 1:
                         this.#tiles[x][y] = new NormalTile(gameManager.getImage("Wheel"), this.#tileSize, x, y);
                         break;
