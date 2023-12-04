@@ -24,7 +24,7 @@ class TileGrid {
                     this.#tiles[x] = new Array();
                 }
 
-                let assetPicker = Math.floor(Math.random() * 4) + 1;  // Random number between 1 and 4 (inclusive)
+                let assetPicker = Math.floor(Math.random() * 4) + 1;  // Random number between 1 and 4
                 
                 switch (assetPicker) {
                     case 1:
@@ -38,9 +38,6 @@ class TileGrid {
                         break;
                     case 4:
                         this.#tiles[x][y] = new NormalTile(gameManager.getImage("StopSign"), this.#tileSize, x, y);
-                        break;
-                    default:
-                        // Handle unexpected cases
                         break;
                 }
             }

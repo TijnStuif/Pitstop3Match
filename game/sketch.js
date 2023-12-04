@@ -17,12 +17,28 @@ function draw() {
     tileGrid.draw();
 }
 
+function mousePressed(event) {
+    touchStarted(event);
+}
+
+function mouseMoved(event) {
+    touchMoved(event);
+}
+
+function mouseReleased(event) {
+    touchEnded(event);
+}
+
 function touchStarted(event) {
     const tile = tileGrid.getTileAtPosition(createVector(event.x, event.y));
+    tile.visible = false;
 }
 
 function touchMoved(event) {
 }
 
 function touchEnded(event) {
+    const tile = tileGrid.getTileAtPosition(createVector(event.x, event.y));
+
+    tile.visible = true;
 }
