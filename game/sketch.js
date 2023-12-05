@@ -30,7 +30,6 @@ function mousePressed() {
 function mouseMoved() {
     const draggingTile = tileGrid.getDraggingTile();
     if (draggingTile) {
-        
         draggingTile.setPosition(createVector(mouseX, mouseY));
     }
 }
@@ -44,10 +43,10 @@ function mouseReleased() {
 
 function touchStarted(event) {
     const tile = tileGrid.getTileAtPosition(createVector(event.x, event.y));
-    
     if (tile) {
         const offsetX = event.x - tile.position.x;
         const offsetY = event.y - tile.position.y;
+        tile.startDragging(offsetX, offsetY);
     }
 }
 
