@@ -3,10 +3,9 @@ class Tile {
     #y;
     #size;
     #image;
-    #visible;
     #isDragging;
-    #offsetX;
-    #offsetY;
+    #startPosX;
+    #startPosY;
 
     get x() {
         return this.#x;
@@ -29,51 +28,48 @@ class Tile {
     }
 
     setPosition(position) {
-        this.#x = position.x - this.#offsetX;
-        this.#y = position.y - this.#offsetY;
+        this.#x = (position.x);
+        this.#y = (position.y);
     }
-
-    get visible() {
-        return this.#visible;
-    }
-
-    set visible(value) {
-        this.#visible = value;
-    }
-
     
     constructor(image, size, x, y) {
         this.#image = image;
         this.#size = size;
         this.#x = x;
         this.#y = y;
-        this.#visible = true;
         this.#isDragging = false;
-        this.#offsetX = 0;
-        this.#offsetY = 0;
+        this.#startPosX = this.position.x;
+        this.#startPosY = this.position.y;
+
     }  
     
     isDragging() {
         return this.#isDragging;
     }
 
-    startDragging(offsetX, offsetY) {
+    startDragging() {
         this.#isDragging = true;
-        this.#offsetX = offsetX;
-        this.#offsetY = offsetY;
+        this.#startPosX = this.position.x;
+        this.#startPosY = this.position.y;
     }
 
     stopDragging() {
         this.#isDragging = false;
+        this.position.x = this.#startPosX - this.#x;
+        this.position.y = this.#startPosY - this.#y;
     }
 
     draw() {
-        if (this.#visible) {
+        if (!this.#isDragging) {
+            image(this.#image, this.#startPosX, this.#startPosY, this.#size, this.#size);
+        }
             if (this.#isDragging) {
-                this.#x = mouseX - this.#offsetX;
-                this.#y = mouseY - this.#offsetY;
-            }
-            image(this.#image, this.position.x, this.position.y, this.#size, this.#size);
+                const targetX = (mouseX - 1/2 * this.#size) * 1/80;
+                const targetY = (mouseY - 1/2 * this.#size) * 1/80;
+                this.setPosition(createVector(targetX, targetY));
+                this.#x += (targetX - this.#x);
+                this.#y += (targetY - this.#y);
+                image(this.#image, this.position.x, this.position.y, this.#size, this.#size);
         }
     }
 }

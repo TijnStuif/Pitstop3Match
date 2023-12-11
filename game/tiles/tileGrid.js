@@ -1,5 +1,7 @@
 class TileGrid {
 
+    gridPosX;
+    gridPosY;
     #tileSize;
     #tiles;
     #width;
@@ -68,6 +70,9 @@ class TileGrid {
     getTileAtPosition(position) {
         const gridXPosition = Math.floor(position.x / this.#tileSize);
         const gridYPosition = Math.floor(position.y / this.#tileSize);
+
+        this.gridPosX = gridXPosition;
+        this.gridPosY = gridYPosition;
 
         return this.getTileAtGridIndex(gridXPosition, gridYPosition);
     }

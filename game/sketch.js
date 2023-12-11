@@ -1,8 +1,8 @@
 let tileGrid;
+let draggingTile = null; // Variable to store the dragging tile
 const tileWidth = 6, tileHeight = 6, tileSize = 80;
 
 function preload() {
-    // Assuming GameManager constructor initializes something
     new GameManager();
     tileGrid = new TileGrid(tileWidth, tileHeight, tileSize);
 }
@@ -21,45 +21,41 @@ function mousePressed() {
     const tile = tileGrid.getTileAtPosition(createVector(mouseX, mouseY));
     
     if (tile) {
-        const offsetX = mouseX - tile.x;
-        const offsetY = mouseY - tile.y;
-        tile.startDragging(offsetX, offsetY);
+        tile.startDragging();
+        draggingTile = tile; // Set the draggingTile variable
     }
 }
 
-function mouseMoved() {
-    const draggingTile = tileGrid.getDraggingTile();
+function mouseDragged() {
     if (draggingTile) {
         draggingTile.setPosition(createVector(mouseX, mouseY));
     }
 }
 
 function mouseReleased() {
-    const draggingTile = tileGrid.getDraggingTile();
     if (draggingTile) {
         draggingTile.stopDragging();
+        draggingTile = null; // Reset the draggingTile variable after releasing the mouse
     }
 }
 
 function touchStarted(event) {
     const tile = tileGrid.getTileAtPosition(createVector(event.x, event.y));
     if (tile) {
-        const offsetX = event.x - tile.position.x;
-        const offsetY = event.y - tile.position.y;
-        tile.startDragging(offsetX, offsetY);
+        tile.startDragging();
+        draggingTile = tile; // Set the draggingTile variable
     }
 }
 
 function touchMoved(event) {
-    const draggingTile = tileGrid.getDraggingTile();
     if (draggingTile) {
         draggingTile.setPosition(createVector(event.x, event.y));
     }
 }
 
-function touchEnded(event) {
-    const draggingTile = tileGrid.getDraggingTile();
+function touchEnded() {
     if (draggingTile) {
         draggingTile.stopDragging();
+        draggingTile = null; // Reset the draggingTile variable after touch ends
     }
 }
