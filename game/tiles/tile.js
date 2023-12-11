@@ -40,7 +40,6 @@ class Tile {
         this.#isDragging = false;
         this.#startPosX = this.position.x;
         this.#startPosY = this.position.y;
-
     }  
     
     isDragging() {
@@ -49,14 +48,10 @@ class Tile {
 
     startDragging() {
         this.#isDragging = true;
-        this.#startPosX = this.position.x;
-        this.#startPosY = this.position.y;
     }
 
     stopDragging() {
         this.#isDragging = false;
-        this.position.x = this.#startPosX - this.#x;
-        this.position.y = this.#startPosY - this.#y;
     }
 
     draw() {
@@ -70,6 +65,7 @@ class Tile {
                 this.#x += (targetX - this.#x);
                 this.#y += (targetY - this.#y);
                 image(this.#image, this.position.x, this.position.y, this.#size, this.#size);
+                console.log(this.#startPosX)
         }
     }
 }
