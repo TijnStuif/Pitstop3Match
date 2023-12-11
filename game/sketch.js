@@ -17,28 +17,6 @@ function draw() {
     tileGrid.draw();
 }
 
-function mousePressed() {
-    const tile = tileGrid.getTileAtPosition(createVector(mouseX, mouseY));
-    
-    if (tile) {
-        tile.startDragging();
-        draggingTile = tile; // Set the draggingTile variable
-    }
-}
-
-function mouseDragged() {
-    if (draggingTile) {
-        draggingTile.setPosition(createVector(mouseX, mouseY));
-    }
-}
-
-function mouseReleased() {
-    if (draggingTile) {
-        draggingTile.stopDragging();
-        draggingTile = null; // Reset the draggingTile variable after releasing the mouse
-    }
-}
-
 function touchStarted(event) {
     const tile = tileGrid.getTileAtPosition(createVector(event.x, event.y));
     if (tile) {

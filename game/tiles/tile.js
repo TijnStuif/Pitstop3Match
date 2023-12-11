@@ -6,6 +6,8 @@ class Tile {
     #isDragging;
     #startPosX;
     #startPosY;
+    #offsetX;
+    #offsetY;
 
     get x() {
         return this.#x;
@@ -28,8 +30,8 @@ class Tile {
     }
 
     setPosition(position) {
-        this.#x = (position.x);
-        this.#y = (position.y);
+        this.#x = position.x;
+        this.#y = position.y;
     }
     
     constructor(image, size, x, y) {
@@ -40,6 +42,8 @@ class Tile {
         this.#isDragging = false;
         this.#startPosX = this.position.x;
         this.#startPosY = this.position.y;
+        this.#offsetX = 0;
+        this.#offsetY = 0;
     }  
     
     isDragging() {
@@ -59,13 +63,16 @@ class Tile {
             image(this.#image, this.#startPosX, this.#startPosY, this.#size, this.#size);
         }
             if (this.#isDragging) {
+                this.#offsetX = Math.round(mouseX % this.#startPosX) - 40;
+                this.#offsetY = Math.round(mouseY % this.#startPosY) - 40;
                 const targetX = (mouseX - 1/2 * this.#size) * 1/80;
                 const targetY = (mouseY - 1/2 * this.#size) * 1/80;
                 this.setPosition(createVector(targetX, targetY));
                 this.#x += (targetX - this.#x);
                 this.#y += (targetY - this.#y);
-                image(this.#image, this.position.x, this.position.y, this.#size, this.#size);
-                console.log(this.#startPosX)
+                image(this.#image, this.position.x - this.#offsetX, this.position.y - this.#offsetY, this.#size, this.#size);
+                console.log(this.#x)
+                console.log(this.#offsetX)
         }
     }
 }
