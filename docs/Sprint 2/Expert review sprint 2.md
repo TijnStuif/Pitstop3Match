@@ -1,8 +1,10 @@
 # Expert review sprint 2: toets over OOP, SQL en UML
 
 ## Foto's toetsresultaat
-
+Tijn:
 <img src="../images/ToetsresultaatTijn"> </br>
+Rick:
+<img src="../images/ToetsresultaatRick"> </br>
 
 ## K5 Je hebt object georiënteerd geprogrammeerd en maak gebruik van objectgeoriënteerde technieken zoals abstraction, inheritance en encapsulation.
 
