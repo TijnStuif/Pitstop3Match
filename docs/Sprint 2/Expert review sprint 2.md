@@ -2,9 +2,9 @@
 
 ## Foto's toetsresultaat
 
-<img src="../images/ToetsresultaatTijn.png"> </br>
+<img src="./../images/ToetsresultaatTijn.png"> </br>
 
-<img src="../images/ToetsresultaatRick.png"> </br>
+<img src="./../images/ToetsresultaatRick.png"> </br>
 
 ## K5 Je hebt object georiënteerd geprogrammeerd en maak gebruik van objectgeoriënteerde technieken zoals abstraction, inheritance en encapsulation.
 
