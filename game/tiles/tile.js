@@ -63,15 +63,16 @@ class Tile {
             image(this.#image, this.#startPosX, this.#startPosY, this.#size, this.#size);
         }
             if (this.#isDragging) {
-                this.#offsetX = Math.round(mouseX % this.#startPosX) - 40;
-                this.#offsetY = Math.round(mouseY % this.#startPosY) - 40;
+                this.#offsetX = Math.round(mouseX % 80) - 40;
+                this.#offsetY = Math.round(mouseY % 80) - 40;
                 const targetX = (mouseX - 1/2 * this.#size) * 1/80;
                 const targetY = (mouseY - 1/2 * this.#size) * 1/80;
                 this.setPosition(createVector(targetX, targetY));
                 this.#x += (targetX - this.#x);
                 this.#y += (targetY - this.#y);
                 image(this.#image, this.position.x - this.#offsetX, this.position.y - this.#offsetY, this.#size, this.#size);
-                console.log(this.#x)
+                console.log(this.#startPosX)
+                console.log(this.position.x)
                 console.log(this.#offsetX)
         }
     }
