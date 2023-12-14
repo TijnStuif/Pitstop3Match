@@ -7,6 +7,7 @@ class TileGrid {
     #width;
     #height;
 
+    //constructor that determines the size of every tile in the grid.
     constructor(width, height, tileSize) {
         this.#tileSize = tileSize;
         this.#width = width
@@ -14,6 +15,7 @@ class TileGrid {
         this.#generateTileGrid();
     }
 
+    //function that makes a tileMap, then loads an image for each respective tile
     #generateTileGrid() {
 
         const tileMap = [
@@ -59,6 +61,7 @@ class TileGrid {
         //handle results from player input here...
     }
 
+    //draw all the tiles
     draw() {
         for (let x = 0; x < this.#width; x++) {
             for (let y = 0; y < this.#height; y++) {
@@ -67,6 +70,7 @@ class TileGrid {
         }
     }
 
+    //function that checks the position of a tile and returns it
     getTileAtPosition(position) {
         const gridXPosition = Math.floor(position.x / this.#tileSize);
         const gridYPosition = Math.floor(position.y / this.#tileSize);
@@ -77,6 +81,7 @@ class TileGrid {
         return this.getTileAtGridIndex(gridXPosition, gridYPosition);
     }
 
+    //checks if a touchEvent is outside of the grid
     getTileAtGridIndex(x, y) {
         if (x < 0 || x >= this.#width || y < 0 || y >= this.#height)
         {
@@ -86,6 +91,7 @@ class TileGrid {
         return this.#tiles[x][y];
     }
 
+    //function that gives tiles a moving function
     getDraggingTile() {
         for (let x = 0; x < this.#width; x++) {
             for (let y = 0; y < this.#height; y++) {

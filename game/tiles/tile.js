@@ -34,6 +34,7 @@ class Tile {
         this.#y = position.y;
     }
     
+    //constructor for a tile that gives it positioning, an image and a dragging boolean
     constructor(image, size, x, y) {
         this.#image = image;
         this.#size = size;
@@ -46,6 +47,7 @@ class Tile {
         this.#offsetY = 0;
     }  
     
+    //functions that determine if a tile is moving or not
     isDragging() {
         return this.#isDragging;
     }
@@ -59,17 +61,17 @@ class Tile {
     }
 
     draw() {
+        //static image that is displayed whenever a tile is not moving
         if (!this.#isDragging) {
             image(this.#image, this.#startPosX, this.#startPosY, this.#size, this.#size);
         }
+            //logic that gives tiles a grid-like movement, and displays it moving
             if (this.#isDragging) {
                 this.#offsetX = Math.round(mouseX % 80) - 40;
                 this.#offsetY = Math.round(mouseY % 80) - 40;
                 const targetX = (mouseX - 1/2 * this.#size) * 1/80;
                 const targetY = (mouseY - 1/2 * this.#size) * 1/80;
                 this.setPosition(createVector(targetX, targetY));
-                this.#x += (targetX - this.#x);
-                this.#y += (targetY - this.#y);
                 image(this.#image, this.position.x - this.#offsetX, this.position.y - this.#offsetY, this.#size, this.#size);
                 console.log(this.#startPosX)
                 console.log(this.position.x)
