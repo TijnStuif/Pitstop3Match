@@ -67,12 +67,15 @@ class TileGrid {
             for (let y = 0; y < this.#height; y++) {
                 if (this.#tiles[x][y] && this.#tiles[x-1] && this.#tiles[x+1]) {
                     if (this.#tiles[x][y].tileType == this.#tiles[x+1][y].tileType && this.#tiles[x][y].tileType == this.#tiles[x-1][y].tileType) {
-                        this.#tiles[x][y] = null;
-                        this.#tiles[x+1][y] = null;
-                        this.#tiles[x-1][y] = null;
-                        alert("L bozo")
+                        console.log("game is now detecting a match here")
                     }
                 }
+                if (this.#tiles[x][y] && this.#tiles[y-1] && this.#tiles[y+1]) {
+                    if (this.#tiles[x][y].tileType == this.#tiles[x][y+1].tileType && this.#tiles[x][y].tileType == this.#tiles[x][y-1].tileType) {
+                        console.log("game is now detecting a match here")
+                    }
+                }
+                if (this.#tiles[x][y] != null)
                 this.#tiles[x][y].draw();
             }
         }
