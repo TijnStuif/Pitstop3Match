@@ -35,7 +35,7 @@ class Tile {
     }
     
     //constructor for a tile that gives it positioning, an image and a dragging boolean
-    constructor(image, size, x, y) {
+    constructor(image, size, x, y, tileType) {
         this.#image = image;
         this.#size = size;
         this.#x = x;
@@ -45,6 +45,7 @@ class Tile {
         this.#startPosY = this.position.y;
         this.#offsetX = 0;
         this.#offsetY = 0;
+        this.tileType = tileType;
     }  
     
     //functions that determine if a tile is moving or not
@@ -73,9 +74,7 @@ class Tile {
                 const targetY = (mouseY - 1/2 * this.#size) * 1/80;
                 this.setPosition(createVector(targetX, targetY));
                 image(this.#image, this.position.x - this.#offsetX, this.position.y - this.#offsetY, this.#size, this.#size);
-                console.log(this.#startPosX)
-                console.log(this.position.x)
-                console.log(this.#offsetX)
+                console.log(this.tileType)
         }
     }
 }
