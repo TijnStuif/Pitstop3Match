@@ -67,12 +67,12 @@ class TileGrid {
             for (let y = 0; y < this.#height; y++) {
                 if (this.#tiles[x][y] && this.#tiles[x-1] && this.#tiles[x+1]) {
                     if (this.#tiles[x][y].tileType == this.#tiles[x+1][y].tileType && this.#tiles[x][y].tileType == this.#tiles[x-1][y].tileType) {
-                        console.log("game is now detecting a match here")
+                        console.log("game is now detecting a match on x-direction here")
                     }
                 }
                 if (this.#tiles[x][y] && this.#tiles[y-1] && this.#tiles[y+1]) {
                     if (this.#tiles[x][y].tileType == this.#tiles[x][y+1].tileType && this.#tiles[x][y].tileType == this.#tiles[x][y-1].tileType) {
-                        console.log("game is now detecting a match here")
+                        console.log("game is now detecting a match on y-direction here")
                     }
                 }
                 if (this.#tiles[x][y] != null)
