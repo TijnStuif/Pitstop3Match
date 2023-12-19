@@ -6,6 +6,8 @@ Wij hebben voor dit onderdeel van de product review gemaakt door alles op te del
 ### Inspiratie voor art van de game:
 De inspiratie voor de art style van de game
 
+### Inspiratie voor de sound effects en soundtrack
+
 ## K2 Je hebt de behoeftes van de doelgroep onderzocht en gebruikt om zelf een aantal user stories te schrijven. 
 We hebben in blok 1 een gebruikerstest uitgevoerd waar wij alle informatie uit hebben gehaald die wij nodig hebben om extra en goede user stories te schrijven. Dit blok hebben wij een gebruikersonderzoek uitgevoerd om de gemaakte user stories te bevestigen bij andere mensen. Dit hebben wij uitgevoerd bij onze broer. Jens, de broer van Tijn, is 19 jaar oud en Kevin, de broer van Rick, is 22 jaar oud.
 

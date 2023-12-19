@@ -24,7 +24,7 @@ class TileGrid {
             [2, 2, 3, 4, 1, 3],
             [3, 1, 3, 2, 3, 4],
             [1, 3, 3, 4, 4, 2],
-            [2, 4, 3, 3, 1, 1]
+            [2, 4, 2, 3, 1, 1]
         ]
         //tiles is a 2D array, meaning that it is an array of arrays. 
         //see https://www.freecodecamp.org/news/javascript-2d-arrays/ for more information about 2D arrays.
@@ -67,12 +67,12 @@ class TileGrid {
             for (let y = 0; y < this.#height; y++) {
                 if (this.#tiles[x][y] && this.#tiles[x-1] && this.#tiles[x+1]) {
                     if (this.#tiles[x][y].tileType == this.#tiles[x+1][y].tileType && this.#tiles[x][y].tileType == this.#tiles[x-1][y].tileType) {
-                        console.log("game is now detecting a match on x-direction here")
+                        console.log("match detected on horizontal line")
                     }
                 }
                 if (this.#tiles[x][y] && this.#tiles[y-1] && this.#tiles[y+1]) {
                     if (this.#tiles[x][y].tileType == this.#tiles[x][y+1].tileType && this.#tiles[x][y].tileType == this.#tiles[x][y-1].tileType) {
-                        console.log("game is now detecting a match on y-direction here")
+                        console.log("match detected on vertical line")
                     }
                 }
                 if (this.#tiles[x][y] != null)
