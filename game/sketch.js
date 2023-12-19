@@ -15,7 +15,7 @@ function setup() {
 
 //draws the background and activates the draw function from tileGrid
 function draw() {
-    background(0, 150, 0);
+    image(gameManager.getImage("GameBackground"), 0, 0, 500, 500);
     noStroke();
     tileGrid.draw();
 }

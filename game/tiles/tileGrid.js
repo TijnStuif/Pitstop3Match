@@ -32,7 +32,7 @@ class TileGrid {
 
         //generate tile grid here and place tiles in the 2D #tile array.
         for (let x = 0; x < this.#width; x++) {
-            for (let y = 0; y < this.#height; y++) {
+            for (let y = 2; y < this.#height; y++) {
                 if (!this.#tiles[x]) {
                     this.#tiles[x] = new Array();
                 }
