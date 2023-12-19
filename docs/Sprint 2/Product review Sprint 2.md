@@ -43,7 +43,17 @@ Hier boven staat een gifje van hoe de game er uit ziet als je het opstart. dit l
 <br>
 Boven dit stukje text staat de achtergrond die je ziet als je het spel speelt. Dit zorgt er voor dat ons spel er minder saai en eentonig uitziet. deze achtergrond bestaat uit een weg waar de auto op zou staan die je doormiddel van matches maken verder zou laten kunnen rijden wat uiteindelijk je score wordt.
 
-## K4 
+Hiernaast hebben wij een paar korte vragen gesteld aan Lennon over onze game tot zover. 
+
+Wat vind je van de movement van de tiles? Voelt het goed, is de grid movement makkelijk te snappen?
+Lennon: De movement is goed uitgewerkt, alleen het bewegen van de tiles doet nog niks met het spel, dus daarom voelt het niet compleet genoeg.
+
+Wat vind je van het thema en de art van de tiles? Past de achtergrond goed bij de voorgrond?
+Lennon: De groene achtergrond past vrij slecht bij de pixel art van de tiles. De tiles hebben wel distincte karakteristieken en goed te onderscheiden.
+
+Hieruit hebben wij gelijk de achtergrond aangepast. Daarnaast zijn we van plan om de swap-mechanic zo snel mogelijk toe te voegen zodat de movement ook gelijk meer compleet voelt.
+
+## K4 Je hebt een testplan geschreven en gebruikt om een gebruikerstest uit te voeren. 
 We hebben in blok 1 een gebruikerstest uitgevoerd waar wij alle informatie uit hebben gehaald die wij nodig hebben om extra en goede user stories te schrijven. Dit blok hebben wij een gebruikersonderzoek uitgevoerd om de gemaakte user stories te bevestigen bij andere mensen. Dit hebben wij uitgevoerd bij onze broer. Jens, de broer van Tijn, is 19 jaar oud en Kevin, de broer van Rick, is 22 jaar oud.
 
 ![Gebruikersonderzoek 3-match game sprint 2](Usertest3Match.png)</br>
