@@ -8,7 +8,6 @@ De inspiratie voor de art style van de game
 
 ## K2 Je hebt de behoeftes van de doelgroep onderzocht en gebruikt om zelf een aantal user stories te schrijven. 
 A
-
 ## K3 Je hebt de gebruikersinterface van jouw product aangepast door prototyping toe te passen 
 Wij hebben deze sprint gewerkt aan de hand van de foto hieronder die aantoont hoe het spel uiteindelijk er uit moet zien. Natuurlijk is dit een erg brede illustratie van de game en is dit natuurlijk niet hoe het er uiteindelijk uit gaat zien aangezien wij nog heel wat art hebben gemaakt deze sprint.
 ![Image game tekening op papier:](DrawingPrototypeGame.png)</br>
