@@ -22,7 +22,9 @@ We hebben in blok 1 een gebruikerstest uitgevoerd waar wij alle informatie uit h
 Hier onder staan nog wat art pieces van de game die de achtergrond opmaken van de uiteindelijke game
 
 ![Opstart scherm game:](StartScreen.gif)</br>
+</br>
 Hier boven staat een gifje van hoe de game er uit ziet als je het opstart. dit laat de speler snel weten wat voor game het is en wat het thema van de game is aangezien een garage meestal wel er voor zorgt dat mensen een connectie maken met auto's.
 
 ![Achtergrond SpeelVeld:](GamescreenBackground.png)</br>
+</br>
 Boven dit stukje text staat de achtergrond die je ziet als je het spel speelt. Dit zorgt er voor dat ons spel er minder saai en eentonig uitziet. deze achtergrond bestaat uit een weg waar de auto op zou staan die je doormiddel van matches maken verder zou laten kunnen rijden wat uiteindelijk je score wordt.
