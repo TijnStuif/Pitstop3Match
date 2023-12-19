@@ -3,7 +3,7 @@
 ## K2 Je hebt de behoeftes van de doelgroep onderzocht en gebruikt om zelf een aantal user stories te schrijven. 
 We hebben in blok 1 een gebruikerstest uitgevoerd waar wij alle informatie uit hebben gehaald die wij nodig hebben om extra en goede user stories te schrijven. Dit blok hebben wij een gebruikersonderzoek uitgevoerd om de gemaakte user stories te bevestigen bij andere mensen. Dit hebben wij uitgevoerd bij onze broer. Jens, de broer van Tijn, is 19 jaar oud en Kevin, de broer van Rick, is 22 jaar oud.
 
-![Gebruikersonderzoek 3-match game sprint 2](Gebruikersonderzoek3Match.png)</br>
+![Gebruikersonderzoek 3-match game sprint 2](Gebruikersonderzoek3Match.png) </br>
 
 
 ## K3 Je hebt de gebruikersinterface van jouw product aangepast door prototyping toe te passen 
