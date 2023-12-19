@@ -32,7 +32,7 @@ class TileGrid {
 
         //generate tile grid here and place tiles in the 2D #tile array.
         for (let x = 0; x < this.#width; x++) {
-            for (let y = 2; y < this.#height; y++) {
+            for (let y = 0; y < this.#height; y++) {
                 if (!this.#tiles[x]) {
                     this.#tiles[x] = new Array();
                 }
@@ -65,14 +65,22 @@ class TileGrid {
     draw() {
         for (let x = 0; x < this.#width; x++) {
             for (let y = 0; y < this.#height; y++) {
-                if (this.#tiles[x][y] && this.#tiles[x-1] && this.#tiles[x+1]) {
+                if (!this.#tiles[x][y]) {
+                    continue;
+                }
+                
+                if (this.#tiles[x][y] && this.#tiles[x-1] && this.#tiles[x-1][y] && this.#tiles[x+1] && this.#tiles[x+1][y]) {
                     if (this.#tiles[x][y].tileType == this.#tiles[x+1][y].tileType && this.#tiles[x][y].tileType == this.#tiles[x-1][y].tileType) {
-                        console.log("match detected on horizontal line")
+                        this.#tiles[x][y] = null
+                        this.#tiles[x+1][y] = null
+                        this.#tiles[x-1][y] = null
                     }
                 }
-                if (this.#tiles[x][y] && this.#tiles[y-1] && this.#tiles[y+1]) {
+                if (this.#tiles[x][y] && this.#tiles[y-1] && this.#tiles[x][y-1] && this.#tiles[y+1] && this.#tiles[x][y+1]) {
                     if (this.#tiles[x][y].tileType == this.#tiles[x][y+1].tileType && this.#tiles[x][y].tileType == this.#tiles[x][y-1].tileType) {
-                        console.log("match detected on vertical line")
+                        this.#tiles[x][y] = null
+                        this.#tiles[x][y+1] = null
+                        this.#tiles[x][y-1] = null
                     }
                 }
                 if (this.#tiles[x][y] != null)
