@@ -74,7 +74,6 @@ class Tile {
                 const targetY = (mouseY - 1/2 * this.#size) * 1/80;
                 this.setPosition(createVector(targetX, targetY));
                 image(this.#image, this.position.x - this.#offsetX, this.position.y - this.#offsetY, this.#size, this.#size);
-                console.log(this.tileType)
         }
     }
 }
