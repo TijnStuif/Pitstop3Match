@@ -7,6 +7,21 @@ Wij hebben voor dit onderdeel van de product review gemaakt door alles op te del
 De inspiratie voor de art style van de game
 
 ### Inspiratie voor de sound effects en soundtrack
+Voor de sound design hebben wij gekeken naar verschillende games die vergelijkbare thema's of gameplay gebruiken. Hieronder vallen de game Hill Climb Racing, Gardenscapes, Pou en Candy Crush. Hill climb racing is een autospel waarin je naar voren moet rijden in een vast gegenereerd level om zo meer geld op te halen, meer maps te unlocken en betere auto's te kopen. De soundtrack hierin geeft roadtrip vibes, het flowt goed en er zit een loop in. De muziek veranderd per menu, maar niet per level. De menumuziek geeft ons een goed basisritme om op voort te werken. De levelmuziek gaat iets te snel voor een 3-match game, dus die laten wij buiterwege.
+
+![Hill Climb Racing pictogram](HillClimbRacing.jpg)
+
+Gardenscapes is een van de bekenste 3-match games op de markt, gethemateerd door tuinattributen. De game is erg rustgevend, wat goed past bij de pacing en het thema van het spel. De game muziek geeft de speler het gevoel alsof hij/zij alle tijd heeft, wat ook de bedoeling is aangezien er geen tijdslimiet op een level zit. Voor de rest gebruikt gardenscapes veel powerups, en de sound effects die bij de powerups horen, geven een goed gevoel aan de speler.
+
+![Gardenscapes gameplay](Gardenscapes.jpg)
+
+Pou een cartoonachtig en een apart spel; je zorgt voor een klein wezentje, waarmee je onder andere minigames kan spelen. Een van deze minigames is een match game. De muziek en soundeffects van pou zijn vrij simpel, maar wel gepast bij de activiteit die de speler verricht. Wij waren hierdoor ook van plan om de muziek simpel te maken, en de soundeffects ook.
+
+![Pou Match-3 gameplay](PouMatch3.png)
+
+Als laatste hebben we Candy Crush. Bij deze game hebben we voornamelijk gekeken naar de sound effects van matches maken en de powerups. Deze waren ritmisch in de chaos van het spel, het was goed duidelijk wanneer er een powerup werd geactiveerd en ook wanneer een match werd gemaakt. Het geluid gaf directe feedback aan de speler, wat wij heel goed vonden. 
+
+![Candy Crush gameplay](CandyCrush.jpg)
 
 ## K2 Je hebt de behoeftes van de doelgroep onderzocht en gebruikt om zelf een aantal user stories te schrijven. 
 We hebben in blok 1 een gebruikerstest uitgevoerd waar wij alle informatie uit hebben gehaald die wij nodig hebben om extra en goede user stories te schrijven. Dit blok hebben wij een gebruikersonderzoek uitgevoerd om de gemaakte user stories te bevestigen bij andere mensen. Dit hebben wij uitgevoerd bij onze broer. Jens, de broer van Tijn, is 19 jaar oud en Kevin, de broer van Rick, is 22 jaar oud.
