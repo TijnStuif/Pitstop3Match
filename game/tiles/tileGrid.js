@@ -19,10 +19,10 @@ class TileGrid {
     #generateTileGrid() {
 
         const tileMap = [
-            [1, 4, 4, 2, 3, 3],
+            [4, 4, 4, 2, 3, 3],
             [4, 1, 1, 3, 2, 1],
             [2, 2, 3, 4, 1, 3],
-            [3, 1, 1, 2, 3, 4],
+            [3, 1, 3, 2, 3, 4],
             [1, 3, 3, 4, 4, 2],
             [2, 4, 3, 3, 1, 1]
         ]
@@ -41,16 +41,16 @@ class TileGrid {
                 
                 switch (tileValue) {
                     case 1:
-                        this.#tiles[x][y] = new NormalTile(gameManager.getImage("Wheel"), this.#tileSize, x, y);
+                        this.#tiles[x][y] = new NormalTile(gameManager.getImage("Wheel"), this.#tileSize, x, y, 1);
                         break;
                     case 2:
-                        this.#tiles[x][y] = new NormalTile(gameManager.getImage("SteeringWheel"), this.#tileSize, x, y);
+                        this.#tiles[x][y] = new NormalTile(gameManager.getImage("SteeringWheel"), this.#tileSize, x, y, 2);
                         break;
                     case 3:
-                        this.#tiles[x][y] = new NormalTile(gameManager.getImage("JerryCan"), this.#tileSize, x, y);
+                        this.#tiles[x][y] = new NormalTile(gameManager.getImage("JerryCan"), this.#tileSize, x, y, 3);
                         break;
                     case 4:
-                        this.#tiles[x][y] = new NormalTile(gameManager.getImage("StopSign"), this.#tileSize, x, y);
+                        this.#tiles[x][y] = new NormalTile(gameManager.getImage("StopSign"), this.#tileSize, x, y, 4);
                         break;
                 }
             }
@@ -65,6 +65,17 @@ class TileGrid {
     draw() {
         for (let x = 0; x < this.#width; x++) {
             for (let y = 0; y < this.#height; y++) {
+                if (this.#tiles[x][y] && this.#tiles[x-1] && this.#tiles[x+1]) {
+                    if (this.#tiles[x][y].tileType == this.#tiles[x+1][y].tileType && this.#tiles[x][y].tileType == this.#tiles[x-1][y].tileType) {
+                        console.log("game is now detecting a match on x-direction here")
+                    }
+                }
+                if (this.#tiles[x][y] && this.#tiles[y-1] && this.#tiles[y+1]) {
+                    if (this.#tiles[x][y].tileType == this.#tiles[x][y+1].tileType && this.#tiles[x][y].tileType == this.#tiles[x][y-1].tileType) {
+                        console.log("game is now detecting a match on y-direction here")
+                    }
+                }
+                if (this.#tiles[x][y] != null)
                 this.#tiles[x][y].draw();
             }
         }
