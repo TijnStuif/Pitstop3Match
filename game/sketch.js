@@ -40,6 +40,6 @@ function touchMoved(event) {
 function touchEnded() {
     if (draggingTile) {
         draggingTile.stopDragging();
-        draggingTile = null; // Reset the draggingTile variable after touch ends
+        //tileGrid.swapTileIndex();
     }
 }

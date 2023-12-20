@@ -122,4 +122,12 @@ class TileGrid {
         }
         return null;
     }
+
+    swapTileIndex() {
+        if (this.#tiles[x][y].gridPosX == this.#tiles[x+1][y].gridposX) {
+            let temp = this.#tiles[x][y]
+            this.#tiles[x][y] = this.#tiles[x+1][y]
+            this.#tiles[x+1][y] = temp
+        }
+    }
 }
