@@ -1,4 +1,5 @@
-# Eerste retrospective review blok 2 Sprint 1.
+# Retrospective blok 2 Sprint 2.
+In deze retrospective kijken we terug op de persoonlijke ontwikkeling, samenwerking en kwaliteit van het werk uit sprint 2.
 
 ## G1: Persoonlijke ontwikkeling.
 
