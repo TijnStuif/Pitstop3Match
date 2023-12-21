@@ -55,7 +55,9 @@ Als de samenwerking niet goed verloopt, dan bespreken wij onze moeilijkheden en/
 
 ### Verwachting van duopartner
 
-Tijn: Ik verwacht van Rick dat hij doet wat hem aangewezen is in de sprintplanning. Ook verwacht ik van hem dat hij zich houdt aan alle regels omtrent het samenwerkingscontract. 
+Tijn: Ik verwacht van Rick dat hij doet wat hem aangewezen is in de sprintplanning. Ook verwacht ik van hem dat hij zich houdt aan alle regels omtrent het samenwerkingscontract. Daarnaast verwacht ik van hem dat hij zicht uitspreekt als dingen niet goed verlopen, zodat wij misschien samen tot een oplossing kunnen komen.
 
 
 ### Feedback aan duopartner
+
+Tijn: 
