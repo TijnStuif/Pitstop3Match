@@ -60,4 +60,4 @@ Tijn: Ik verwacht van Rick dat hij doet wat hem aangewezen is in de sprintplanni
 
 ### Feedback aan duopartner
 
-Tijn: 
+Tijn: Hoewel Rick deze sprint mooie art heeft gemaakt voor onze game, heeft hij eigenlijk niet zoveel gewerkt aan de gehele code (JavaScript, SQL). Ik wil dat hij dus meer helpt met het vormgeven van de game, en niet zozeer een minder belangrijk onderwerp als de graphic design van de game (hoewel dat wel belangrijk is, maar dan pas later in het project). Hij communiceert wel wanneer hij op school is, en wat hij gaat doen per les. Maar ook wat hij van mij wil/verwacht, en dat waardeer ik enorm.
