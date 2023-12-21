@@ -47,11 +47,15 @@ De indentation wordt voornamelijk gebruikt in de switch-case functie. Door inden
 
 ### Samenwerkingscontract
 
+![Samenwerkingscontract](Samenwerkingscontract.png)
 
 ### Wat doen wij als de samenwerking niet lekker verloopt?
 
+Als de samenwerking niet goed verloopt, dan bespreken wij onze moeilijkheden en/of punten van kritiek met elkaar. Van hieruit proberen wij tot een concensus te komen, waar wij allebei weer mee overweg kunnen. Hiervan leren wij van elkaar, en zal onze samenwerking erop vooruitgaan.
 
 ### Verwachting van duopartner
+
+Tijn: Ik verwacht van Rick dat hij doet wat hem aangewezen is in de sprintplanning. Ook verwacht ik van hem dat hij zich houdt aan alle regels omtrent het samenwerkingscontract. 
 
 
 ### Feedback aan duopartner
