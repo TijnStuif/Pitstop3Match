@@ -31,13 +31,17 @@ Voor onze coding conventions kijken we naar een paar conventions die wij hantere
 
 ![Stukje code om coding conventions aan te tonen](CodingConventionsSprint2.png)
 
-Voor de naming convention
+Om de naming conventions aan te tonen kijken we naar de variable tileValue en tileMap. De tileMap is een 2D array die aangeeft welke tilesoort er aan het begin van een level spawnt, zodat het altijd mogelijk is om aan het begin van het level een match te maken. De tileValue leest de waarde die op de bepaalde x en y-positie van de 2D array. Deze tileValue wordt vervolgens gebruikt om een bepaalde image in te laden, zodat het correcte plaatje laten zien wordt.
 
+De line length convention wordt gebruikt door de switch-statement op te delen in 10 verschillende lines, zodat elke case van deze functie makkelijk leesbaar is zonder het bestand naar links en naar rechts te bewegen. 
 
+De comment bovenaan de gehele for-loop laat zien waar de for-loop precies voor is; het creeeren van een tileGrid op het scherm aan de hand van de tileMap. Dit is ook precies wat er gebeurd in het gehele stukje code, dus de comment beschrijft goed wat er gebeurd.
+
+De indentation wordt voornamelijk gebruikt in de switch-case functie. Door indentation is makkelijk te zien wanneer een bepaalde statement zich bijvoorbeeld in case 1 of in case 2 bevindt. Dit helpt met structuur geven aan het gehele stukje code.
 
 ### Je code is technisch gedocumenteerd en relevant voor collega's
 
-### Je communiceert proffesioneel en gestructureerd
+### Je communiceert professioneel en gestructureerd
 
 ## G5: Je kan constructief samenwerken in een duo
 
