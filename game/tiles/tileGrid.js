@@ -51,6 +51,7 @@ class TileGrid {
                         break;
                     case 4:
                         this.#tiles[x][y] = new NormalTile(gameManager.getImage("StopSign"), this.#tileSize, x, y, 4);
+                        console.log(x, y)
                         break;
                 }
             }
@@ -68,7 +69,6 @@ class TileGrid {
                 if (!this.#tiles[x][y]) {
                     continue;
                 }
-                
                 if (this.#tiles[x][y] && this.#tiles[x-1] && this.#tiles[x-1][y] && this.#tiles[x+1] && this.#tiles[x+1][y]) {
                     if (this.#tiles[x][y].tileType == this.#tiles[x+1][y].tileType && this.#tiles[x][y].tileType == this.#tiles[x-1][y].tileType) {
                         this.#tiles[x][y] = null
@@ -89,13 +89,19 @@ class TileGrid {
         }
     }
 
+    getGridX(x) {
+        console.log(x)
+        return Math.floor(x / this.#tileSize);
+    }
+
+    getGridY(y) {
+        return Math.floor(y / this.#tileSize);
+    }
+
     //function that checks the position of a tile and returns it
     getTileAtPosition(position) {
-        const gridXPosition = Math.floor(position.x / this.#tileSize);
-        const gridYPosition = Math.floor(position.y / this.#tileSize);
-
-        this.gridPosX = gridXPosition;
-        this.gridPosY = gridYPosition;
+        let gridXPosition = Math.floor(position.x / this.#tileSize);
+        let gridYPosition = Math.floor(position.y / this.#tileSize);
 
         return this.getTileAtGridIndex(gridXPosition, gridYPosition);
     }
@@ -123,11 +129,35 @@ class TileGrid {
         return null;
     }
 
-    swapTileIndex() {
-        if (this.#tiles[x][y].gridPosX == this.#tiles[x+1][y].gridposX) {
-            let temp = this.#tiles[x][y]
-            this.#tiles[x][y] = this.#tiles[x+1][y]
-            this.#tiles[x+1][y] = temp
+    swapTiles(x1, y1, x2, y2) {
+        console.log(x1, x2, y1, y2)
+        let temp = this.#tiles[x1][y1];
+        this.#tiles[x1][y1] = this.#tiles[x2][y2];
+        this.#tiles[x2][y2] = temp;
+        temp = null;
+        this.#tiles[x1][y1].setPosition(createVector(x1, y1));
+        this.#tiles[x2][y2].setPosition(createVector(x2, y2));
+        console.log(this.#tiles[x1][y1].position)
+    }
+
+    swapTileIndex(x, y) {
+        if (this.#tiles[x][y] && this.#tiles[x + 1] && this.#tiles[x][y].isDragging) {
+            if (this.#tiles[x][y].x == this.#tiles[x + 1][y].x) {
+                console.log(this.#tiles[x][y]);
+                let temp = this.#tiles[x][y];
+                this.#tiles[x][y] = this.#tiles[x + 1][y];
+                this.#tiles[x + 1][y] = temp;
+                temp = null;
+            }
+        }
+        if (this.#tiles[x][y] && this.#tiles[x - 1] && this.#tiles[x][y].isDragging) {
+            if (this.#tiles[x][y].x == this.#tiles[x - 1][y].x) {
+                console.log(this.#tiles[x][y]);
+                let temp = this.#tiles[x][y];
+                this.#tiles[x][y] = this.#tiles[x - 1][y];
+                this.#tiles[x - 1][y] = temp;
+                temp = null;
+            }
         }
     }
 }

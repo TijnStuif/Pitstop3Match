@@ -33,13 +33,13 @@ function touchStarted(event) {
 function touchMoved(event) {
     if (draggingTile) {
         draggingTile.setPosition(createVector(event.x, event.y));
+        tileGrid.swapTiles(tileGrid.getGridX(event.x), tileGrid.getGridY(event.y), tileGrid.getGridX(draggingTile.x), tileGrid.getGridY(draggingTile.y))
     }
 }
 
 //does all the logic for a touch ending
-function touchEnded() {
+function touchEnded(event) {
     if (draggingTile) {
-        draggingTile.stopDragging();
-        //tileGrid.swapTileIndex();
+        draggingTile.stopDragging(event);
     }
 }

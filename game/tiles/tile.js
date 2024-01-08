@@ -3,9 +3,7 @@ class Tile {
     #y;
     #size;
     #image;
-    #isDragging;
-    #startPosX;
-    #startPosY;
+    isDragging;
     #offsetX;
     #offsetY;
 
@@ -30,6 +28,7 @@ class Tile {
     }
 
     setPosition(position) {
+        console.log(position.x, position.y)
         this.#x = position.x;
         this.#y = position.y;
     }
@@ -40,9 +39,7 @@ class Tile {
         this.#size = size;
         this.#x = x;
         this.#y = y;
-        this.#isDragging = false;
-        this.#startPosX = this.position.x;
-        this.#startPosY = this.position.y;
+        this.isDragging = false;
         this.#offsetX = 0;
         this.#offsetY = 0;
         this.tileType = tileType;
@@ -50,24 +47,27 @@ class Tile {
     
     //functions that determine if a tile is moving or not
     isDragging() {
-        return this.#isDragging;
+        return this.isDragging;
     }
 
     startDragging() {
-        this.#isDragging = true;
+        this.isDragging = true;
     }
 
-    stopDragging() {
-        this.#isDragging = false;
+    stopDragging(value) {
+        this.isDragging = false;
+        this.#x = value.x
+        this.#y = value.y
     }
 
     draw() {
+        //tileGrid.getTileAtPosition(this.position);
         //static image that is displayed whenever a tile is not moving
-        if (!this.#isDragging) {
-            image(this.#image, this.#startPosX, this.#startPosY, this.#size, this.#size);
+        if (!this.isDragging) {
+            image(this.#image, this.position.x - this.#offsetX, this.position.y - this.#offsetY, this.#size, this.#size);
         }
             //logic that gives tiles a grid-like movement, and displays it moving
-            if (this.#isDragging) {
+            if (this.isDragging) {
                 this.#offsetX = Math.round(mouseX % 80) - 40;
                 this.#offsetY = Math.round(mouseY % 80) - 40;
                 const targetX = (mouseX - 1/2 * this.#size) * 1/80;
