@@ -105,7 +105,6 @@ class TileGrid {
         console.log(randomTileType)
     }
     getGridX(x) {
-        console.log(x)
         return Math.floor(x / this.#tileSize);
     }
 
@@ -145,34 +144,11 @@ class TileGrid {
     }
 
     swapTiles(x1, y1, x2, y2) {
-        console.log(x1, x2, y1, y2)
         let temp = this.#tiles[x1][y1];
         this.#tiles[x1][y1] = this.#tiles[x2][y2];
         this.#tiles[x2][y2] = temp;
         temp = null;
         this.#tiles[x1][y1].setPosition(createVector(x1, y1));
         this.#tiles[x2][y2].setPosition(createVector(x2, y2));
-        console.log(this.#tiles[x1][y1].position)
-    }
-
-    swapTileIndex(x, y) {
-        if (this.#tiles[x][y] && this.#tiles[x + 1] && this.#tiles[x][y].isDragging) {
-            if (this.#tiles[x][y].x == this.#tiles[x + 1][y].x) {
-                console.log(this.#tiles[x][y]);
-                let temp = this.#tiles[x][y];
-                this.#tiles[x][y] = this.#tiles[x + 1][y];
-                this.#tiles[x + 1][y] = temp;
-                temp = null;
-            }
-        }
-        if (this.#tiles[x][y] && this.#tiles[x - 1] && this.#tiles[x][y].isDragging) {
-            if (this.#tiles[x][y].x == this.#tiles[x - 1][y].x) {
-                console.log(this.#tiles[x][y]);
-                let temp = this.#tiles[x][y];
-                this.#tiles[x][y] = this.#tiles[x - 1][y];
-                this.#tiles[x - 1][y] = temp;
-                temp = null;
-            }
-        }
     }
 }
