@@ -226,7 +226,7 @@ Aan het begin worden alle class variablen gedefinieerd; dit zijn de x-positie en
 ### Je communiceert professioneel en gestructureerd
 Tijn: Voor communicatie tussen mij en Rick hebben wij exclusief gebruik gemaakt van Discord. Dit is een (video)chatplatform, waarmee gemakkelijk foto's en video's kunnen worden. Ook kunnen videooproepen gestart worden, en scherm delen is ook een optie. Daarnaast heb ik met leraren zo formeel mogelijk gecommuniceerd. Ook probeer ik mijn feedback zo construcief mogelijk te verwoorden, en wordt kritiek met open armen ontvangen, aangezien ik hierdoor kan groeien als persoon en als programmeur.
 
-Rick: Net als Tijn al had vermeld communiceren wij buiten school alleen via het platform "Discord" hiermee kunnen wij code snippets delen
+Rick: Net als Tijn al had vermeld communiceren wij buiten school alleen via het platform "Discord" hiermee kunnen wij code snippets delen en met elkaar video bellen als dit nodig is. Naast dit ben ik zo formeel mogelijk met docenten en ben ik erg respectabel tegen mensen die mij proberen te helpen. Negatiefe feedback neem ik zo goed mogelijk in mij op om dit de volgende keer te kunnen vermijden en te kunnen groeien in mijn vakgebiet.
 
 ## G5: Je kan constructief samenwerken in een duo
 
@@ -242,7 +242,10 @@ Als de samenwerking niet goed verloopt, dan bespreken wij onze moeilijkheden en/
 
 Tijn: Ik verwacht van Rick dat hij doet wat hem aangewezen is in de sprintplanning. Ook verwacht ik van hem dat hij zich houdt aan alle regels omtrent het samenwerkingscontract. Daarnaast verwacht ik van hem dat hij zicht uitspreekt als dingen niet goed verlopen, zodat wij misschien samen tot een oplossing kunnen komen.
 
+Rick: Ik verwacht dat tijn meld als hij niet aanwezig kan zijn op een dag en ik hoop dat tijn dit ook van mij verwacht. Naast dit verwacht ik van Tijn dat hij zich aan de regels houd die zijn opgeschreven in het samenwerkings contract.
 
 ### Feedback aan duopartner
 
 Tijn: Hoewel Rick deze sprint mooie art heeft gemaakt voor onze game, heeft hij eigenlijk niet zoveel gewerkt aan de gehele code (JavaScript, SQL). Ik wil dat hij dus meer helpt met het vormgeven van de game, en niet zozeer een minder belangrijk onderwerp als de graphic design van de game (hoewel dat wel belangrijk is, maar dan pas later in het project). Hij communiceert wel wanneer hij op school is, en wat hij gaat doen per les. Maar ook wat hij van mij wil/verwacht, en dat waardeer ik enorm.
+
+Rick: Tijn heeft zich meer gefocust op het programmeren van de game dan ik heb gedaan de afgelopen sprint. Persoonlijk ben ik erg blij met de progressie die hij heeft gemaakt met het project ookal heeft hij moeite gehad met het programmeren van sommige aspecten van de code. Naast dit heb ik niet echt negatieve opmerkingen over zijn werk wat hij heeft verleend deze sprint aangezien ik in sprint 2 de zwakke schakel was.
