@@ -4,8 +4,6 @@ class Tile {
     #size;
     #image;
     isDragging;
-    #offsetX;
-    #offsetY;
 
     get x() {
         return this.#x;
@@ -39,8 +37,6 @@ class Tile {
         this.#x = x;
         this.#y = y;
         this.isDragging = false;
-        this.#offsetX = 0;
-        this.#offsetY = 0;
         this.tileType = tileType;
     }  
     
@@ -58,9 +54,8 @@ class Tile {
     }
 
     draggingTileMovement() {
-            const targetX = (mouseX - 1/2 * this.#size) * 1/80;
-            const targetY = (mouseY - 1/2 * this.#size) * 1/80;
-            this.setPosition(createVector(targetX, targetY));
+        const snappedX = Math.floor(mouseX / this.#size) * this.#size;
+        const snappedY = Math.floor(mouseY / this.#size) * this.#size;
     }
 
     draw() {
@@ -69,13 +64,13 @@ class Tile {
         if (!this.isDragging) {
             image(this.#image, this.position.x, this.position.y, this.#size, this.#size);
         }
-            //logic that gives tiles a grid-like movement, and displays it moving
-            if (this.isDragging) {
-                // mouse coordinates, snapped to grid using math.floor
-                const snappedX = Math.floor(mouseX / this.#size) * this.#size;
-                const snappedY = Math.floor(mouseY / this.#size) * this.#size;
+        //logic that gives tiles a grid-like movement, and displays it moving
+        if (this.isDragging) {
+            // mouse coordinates, snapped to grid using math.floor
+            const snappedX = Math.floor(mouseX / this.#size) * this.#size;
+            const snappedY = Math.floor(mouseY / this.#size) * this.#size;
             
-                image(this.#image, snappedX, snappedY, this.#size, this.#size);
-            }
+            image(this.#image, snappedX, snappedY, this.#size, this.#size);
+        }
     }
 }

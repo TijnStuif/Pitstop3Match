@@ -41,7 +41,6 @@ function touchMoved(event) {
 function touchEnded(event) {
     if (draggingTile) {
         tileGrid.swapTiles(tileGrid.getGridX(event.x), tileGrid.getGridY(event.y), draggingTileX, draggingTileY);
-        console.log(tileGrid.getGridX(event.x), tileGrid.getGridY(event.y), tileGrid.getGridX(draggingTile.x), tileGrid.getGridY(draggingTile.y))
         draggingTile.stopDragging(event);
     }
 }

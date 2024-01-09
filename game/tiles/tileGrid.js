@@ -32,7 +32,7 @@ class TileGrid {
 
         //generate tile grid here and place tiles in the 2D #tile array.
         for (let x = 0; x < this.#width; x++) {
-            for (let y = 0; y < this.#height; y++) {
+            for (let y = 2; y < this.#height; y++) {
                 if (!this.#tiles[x]) {
                     this.#tiles[x] = new Array();
                 }
@@ -50,8 +50,7 @@ class TileGrid {
                         this.#tiles[x][y] = new NormalTile(gameManager.getImage("JerryCan"), this.#tileSize, x, y, 3);
                         break;
                     case 4:
-                        this.#tiles[x][y] = new NormalTile(gameManager.getImage("StopSign"), this.#tileSize, x, y, 4);
-                        break;
+                        this.#tiles[x][y] = new SpecialTile(gameManager.getImage("StopSign"), this.#tileSize, x, y, 4);
                 }
             }
         }
@@ -63,6 +62,10 @@ class TileGrid {
 
     //draw all the tiles
     draw() {
+        this.checkMatches()
+    }
+
+    checkMatches() {
         for (let x = 0; x < this.#width; x++) {
             for (let y = 0; y < this.#height; y++) {
                 if (!this.#tiles[x][y]) {
@@ -77,9 +80,9 @@ class TileGrid {
                 }
                 if (this.#tiles[x][y] && this.#tiles[y-1] && this.#tiles[x][y-1] && this.#tiles[y+1] && this.#tiles[x][y+1]) {
                     if (this.#tiles[x][y].tileType == this.#tiles[x][y+1].tileType && this.#tiles[x][y].tileType == this.#tiles[x][y-1].tileType) {
-                        this.#tiles[x][y] = null
-                        this.#tiles[x][y+1] = null
-                        this.#tiles[x][y-1] = null
+                        this.#tiles[x][y].tileType = null
+                        this.#tiles[x][y+1].tileType = null
+                        this.#tiles[x][y-1].tileType = null
                     }
                 }
                 if (this.#tiles[x][y] != null)
@@ -88,6 +91,11 @@ class TileGrid {
         }
     }
 
+    getRandomTileType() {
+        let randomTileType;
+        randomTileType = Math.floor(random(1,4))
+        console.log(randomTileType)
+    }
     getGridX(x) {
         return Math.floor(x / this.#tileSize);
     }
