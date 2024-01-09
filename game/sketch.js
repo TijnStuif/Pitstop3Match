@@ -2,6 +2,7 @@ let tileGrid;
 let draggingTile = null; // Variable to store the dragging tile
 let draggingTileX;
 let draggingTileY;
+let score = 0;
 const tileWidth = 6, tileHeight = 6, tileSize = 80;
 
 //preloads GameManager and the tileGrid

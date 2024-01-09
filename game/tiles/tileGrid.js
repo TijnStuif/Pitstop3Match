@@ -62,10 +62,6 @@ class TileGrid {
 
     //draw all the tiles
     draw() {
-        this.checkMatches()
-    }
-
-    checkMatches() {
         for (let x = 0; x < this.#width; x++) {
             for (let y = 0; y < this.#height; y++) {
                 if (!this.#tiles[x][y]) {
@@ -73,16 +69,28 @@ class TileGrid {
                 }
                 if (this.#tiles[x][y] && this.#tiles[x-1] && this.#tiles[x-1][y] && this.#tiles[x+1] && this.#tiles[x+1][y]) {
                     if (this.#tiles[x][y].tileType == this.#tiles[x+1][y].tileType && this.#tiles[x][y].tileType == this.#tiles[x-1][y].tileType) {
+                        if (this.#tiles[x][y].tileType == 4) {
+                            score -= 50
+                        } else {
+                            score += 100
+                        }
                         this.#tiles[x][y] = null
                         this.#tiles[x+1][y] = null
                         this.#tiles[x-1][y] = null
+                        console.log(score)
                     }
                 }
                 if (this.#tiles[x][y] && this.#tiles[y-1] && this.#tiles[x][y-1] && this.#tiles[y+1] && this.#tiles[x][y+1]) {
                     if (this.#tiles[x][y].tileType == this.#tiles[x][y+1].tileType && this.#tiles[x][y].tileType == this.#tiles[x][y-1].tileType) {
+                        if (this.#tiles[x][y].tileType == 4) {
+                            score -= 50
+                        } else {
+                            score += 100
+                        }
                         this.#tiles[x][y] = null
                         this.#tiles[x][y+1] = null
                         this.#tiles[x][y-1] = null
+                        console.log(score)
                     }
                 }
                 if (this.#tiles[x][y] != null)
