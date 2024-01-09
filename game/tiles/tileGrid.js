@@ -80,9 +80,9 @@ class TileGrid {
                 }
                 if (this.#tiles[x][y] && this.#tiles[y-1] && this.#tiles[x][y-1] && this.#tiles[y+1] && this.#tiles[x][y+1]) {
                     if (this.#tiles[x][y].tileType == this.#tiles[x][y+1].tileType && this.#tiles[x][y].tileType == this.#tiles[x][y-1].tileType) {
-                        this.#tiles[x][y].tileType = null
-                        this.#tiles[x][y+1].tileType = null
-                        this.#tiles[x][y-1].tileType = null
+                        this.#tiles[x][y] = null
+                        this.#tiles[x][y+1] = null
+                        this.#tiles[x][y-1] = null
                     }
                 }
                 if (this.#tiles[x][y] != null)
