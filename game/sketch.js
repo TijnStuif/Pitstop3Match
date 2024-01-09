@@ -2,6 +2,7 @@ let tileGrid;
 let draggingTile = null; // Variable to store the dragging tile
 let draggingTileX;
 let draggingTileY;
+let score = 0;
 const tileWidth = 6, tileHeight = 6, tileSize = 80;
 
 //preloads GameManager and the tileGrid
@@ -41,7 +42,6 @@ function touchMoved(event) {
 function touchEnded(event) {
     if (draggingTile) {
         tileGrid.swapTiles(tileGrid.getGridX(event.x), tileGrid.getGridY(event.y), draggingTileX, draggingTileY);
-        console.log(tileGrid.getGridX(event.x), tileGrid.getGridY(event.y), tileGrid.getGridX(draggingTile.x), tileGrid.getGridY(draggingTile.y))
         draggingTile.stopDragging(event);
     }
 }

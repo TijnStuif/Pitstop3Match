@@ -32,7 +32,7 @@ class TileGrid {
 
         //generate tile grid here and place tiles in the 2D #tile array.
         for (let x = 0; x < this.#width; x++) {
-            for (let y = 0; y < this.#height; y++) {
+            for (let y = 2; y < this.#height; y++) {
                 if (!this.#tiles[x]) {
                     this.#tiles[x] = new Array();
                 }
@@ -50,9 +50,7 @@ class TileGrid {
                         this.#tiles[x][y] = new NormalTile(gameManager.getImage("JerryCan"), this.#tileSize, x, y, 3);
                         break;
                     case 4:
-                        this.#tiles[x][y] = new NormalTile(gameManager.getImage("StopSign"), this.#tileSize, x, y, 4);
-                        console.log(x, y)
-                        break;
+                        this.#tiles[x][y] = new SpecialTile(gameManager.getImage("StopSign"), this.#tileSize, x, y, 4);
                 }
             }
         }
@@ -71,16 +69,28 @@ class TileGrid {
                 }
                 if (this.#tiles[x][y] && this.#tiles[x-1] && this.#tiles[x-1][y] && this.#tiles[x+1] && this.#tiles[x+1][y]) {
                     if (this.#tiles[x][y].tileType == this.#tiles[x+1][y].tileType && this.#tiles[x][y].tileType == this.#tiles[x-1][y].tileType) {
+                        if (this.#tiles[x][y].tileType == 4) {
+                            score -= 50
+                        } else {
+                            score += 100
+                        }
                         this.#tiles[x][y] = null
                         this.#tiles[x+1][y] = null
                         this.#tiles[x-1][y] = null
+                        console.log(score)
                     }
                 }
                 if (this.#tiles[x][y] && this.#tiles[y-1] && this.#tiles[x][y-1] && this.#tiles[y+1] && this.#tiles[x][y+1]) {
                     if (this.#tiles[x][y].tileType == this.#tiles[x][y+1].tileType && this.#tiles[x][y].tileType == this.#tiles[x][y-1].tileType) {
+                        if (this.#tiles[x][y].tileType == 4) {
+                            score -= 50
+                        } else {
+                            score += 100
+                        }
                         this.#tiles[x][y] = null
                         this.#tiles[x][y+1] = null
                         this.#tiles[x][y-1] = null
+                        console.log(score)
                     }
                 }
                 if (this.#tiles[x][y] != null)
@@ -89,6 +99,11 @@ class TileGrid {
         }
     }
 
+    getRandomTileType() {
+        let randomTileType;
+        randomTileType = Math.floor(random(1,4))
+        console.log(randomTileType)
+    }
     getGridX(x) {
         console.log(x)
         return Math.floor(x / this.#tileSize);
