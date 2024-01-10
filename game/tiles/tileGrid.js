@@ -57,11 +57,20 @@ class TileGrid {
     }
 
     update(deltaTime) {
-        //handle results from player input here...
+
     }
+    
 
     //draw all the tiles
     draw() {
+            for (let x = 0; x < this.#width; x++) {
+                for (let y = this.#height - 2; y >= 0; y--) {
+                    if (this.#tiles[x][y] != null && !this.#tiles[x][y + 1]) {
+                        // Move the tile down if there is an empty space below
+                        this.swapTiles(x, y, x, y + 1);
+                    }
+                }
+            }
         for (let x = 0; x < this.#width; x++) {
             for (let y = 0; y < this.#height; y++) {
                 if (!this.#tiles[x][y]) {
@@ -69,11 +78,7 @@ class TileGrid {
                 }
                 if (this.#tiles[x][y] && this.#tiles[x-1] && this.#tiles[x-1][y] && this.#tiles[x+1] && this.#tiles[x+1][y]) {
                     if (this.#tiles[x][y].tileType == this.#tiles[x+1][y].tileType && this.#tiles[x][y].tileType == this.#tiles[x-1][y].tileType) {
-                        if (this.#tiles[x][y].tileType == 4) {
-                            score -= 50
-                        } else {
-                            score += 100
-                        }
+                        this.distributePoints(x, y);
                         this.#tiles[x][y] = null
                         this.#tiles[x+1][y] = null
                         this.#tiles[x-1][y] = null
@@ -82,11 +87,7 @@ class TileGrid {
                 }
                 if (this.#tiles[x][y] && this.#tiles[y-1] && this.#tiles[x][y-1] && this.#tiles[y+1] && this.#tiles[x][y+1]) {
                     if (this.#tiles[x][y].tileType == this.#tiles[x][y+1].tileType && this.#tiles[x][y].tileType == this.#tiles[x][y-1].tileType) {
-                        if (this.#tiles[x][y].tileType == 4) {
-                            score -= 50
-                        } else {
-                            score += 100
-                        }
+                        this.distributePoints(x, y);
                         this.#tiles[x][y] = null
                         this.#tiles[x][y+1] = null
                         this.#tiles[x][y-1] = null
@@ -95,10 +96,18 @@ class TileGrid {
                 }
                 if (this.#tiles[x][y] != null)
                 this.#tiles[x][y].draw();
+
             }
         }
     }
 
+    distributePoints(x, y) {
+        if (this.#tiles[x][y].tileType == 4) {
+            score -= 50
+        } else {
+            score += 100
+        }
+    }
     getRandomTileType() {
         let randomTileType;
         randomTileType = Math.floor(random(1,4))
@@ -148,7 +157,12 @@ class TileGrid {
         this.#tiles[x1][y1] = this.#tiles[x2][y2];
         this.#tiles[x2][y2] = temp;
         temp = null;
-        this.#tiles[x1][y1].setPosition(createVector(x1, y1));
-        this.#tiles[x2][y2].setPosition(createVector(x2, y2));
+        if (this.#tiles[x1][y1] != null) {
+            this.#tiles[x1][y1].setPosition(createVector(x1, y1));
+        }
+    
+        if (this.#tiles[x2][y2] != null) {
+            this.#tiles[x2][y2].setPosition(createVector(x2, y2));
+        }
     }
 }
