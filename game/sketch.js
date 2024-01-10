@@ -1,3 +1,4 @@
+let tile;
 let tileGrid;
 let draggingTile = null; // Variable to store the dragging tile
 let draggingTileX;

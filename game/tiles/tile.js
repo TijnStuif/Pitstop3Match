@@ -53,9 +53,10 @@ class Tile {
         this.isDragging = false;
     }
 
-    draggingTileMovement() {
-        const snappedX = Math.floor(mouseX / this.#size) * this.#size;
-        const snappedY = Math.floor(mouseY / this.#size) * this.#size;
+    draggingTileMovement(event) {
+        const snappedX = Math.floor(event.x / this.#size) * this.#size;
+        const snappedY = Math.floor(event.y / this.#size) * this.#size;
+        this.setPosition(createVector(snappedX, snappedY));
     }
 
     draw() {
@@ -69,8 +70,9 @@ class Tile {
             // mouse coordinates, snapped to grid using math.floor
             const snappedX = Math.floor(mouseX / this.#size) * this.#size;
             const snappedY = Math.floor(mouseY / this.#size) * this.#size;
-            
             image(this.#image, snappedX, snappedY, this.#size, this.#size);
+
+        
         }
     }
 }
