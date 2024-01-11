@@ -83,7 +83,6 @@ class TileGrid {
                         this.#tiles[x][y] = null
                         this.#tiles[x+1][y] = null
                         this.#tiles[x-1][y] = null
-                        console.log(score)
                     }
                 }
                 if (this.#tiles[x][y] && this.#tiles[y-1] && this.#tiles[x][y-1] && this.#tiles[y+1] && this.#tiles[x][y+1]) {
@@ -92,16 +91,15 @@ class TileGrid {
                         this.#tiles[x][y] = null
                         this.#tiles[x][y+1] = null
                         this.#tiles[x][y-1] = null
-                        console.log(score)
                     }
                 }   
                 
                 if (this.#tiles[x][y] != null)
                 this.#tiles[x][y].draw();
-                
+
                 if (!this.#tiles[x][1] && !this.#tiles[x][2]) {
                     let randomTileType;
-                    randomTileType = Math.floor(random(1,4))
+                    randomTileType = Math.floor(random(1,5))
                     switch (randomTileType) {
                         case 1:
                             this.#tiles[x][2] = new NormalTile(gameManager.getImage("Wheel"), this.#tileSize, x, 2, 1);
@@ -116,7 +114,10 @@ class TileGrid {
                             this.#tiles[x][2] = new SpecialTile(gameManager.getImage("StopSign"), this.#tileSize, x, 2, 4);
                     }
                 randomTileType = 0;
-                }  
+                }
+                textSize(100);
+                fill(255);
+                text(score, 200, 150);
             }
         }
     }
