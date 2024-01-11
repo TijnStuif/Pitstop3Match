@@ -175,22 +175,20 @@ class TileGrid {
     }
 
     swapTiles(x1, y1, x2, y2) {
-        const isAdjacent = (Math.abs(x1 - x2) === 1) ||
-                           (Math.abs(y1 - y2) === 1);
-
-        if (!isAdjacent) {
-            return;
-        }
-        let temp = this.#tiles[x1][y1];
-        this.#tiles[x1][y1] = this.#tiles[x2][y2];
-        this.#tiles[x2][y2] = temp;
-        temp = null;
-        if (this.#tiles[x1][y1] != null) {
-            this.#tiles[x1][y1].setPosition(createVector(x1, y1));
-        }
+        const isAdjacentX = Math.abs(x1 - x2) < 1;
+        const isAdjacentY = Math.abs(y1 - y2) < 1;
+        if ((isAdjacentX && !isAdjacentY) || (!isAdjacentX && isAdjacentY)) {
+            let temp = this.#tiles[x1][y1];
+            this.#tiles[x1][y1] = this.#tiles[x2][y2];
+            this.#tiles[x2][y2] = temp;
+            temp = null;
+            if (this.#tiles[x1][y1] != null) {
+                this.#tiles[x1][y1].setPosition(createVector(x1, y1));
+            }
     
-        if (this.#tiles[x2][y2] != null) {
-            this.#tiles[x2][y2].setPosition(createVector(x2, y2));
+            if (this.#tiles[x2][y2] != null) {
+                this.#tiles[x2][y2].setPosition(createVector(x2, y2));
+            }
         }
     }
 
