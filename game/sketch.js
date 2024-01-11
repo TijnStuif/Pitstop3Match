@@ -4,6 +4,8 @@ let draggingTile = null; // Variable to store the dragging tile
 let draggingTileX;
 let draggingTileY;
 let score = 0;
+let screenIndex;
+let startScreenTimer = 0;
 const tileWidth = 6, tileHeight = 6, tileSize = 80;
 
 //preloads GameManager and the tileGrid
@@ -15,13 +17,23 @@ function preload() {
 //sets up the canvas
 function setup() {
     createCanvas(500, 500);
+    switchScreen(1);
 }
 
 //draws the background and activates the draw function from tileGrid
 function draw() {
-    image(gameManager.getImage("GameBackground"), 0, 0, 500, 500);
+    if (screenIndex == 1) {
+        image(gameManager.getImage("StartScreenGif"), 0, 0, 500, 500)
+        startScreenTimer += 1;
+        if (startScreenTimer > 300) {
+            screenIndex = 2;
+        }
+    }
+    if (screenIndex == 2) {
+        image(gameManager.getImage("GameBackground"), 0, 0, 500, 500);
+        tileGrid.draw();
+    }
     noStroke();
-    tileGrid.draw();
 }
 
 //does all the logic for a touch start
@@ -45,4 +57,9 @@ function touchEnded(event) {
         tileGrid.swapTiles(tileGrid.getGridX(event.x), tileGrid.getGridY(event.y), draggingTileX, draggingTileY);
         draggingTile.stopDragging(event);
     }
+}
+
+function switchScreen (screenSwitcher) {
+    screenIndex = screenSwitcher
+    console.log(screenIndex);
 }

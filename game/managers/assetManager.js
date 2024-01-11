@@ -16,6 +16,7 @@ class AssetManager {
         this.#images.set("Wheel", loadImage("assets/images/car_parts/Wheel.png"));
         this.#images.set("StopSign", loadImage("assets/images/car_parts/StopSign.png"));
         this.#images.set("GameBackground", loadImage("assets/images/background/GamescreenBackground.png"));
+        this.#images.set("StartScreenGif", loadImage("assets/images/background/StartScreen.gif"));
     }
 
     getImage(assetname) {

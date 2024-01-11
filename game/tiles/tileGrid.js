@@ -120,6 +120,9 @@ class TileGrid {
                 textSize(100);
                 fill(255);
                 text(score, 200, 150);
+                if (score > 1000) {
+                    switchScreen(5)
+                }
             }
         }
     }
@@ -177,8 +180,8 @@ class TileGrid {
     }
 
     swapTiles(x1, y1, x2, y2) {
-    const isAdjacentX = (x1 === x2) && (Math.abs(y1 - y2) === 1);
-    const isAdjacentY = (y1 === y2) && (Math.abs(x1 - x2) === 1);
+        const isAdjacentX = (x1 === x2) && (Math.abs(y1 - y2) === 1);
+        const isAdjacentY = (y1 === y2) && (Math.abs(x1 - x2) === 1);
         if (isAdjacentX || isAdjacentY) {
             let temp = this.#tiles[x1][y1];
             this.#tiles[x1][y1] = this.#tiles[x2][y2];
