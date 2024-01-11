@@ -94,6 +94,24 @@ class TileGrid {
                         console.log(score)
                     }
                 }
+                if (!this.#tiles[x][2]) {
+                    let randomTileType;
+                    randomTileType = Math.floor(random(1,4))
+                    switch (randomTileType) {
+                        case 1:
+                            this.#tiles[x][2] = new NormalTile(gameManager.getImage("Wheel"), this.#tileSize, x, 2, 1);
+                            break;
+                        case 2:
+                            this.#tiles[x][2] = new NormalTile(gameManager.getImage("SteeringWheel"), this.#tileSize, x, 2, 2);
+                            break;
+                        case 3:
+                            this.#tiles[x][2] = new NormalTile(gameManager.getImage("JerryCan"), this.#tileSize, x, 2, 3);
+                            break;
+                        case 4:
+                            this.#tiles[x][2] = new SpecialTile(gameManager.getImage("StopSign"), this.#tileSize, x, 2, 4);
+                }
+                randomTileType = 0;
+                }   
                 if (this.#tiles[x][y] != null)
                 this.#tiles[x][y].draw();
 
@@ -110,8 +128,9 @@ class TileGrid {
     }
     getRandomTileType() {
         let randomTileType;
+        randomTileType = 0;
         randomTileType = Math.floor(random(1,4))
-        console.log(randomTileType)
+        return randomTileType;
     }
     getGridX(x) {
         return Math.floor(x / this.#tileSize);
@@ -164,5 +183,24 @@ class TileGrid {
         if (this.#tiles[x2][y2] != null) {
             this.#tiles[x2][y2].setPosition(createVector(x2, y2));
         }
+    }
+
+    spawnRandomTile() {
+        let randomTileType;
+        randomTileType = Math.floor(random(1,4))
+        switch (randomTileType) {
+            case 1:
+                this.#tiles[x][y] = new NormalTile(gameManager.getImage("Wheel"), this.#tileSize, x, y, 1);
+                break;
+            case 2:
+                this.#tiles[x][y] = new NormalTile(gameManager.getImage("SteeringWheel"), this.#tileSize, x, y, 2);
+                break;
+            case 3:
+                this.#tiles[x][y] = new NormalTile(gameManager.getImage("JerryCan"), this.#tileSize, x, y, 3);
+                break;
+            case 4:
+                this.#tiles[x][y] = new SpecialTile(gameManager.getImage("StopSign"), this.#tileSize, x, y, 4);
+        }
+        randomTileType = 0;
     }
 }
