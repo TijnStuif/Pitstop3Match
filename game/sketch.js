@@ -50,14 +50,18 @@ function draw() {
         tileGrid.draw();
     }
     if (screenIndex == 3) {
+        clear();
         textSize(50);
+        fill(0);
         text("you won!", 150, 50)
         text(`your score is: ${savedScore}`, 50, 100)
         text("continue", 250, 300)
         text("exit", 100, 300)
     }
     if (screenIndex == 4) {
+        clear();
         textSize(50);
+        fill(0);
         text("you lost!", 150, 50)
         text(`your score is: ${savedScore}`, 50, 100)
         text("continue", 250, 300)
