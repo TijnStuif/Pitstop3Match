@@ -68,7 +68,7 @@ class TileGrid {
                 for (let y = this.#height - 2; y >= 0; y--) {
                     if (this.#tiles[x][y] != null && !this.#tiles[x][y + 1]) {
                         // Move the tile down if there is an empty space below
-                        this.swapTiles(x, y, x, y + 1);
+                        this.tileGravity(x, y, x, y + 1);
                     }
                 }
             }
@@ -175,6 +175,26 @@ class TileGrid {
     }
 
     swapTiles(x1, y1, x2, y2) {
+        const isAdjacent = (Math.abs(x1 - x2) === 1) ||
+                           (Math.abs(y1 - y2) === 1);
+
+        if (!isAdjacent) {
+            return;
+        }
+        let temp = this.#tiles[x1][y1];
+        this.#tiles[x1][y1] = this.#tiles[x2][y2];
+        this.#tiles[x2][y2] = temp;
+        temp = null;
+        if (this.#tiles[x1][y1] != null) {
+            this.#tiles[x1][y1].setPosition(createVector(x1, y1));
+        }
+    
+        if (this.#tiles[x2][y2] != null) {
+            this.#tiles[x2][y2].setPosition(createVector(x2, y2));
+        }
+    }
+
+    tileGravity(x1, y1, x2, y2) {
         let temp = this.#tiles[x1][y1];
         this.#tiles[x1][y1] = this.#tiles[x2][y2];
         this.#tiles[x2][y2] = temp;

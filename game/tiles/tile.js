@@ -53,12 +53,6 @@ class Tile {
         this.isDragging = false;
     }
 
-    draggingTileMovement(event) {
-        const snappedX = Math.floor(event.x / this.#size) * this.#size;
-        const snappedY = Math.floor(event.y / this.#size) * this.#size;
-        this.setPosition(createVector(snappedX, snappedY));
-    }
-
     draw() {
         //tileGrid.getTileAtPosition(this.position);
         //static image that is displayed whenever a tile is not moving
