@@ -19,7 +19,7 @@ function preload() {
 //sets up the canvas
 function setup() {
     createCanvas(500, 500);
-    switchScreen(2);
+    switchScreen(1);
 }
 
 //draws the background and activates the draw function from tileGrid

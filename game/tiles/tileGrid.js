@@ -53,7 +53,7 @@ class TileGrid {
                         this.#tiles[x][y] = new SpecialTile(gameManager.getImage("StopSign"), this.#tileSize, x, y, 4);
                         break;
                     case 5:
-                        this.#tiles[x][y] = new StaticTile(gameManager.getImage("BeetleCar"), this.#tileSize, x, y, 5)
+                        this.#tiles[x][y] = new StaticTile(gameManager.getImage("YellowBlackSign"), this.#tileSize, x, y, 5)
                         
                 }
             }
