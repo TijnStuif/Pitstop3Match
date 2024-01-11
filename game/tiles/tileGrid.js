@@ -97,6 +97,8 @@ class TileGrid {
                 if (this.#tiles[x][y] != null)
                 this.#tiles[x][y].draw();
 
+
+
                 if (!this.#tiles[x][1] && !this.#tiles[x][2]) {
                     let randomTileType;
                     randomTileType = Math.floor(random(1,5))
@@ -175,9 +177,9 @@ class TileGrid {
     }
 
     swapTiles(x1, y1, x2, y2) {
-        const isAdjacentX = Math.abs(x1 - x2) < 1;
-        const isAdjacentY = Math.abs(y1 - y2) < 1;
-        if ((isAdjacentX && !isAdjacentY) || (!isAdjacentX && isAdjacentY)) {
+    const isAdjacentX = (x1 === x2) && (Math.abs(y1 - y2) === 1);
+    const isAdjacentY = (y1 === y2) && (Math.abs(x1 - x2) === 1);
+        if (isAdjacentX || isAdjacentY) {
             let temp = this.#tiles[x1][y1];
             this.#tiles[x1][y1] = this.#tiles[x2][y2];
             this.#tiles[x2][y2] = temp;
