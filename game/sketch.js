@@ -4,8 +4,10 @@ let draggingTile = null; // Variable to store the dragging tile
 let draggingTileX;
 let draggingTileY;
 let score = 0;
+let savedScore = 0;
 let screenIndex;
 let startScreenTimer = 0;
+let turnCounter = 10;
 const tileWidth = 6, tileHeight = 6, tileSize = 80;
 
 //preloads GameManager and the tileGrid
@@ -31,7 +33,26 @@ function draw() {
     }
     if (screenIndex == 2) {
         image(gameManager.getImage("GameBackground"), 0, 0, 500, 500);
+        textSize(100);
+        fill(255);
+        text(score, 200, 150);
+        if (score >= 1000) {
+            switchScreen(3)
+            savedScore = score;
+            score = 0;
+        }
+        textSize(30);
+        text(`turns left: ${turnCounter}`, 25, 50)
         tileGrid.draw();
+    }
+    if (screenIndex == 3) {
+        textSize(50);
+        text(`your score is: ${savedScore}`, 100, 100)
+        text("continue", 250, 300)
+        text("exit", 100, 300)
+    }
+    if (screenIndex == 4) {
+        image(gameManager.getImage("StartScreen"), 0, 0, 500, 500)
     }
     noStroke();
 }

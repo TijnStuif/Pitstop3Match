@@ -20,10 +20,10 @@ class TileGrid {
 
         const tileMap = [
             [0, 0, 1, 4, 2, 2],
-            [0, 0, 1, 1, 4, 2],
+            [0, 0, 1, 1, 5, 2],
             [0, 0, 3, 4, 1, 3],
             [0, 0, 4, 2, 3, 4],
-            [0, 0, 3, 4, 4, 2],
+            [0, 0, 3, 4, 5, 2],
             [0, 0, 2, 3, 1, 1]
         ]
         //tiles is a 2D array, meaning that it is an array of arrays. 
@@ -52,6 +52,9 @@ class TileGrid {
                     case 4:
                         this.#tiles[x][y] = new SpecialTile(gameManager.getImage("StopSign"), this.#tileSize, x, y, 4);
                         break;
+                    case 5:
+                        this.#tiles[x][y] = new StaticTile(gameManager.getImage("BeetleCar"), this.#tileSize, x, y, 5)
+                        
                 }
             }
         }
@@ -66,7 +69,7 @@ class TileGrid {
     draw() {
             for (let x = 0; x < this.#width; x++) {
                 for (let y = this.#height - 2; y >= 0; y--) {
-                    if (this.#tiles[x][y] != null && !this.#tiles[x][y + 1]) {
+                    if (this.#tiles[x][y] != null && !this.#tiles[x][y + 1] && this.#tiles[x][y].tileType !== 5) {
                         // Move the tile down if there is an empty space below
                         this.tileGravity(x, y, x, y + 1);
                     }
@@ -116,12 +119,6 @@ class TileGrid {
                             this.#tiles[x][2] = new SpecialTile(gameManager.getImage("StopSign"), this.#tileSize, x, 2, 4);
                     }
                 randomTileType = 0;
-                }
-                textSize(100);
-                fill(255);
-                text(score, 200, 150);
-                if (score > 1000) {
-                    switchScreen(5)
                 }
             }
         }
@@ -182,13 +179,15 @@ class TileGrid {
     swapTiles(x1, y1, x2, y2) {
         const isAdjacentX = (x1 === x2) && (Math.abs(y1 - y2) === 1);
         const isAdjacentY = (y1 === y2) && (Math.abs(x1 - x2) === 1);
-        if (isAdjacentX || isAdjacentY) {
+        if (isAdjacentX && this.#tiles[x1][y1].tileType !== 5 && this.#tiles[x2][y2].tileType !== 5 || isAdjacentY && this.#tiles[x1][y1].tileType !== 5 && this.#tiles[x2][y2].tileType !== 5) {
             let temp = this.#tiles[x1][y1];
             this.#tiles[x1][y1] = this.#tiles[x2][y2];
             this.#tiles[x2][y2] = temp;
             temp = null;
             if (this.#tiles[x1][y1] != null) {
                 this.#tiles[x1][y1].setPosition(createVector(x1, y1));
+                turnCounter -= 1;
+                console.log(turnCounter)
             }
     
             if (this.#tiles[x2][y2] != null) {

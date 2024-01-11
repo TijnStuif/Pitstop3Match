@@ -1,5 +1,5 @@
 class StaticTile extends Tile {
-    constructor(image, size, x, y) {
-        super(image, size, x, y);
+    constructor(image, size, x, y, tileValue) {
+        super(image, size, x, y, tileValue);
     }
 }
