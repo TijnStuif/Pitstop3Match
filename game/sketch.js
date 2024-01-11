@@ -19,7 +19,7 @@ function preload() {
 //sets up the canvas
 function setup() {
     createCanvas(500, 500);
-    switchScreen(1);
+    switchScreen(2);
 }
 
 //draws the background and activates the draw function from tileGrid
@@ -40,6 +40,10 @@ function draw() {
             switchScreen(3)
             savedScore = score;
             score = 0;
+        } else if (turnCounter == 0) {
+            switchScreen(4)
+            savedScore = score;
+            score = 0;  
         }
         textSize(30);
         text(`turns left: ${turnCounter}`, 25, 50)
@@ -47,11 +51,19 @@ function draw() {
     }
     if (screenIndex == 3) {
         textSize(50);
-        text(`your score is: ${savedScore}`, 100, 100)
+        text("you won!", 150, 50)
+        text(`your score is: ${savedScore}`, 50, 100)
         text("continue", 250, 300)
         text("exit", 100, 300)
     }
     if (screenIndex == 4) {
+        textSize(50);
+        text("you lost!", 150, 50)
+        text(`your score is: ${savedScore}`, 50, 100)
+        text("continue", 250, 300)
+        text("exit", 100, 300)
+    }
+    if (screenIndex == 5) {
         image(gameManager.getImage("StartScreen"), 0, 0, 500, 500)
     }
     noStroke();
