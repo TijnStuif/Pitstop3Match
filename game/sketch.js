@@ -98,5 +98,4 @@ function touchEnded(event) {
 
 function switchScreen (screenSwitcher) {
     screenIndex = screenSwitcher
-    console.log(screenIndex);
 }

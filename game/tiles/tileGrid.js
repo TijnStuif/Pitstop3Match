@@ -187,7 +187,6 @@ class TileGrid {
             if (this.#tiles[x1][y1] != null) {
                 this.#tiles[x1][y1].setPosition(createVector(x1, y1));
                 turnCounter -= 1;
-                console.log(turnCounter)
             }
     
             if (this.#tiles[x2][y2] != null) {
