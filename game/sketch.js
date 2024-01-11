@@ -25,7 +25,7 @@ function draw() {
     if (screenIndex == 1) {
         image(gameManager.getImage("StartScreenGif"), 0, 0, 500, 500)
         startScreenTimer += 1;
-        if (startScreenTimer > 300) {
+        if (startScreenTimer > 280) {
             screenIndex = 2;
         }
     }
