@@ -65,8 +65,6 @@ class Tile {
             const snappedX = Math.floor(mouseX / this.#size) * this.#size;
             const snappedY = Math.floor(mouseY / this.#size) * this.#size;
             image(this.#image, snappedX, snappedY, this.#size, this.#size);
-
-        
         }
     }
 }
