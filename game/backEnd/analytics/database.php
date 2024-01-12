@@ -1,5 +1,4 @@
 <?php
-include('../../db/user.php'); // $_ENV variables... TODO REPLACE with your own file or hardcode it below.
 
 
 class DatabaseConnection {
@@ -11,11 +10,11 @@ class DatabaseConnection {
     {
         // Use values set in $_ENV through the included user.php file
         // Create an account at: https://oege.ie.hva.nl
-        $host = $_ENV["dbHost"];            // Hostname (localhost)
-        $port = $_ENV["dbPort"];            // Oege Database port number (3306)
-        $db   = $_ENV["dbName"];            // Oege Database schema name ()
-        $user = $_ENV["dbUsername"];        // Oege Database username
-        $pass = $_ENV["dbPassword"];        // Oege Database password 
+        $host = $_ENV["localhost"];            // Hostname (localhost)
+        $port = $_ENV["3306"];            // Oege Database port number (3306)
+        $db   = $_ENV["zstuifbt1"];            // Oege Database schema name ()
+        $user = $_ENV["stuifbt1"];        // Oege Database username
+        $pass = $_ENV["wucHrcWb+bc3Jr"];        // Oege Database password 
 
         try {
             // Create MYSQL connection using the improved connection method
