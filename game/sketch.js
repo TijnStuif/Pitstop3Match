@@ -50,7 +50,7 @@ function draw() {
         textSize(100);
         fill(255);
         text(score, 200, 150);
-        if (score >= 1000) {
+        if (score >= 100) {
             switchScreen(3)
             savedScore = score;
             score = 0;

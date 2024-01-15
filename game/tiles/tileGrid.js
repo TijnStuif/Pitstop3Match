@@ -14,12 +14,13 @@ class TileGrid {
                 [0, 0, 1, 4, 2, 2],
                 [0, 0, 1, 1, 3, 2],
                 [0, 0, 3, 4, 1, 3],
-                [0, 0, 4, 2, 3, 4],
+                [0, 0, 4, 1, 3, 4],
                 [0, 0, 1, 4, 1, 2],
                 [0, 0, 2, 3, 1, 1],
                 [0, 0, 0, 0, 0, 0]
             ],
-            pointsNeeded: 1000
+            pointsNeeded: 1000,
+            turnCounter: 10
         },
         {
             grid: [
@@ -31,13 +32,14 @@ class TileGrid {
                 [0, 0, 2, 3, 2, 1],
                 [0, 0, 0, 0, 0, 0]
             ],
-            pointsNeeded: 1200
+            pointsNeeded: 1200,
+            turnCounter: 10
         },
         // Follow this method for more levels
     ];
 
     currentLevel = 0    ; // Tracks the current level
-    pointsNeeded = TileGrid.levels[this.currentLevel].pointsNeeded;
+    //pointsNeeded = this.levels[this.currentLevel].pointsNeeded;
 
     //constructor that determines the size of every tile in the grid.
     constructor(width, height, tileSize) {
@@ -50,7 +52,7 @@ class TileGrid {
         this.nextLevelButton = createButton('Continue');
         this.nextLevelButton.position(200, 200);
 
-        this.buttonShowed = false;
+        this.nextLevelButton.hide();
 
         this.nextLevelButton.mousePressed(() => {
             console.log('hi'); 
@@ -132,15 +134,9 @@ class TileGrid {
     }
 
     checkIfNextLevelIsUnlocked() {
-
-        this.buttonShowed
         console.log(this.getLevelIndex());
-        if(this.getLevelIndex() == 1) {
-            if(!this.buttonShowed) {
-                this.buttonShowed = true;
+        if(screenIndex == 3) {
                 this.nextLevelButton.show();
-            }
-
         }
     }
 
