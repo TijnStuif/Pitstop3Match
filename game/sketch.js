@@ -8,27 +8,41 @@ let savedScore = 0;
 let screenIndex;
 let startScreenTimer = 0;
 let turnCounter = 10;
+let openGarageButton;
 const tileWidth = 6, tileHeight = 6, tileSize = 80;
 
 //preloads GameManager and the tileGrid
 function preload() {
     new GameManager();
     tileGrid = new TileGrid(tileWidth, tileHeight, tileSize);
+    dbConnection = new DatabaseConnection();
 }
 
 //sets up the canvas
 function setup() {
     createCanvas(500, 500);
-    switchScreen(1);
+    switchScreen(0);
+    dbConnection.createUser();
+    openGarageButton = createButton("Open the Garage!");
+    openGarageButton.position(350, 200);
+    openGarageButton.mousePressed(() => {
+        switchScreen(1);
+    });
+    openGarageButton.hide();
 }
 
 //draws the background and activates the draw function from tileGrid
 function draw() {
+    if (screenIndex == 0) {
+        image(gameManager.getImage("ClosedGarage"), 0, 0, 500, 500);
+        openGarageButton.show();
+    }
     if (screenIndex == 1) {
-        image(gameManager.getImage("StartScreenGif"), 0, 0, 500, 500)
+        openGarageButton.hide();
+        image(gameManager.getImage("OpeningGarageGif"), 0, 0, 500, 500);
         startScreenTimer += 1;
         if (startScreenTimer > 280) {
-            screenIndex = 2;
+            switchScreen(2);
         }
     }
     if (screenIndex == 2) {
@@ -36,12 +50,12 @@ function draw() {
         textSize(100);
         fill(255);
         text(score, 200, 150);
-        if (score >= 100) {
+        if (score >= 1000) {
             switchScreen(3)
             savedScore = score;
             score = 0;
         } else if (turnCounter == 0) {
-            switchScreen(4)
+            switchScreen(4);
             savedScore = score;
             score = 0;  
         }
@@ -71,7 +85,7 @@ function draw() {
         text("exit", 100, 300)
     }
     if (screenIndex == 5) {
-        image(gameManager.getImage("StartScreen"), 0, 0, 500, 500)
+        image(gameManager.getImage("OpenGarage"), 0, 0, 500, 500)
     }
     noStroke();
 }
