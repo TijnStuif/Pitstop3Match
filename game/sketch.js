@@ -23,20 +23,22 @@ function setup() {
     createCanvas(500, 500);
     switchScreen(0);
     dbConnection.createUser();
-
+    openGarageButton = createButton("Open the Garage!");
+    openGarageButton.position(350, 200);
+    openGarageButton.mousePressed(() => {
+        switchScreen(1);
+    });
+    openGarageButton.hide();
 }
 
 //draws the background and activates the draw function from tileGrid
 function draw() {
     if (screenIndex == 0) {
         image(gameManager.getImage("ClosedGarage"), 0, 0, 500, 500);
-        openGarageButton = createButton("Open the Garage!");
-        openGarageButton.position(350, 200);
-        openGarageButton.mousePressed(() => {
-            switchScreen(1);
-        } )
+        openGarageButton.show();
     }
     if (screenIndex == 1) {
+        openGarageButton.hide();
         image(gameManager.getImage("OpeningGarageGif"), 0, 0, 500, 500);
         startScreenTimer += 1;
         if (startScreenTimer > 280) {
