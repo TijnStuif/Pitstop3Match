@@ -55,11 +55,12 @@ function draw() {
     }
 
     if (screenIndex == 2) {
+        console.log(TileGrid.pointsNeeded)
         image(gameManager.getImage("GameBackground"), 0, 0, 500, 500);
         textSize(100);
         fill(255);
         text(score, 200, 150);
-        if (score >= 100) {
+        if (score >= 500) {
             switchScreen(3);
             savedScore = score;
             score = 0;

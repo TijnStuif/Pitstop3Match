@@ -20,7 +20,6 @@ class TileGrid {
                 [0, 0, 0, 0, 0, 0]
             ],
             pointsNeeded: 1000,
-            turnCounter: 10
         },
         {
             grid: [
@@ -33,7 +32,6 @@ class TileGrid {
                 [0, 0, 0, 0, 0, 0]
             ],
             pointsNeeded: 1200,
-            turnCounter: 10
         },
         // Follow this method for more levels
     ];
@@ -47,7 +45,8 @@ class TileGrid {
         this.#width = width;
         this.#height = height;
         this.currentLevel = 0; // Start from level 1
-        this.pointsNeeded = TileGrid.levels[this.currentLevel].pointsNeeded;
+        this.pointRequirementCheck();
+        this.pointsNeeded;
         this.#generateTileGrid();
         this.nextLevelButton = createButton('Continue');
         this.nextLevelButton.position(200, 200);
@@ -112,22 +111,26 @@ class TileGrid {
 
         if (this.currentLevel < TileGrid.levels.length - 1) {
             this.currentLevel++;
-            this.pointsNeeded = TileGrid.levels[this.currentLevel].pointsNeeded;
+            this.pointRequirementCheck();
             this.#generateTileGrid();
         } else {
             // Handle game completion or loop back to the first level
             // For now, let's loop back to the first level
             this.currentLevel = 0;
-            this.pointsNeeded = TileGrid.levels[this.currentLevel].pointsNeeded;
+            this.pointRequirementCheck();
             this.#generateTileGrid();
         }
     }
 
     checkIfNextLevelIsUnlocked() {
-        console.log(this.getLevelIndex());
         if(screenIndex == 3) {
                 this.nextLevelButton.show();
         }
+    }
+
+    pointRequirementCheck() {
+        this.pointsNeeded = TileGrid.levels[this.currentLevel].pointsNeeded;
+        console.log(this.pointsNeeded);
     }
 
     //draw all the tiles
