@@ -24,11 +24,11 @@ class TileGrid {
         },
         {
             grid: [
-                [0, 0, 1, 1, 2, 2],
+                [0, 0, 3, 1, 3, 3],
                 [0, 0, 1, 4, 3, 2],
                 [0, 0, 3, 2, 4, 3],
                 [0, 0, 4, 2, 2, 4],
-                [0, 0, 3, 4, 3, 2],
+                [0, 0, 3, 4, 3, 4],
                 [0, 0, 2, 3, 2, 1],
                 [0, 0, 0, 0, 0, 0]
             ],
@@ -51,18 +51,10 @@ class TileGrid {
         this.#generateTileGrid();
         this.nextLevelButton = createButton('Continue');
         this.nextLevelButton.position(200, 200);
-
         this.nextLevelButton.hide();
-
         this.nextLevelButton.mousePressed(() => {
-            console.log('hi'); 
-            if(this.getLevelIndex() == 1) {
                 this.goToNextLevel();
-            }
         })
-        //this.nextLevelButton.hide();
-
-
         this.levelIndex = 0;
     }
 
@@ -112,7 +104,8 @@ class TileGrid {
 
     // Add a function to move to the next level
     goToNextLevel() {
-        console.log('hi it works :D');
+        this.nextLevelButton.hide();
+        this.setLevelIndex(this.getLevelIndex() + 1);
         screenIndex = 2;
         this.#generateTileGrid();
 
@@ -127,10 +120,6 @@ class TileGrid {
             this.pointsNeeded = TileGrid.levels[this.currentLevel].pointsNeeded;
             this.#generateTileGrid();
         }
-    }
-
-    update(deltaTime) {
-        // Add any update logic if needed
     }
 
     checkIfNextLevelIsUnlocked() {

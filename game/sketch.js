@@ -37,6 +37,7 @@ function draw() {
         image(gameManager.getImage("ClosedGarage"), 0, 0, 500, 500);
         openGarageButton.show();
     }
+
     if (screenIndex == 1) {
         openGarageButton.hide();
         image(gameManager.getImage("OpeningGarageGif"), 0, 0, 500, 500);
@@ -45,13 +46,14 @@ function draw() {
             switchScreen(2);
         }
     }
+
     if (screenIndex == 2) {
         image(gameManager.getImage("GameBackground"), 0, 0, 500, 500);
         textSize(100);
         fill(255);
         text(score, 200, 150);
         if (score >= 100) {
-            switchScreen(3)
+            switchScreen(3);
             savedScore = score;
             score = 0;
         } else if (turnCounter == 0) {
@@ -63,11 +65,12 @@ function draw() {
         text(`turns left: ${turnCounter}`, 25, 50)
         tileGrid.draw();
     }
+
     if (screenIndex == 3) {
-        let currentLevelTest = tileGrid.getLevelIndex();
-        console.log(currentLevelTest);
-        tileGrid.setLevelIndex(1);
         clear();
+        let currentLevel = tileGrid.getLevelIndex();
+        fill(120);
+        text(currentLevel, 300, 200)
         textSize(50);
         fill(0);
         text("you won!", 150, 50)
