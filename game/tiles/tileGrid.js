@@ -101,8 +101,6 @@ class TileGrid {
                 if (this.#tiles[x][y] != null)
                 this.#tiles[x][y].draw();
 
-
-
                 if (!this.#tiles[x][1] && !this.#tiles[x][2]) {
                     let randomTileType;
                     randomTileType = Math.floor(random(1,5))
