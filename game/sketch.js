@@ -14,18 +14,24 @@ const tileWidth = 6, tileHeight = 6, tileSize = 80;
 function preload() {
     new GameManager();
     tileGrid = new TileGrid(tileWidth, tileHeight, tileSize);
+    dbConnection = new DatabaseConnection();
 }
 
 //sets up the canvas
 function setup() {
     createCanvas(500, 500);
     switchScreen(1);
+    dbConnection.createUser();
+
 }
 
 //draws the background and activates the draw function from tileGrid
 function draw() {
+    if (screenIndex == 0) {
+        image(gameManager.getImage("ClosedGarage"))
+    }
     if (screenIndex == 1) {
-        image(gameManager.getImage("StartScreenGif"), 0, 0, 500, 500)
+        image(gameManager.getImage("OpeningGarageGif"), 0, 0, 500, 500)
         startScreenTimer += 1;
         if (startScreenTimer > 280) {
             screenIndex = 2;
@@ -68,7 +74,7 @@ function draw() {
         text("exit", 100, 300)
     }
     if (screenIndex == 5) {
-        image(gameManager.getImage("StartScreen"), 0, 0, 500, 500)
+        image(gameManager.getImage("OpenGarage"), 0, 0, 500, 500)
     }
     noStroke();
 }
