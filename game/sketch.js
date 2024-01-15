@@ -29,6 +29,13 @@ function setup() {
         switchScreen(1);
     });
     openGarageButton.hide();
+    goToLevelButton = createButton(`Go to level ${tileGrid.getLevelIndex()}`);
+    goToLevelButton.position(350, 200);
+    goToLevelButton.mousePressed(() => {
+        switchScreen(2);
+        goToLevelButton.hide();
+    })
+    goToLevelButton.hide();
 }
 
 //draws the background and activates the draw function from tileGrid
@@ -43,7 +50,7 @@ function draw() {
         image(gameManager.getImage("OpeningGarageGif"), 0, 0, 500, 500);
         startScreenTimer += 1;
         if (startScreenTimer > 280) {
-            switchScreen(2);
+            switchScreen(5);
         }
     }
 
@@ -88,7 +95,8 @@ function draw() {
         text("exit", 100, 300)
     }
     if (screenIndex == 5) {
-        image(gameManager.getImage("OpenGarage"), 0, 0, 500, 500)
+        image(gameManager.getImage("OpenGarage"), 0, 0, 500, 500);
+        goToLevelButton.show();
     }
     noStroke();
 }

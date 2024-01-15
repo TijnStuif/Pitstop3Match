@@ -54,6 +54,7 @@ class TileGrid {
         this.nextLevelButton.hide();
         this.nextLevelButton.mousePressed(() => {
                 this.goToNextLevel();
+                turnCounter = 10;
         })
         this.levelIndex = 0;
     }
