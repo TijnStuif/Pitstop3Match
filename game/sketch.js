@@ -36,7 +36,7 @@ function draw() {
         textSize(100);
         fill(255);
         text(score, 200, 150);
-        if (score >= 1000) {
+        if (score >= 100) {
             switchScreen(3)
             savedScore = score;
             score = 0;
@@ -50,6 +50,9 @@ function draw() {
         tileGrid.draw();
     }
     if (screenIndex == 3) {
+        let currentLevelTest = tileGrid.getLevelIndex();
+        console.log(currentLevelTest);
+        tileGrid.setLevelIndex(1);
         clear();
         textSize(50);
         fill(0);
