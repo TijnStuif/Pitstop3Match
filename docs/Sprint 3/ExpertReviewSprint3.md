@@ -4,12 +4,20 @@
 Tijn:
 
 Rick:
+(Abstraction:
+
+)
+(Inheritance:
+
+)
+(Encapsulation
+
+)
 
 ## K6 Je hebt een genormaliseerde relationele database ontworpen en gebruikt om informatie uit je project in op te slaan, op te halen en te bewerken. 
 Tijn:
 
 Rick:
-
 ## K7 Je hebt je werk beschreven met behulp van UML-technieken
 Tijn:
 
