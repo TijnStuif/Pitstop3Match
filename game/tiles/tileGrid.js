@@ -50,12 +50,12 @@ class TileGrid {
         },
         {
             grid: [
-                [0, 0, 5, 1, 3, 4],
-                [0, 0, 1, 4, 5, 3],
+                [0, 0, 5, 1, 3, 5],
+                [0, 0, 1, 4, 1, 3],
                 [0, 0, 3, 3, 4, 3],
                 [0, 0, 4, 3, 2, 4],
-                [0, 0, 3, 4, 5, 3],
-                [0, 0, 5, 4, 3, 4],
+                [0, 0, 3, 4, 1, 3],
+                [0, 0, 5, 4, 3, 5],
                 [0, 0, 0, 0, 0, 0]
             ],
             pointRequirement: 1800,
@@ -72,6 +72,7 @@ class TileGrid {
         this.#width = width;
         this.#height = height;
         this.currentLevel = 1; // Start from level 1
+        this.levelCompleted = false;
         this.startLevelValueCheck();
         this.pointRequirement;
         this.turnCounter;
@@ -81,16 +82,16 @@ class TileGrid {
         this.nextLevelButton.hide();
         this.nextLevelButton.mousePressed(() => {
                 this.goToNextLevel();
+                this.nextLevelButton.hide();
         })
-        this.levelIndex = 1;
     }
 
     getLevelIndex() {
-        return this.levelIndex;
+        return this.currentLevel;
     }
 
     setLevelIndex(newLevelIndex) {
-        this.levelIndex = newLevelIndex + 1;
+        this.currentLevel = newLevelIndex;
     }
 
     //function that makes a tileMap, then loads an image for each respective tile
@@ -131,11 +132,10 @@ class TileGrid {
 
     // Add a function to move to the next level
     goToNextLevel() {
-        this.nextLevelButton.hide();
         screenIndex = 2;
         this.#generateTileGrid();
 
-        if (this.currentLevel < TileGrid.levels.length) {
+        if (this.currentLevel < TileGrid.levels.length && this.levelCompleted) {
             this.currentLevel++;
             this.startLevelValueCheck();
             this.#generateTileGrid();
@@ -197,7 +197,7 @@ class TileGrid {
                 if (this.#tiles[x][y] != null)
                 this.#tiles[x][y].draw();
 
-                if (!this.#tiles[x][1] && !this.#tiles[x][2] || !this.#tiles[x][1] && !this.#tiles[x][2] && this.#tiles[x][3] ||
+                if (!this.#tiles[x][1] && !this.#tiles[x][2] || 
                     !this.#tiles[x][1] && !this.#tiles[x][2] && this.#tiles[x][3] && this.#tiles[x][4]) {
                     let randomTileType;
                     randomTileType = Math.floor(random(1,5))

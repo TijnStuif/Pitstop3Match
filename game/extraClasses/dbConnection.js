@@ -28,7 +28,7 @@ class DatabaseConnection {
     }
 
     getPlayerInfo() {
-        const playerInfoURL = "https://oege.ie.hva.nl/~stuifbt1/blok2/analytics/user.php";
+        const playerInfoURL = "https://oege.ie.hva.nl/~stuifbt1/blok2/analytics/user.php?uniqueCode=all";
 
         httpGet(playerInfoURL, 'json', false, (result) => {
             // success callback

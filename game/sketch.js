@@ -15,26 +15,36 @@ function preload() {
     new GameManager();
     tileGrid = new TileGrid(tileWidth, tileHeight, tileSize);
     dbConnection = new DatabaseConnection();
+    dbConnection.createUser();
 }
 
 //sets up the canvas
 function setup() {
     createCanvas(500, 500);
     switchScreen(0);
-    dbConnection.createUser();
     openGarageButton = createButton("Open the Garage!");
     openGarageButton.position(350, 200);
     openGarageButton.mousePressed(() => {
         switchScreen(1);
+        openGarageButton.hide();
     });
     openGarageButton.hide();
-    goToLevelButton = createButton(`Go to level ${tileGrid.getLevelIndex()}`);
-    goToLevelButton.position(350, 200);
-    goToLevelButton.mousePressed(() => {
+    goToLevel1Button = createButton("Level 1");
+    goToLevel1Button.position(375, 150);
+    goToLevel1Button.mousePressed(() => {
         switchScreen(2);
-        goToLevelButton.hide();
+        goToLevel1Button.hide();
     })
-    goToLevelButton.hide();
+    goToLevel1Button.hide();
+    goToGarageButton = createButton("Go back to the garage");
+    goToGarageButton.position(200, 300);
+    goToGarageButton.mousePressed(() => {
+        tileGrid.goToNextLevel();
+        switchScreen(5);
+        goToGarageButton.hide();
+        tileGrid.nextLevelButton.hide();
+    })
+    goToGarageButton.hide();
 }
 
 //draws the background and activates the draw function from tileGrid
@@ -45,7 +55,6 @@ function draw() {
     }
 
     if (screenIndex == 1) {
-        openGarageButton.hide();
         image(gameManager.getImage("OpeningGarageGif"), 0, 0, 500, 500);
         startScreenTimer += 1;
         if (startScreenTimer > 280) {
@@ -59,6 +68,7 @@ function draw() {
         fill(255);
         text(score, 200, 150);
         if (score >= tileGrid.pointRequirement) {
+            tileGrid.levelCompleted = true;
             switchScreen(3);
             savedScore = score;
             score = 0;
@@ -75,15 +85,14 @@ function draw() {
 
     if (screenIndex == 3) {
         clear();
-        let currentLevel = tileGrid.getLevelIndex();
-        fill(120);
-        text(currentLevel, 300, 200)
         textSize(50);
         fill(0);
-        text("you won!", 150, 50)
-        text(`your score is: ${savedScore}`, 50, 100)
-        text("continue", 250, 300)
-        text("exit", 100, 300)
+        text("congratulations", 50, 50);
+        text(`you beat level ${tileGrid.currentLevel}`, 50, 100);
+        text(`continue to level ${tileGrid.currentLevel + 1}?`, 50, 150);
+        text(`return to the garage?`, 25, 250);
+        goToGarageButton.show();
+
     }
     if (screenIndex == 4) {
         clear();
@@ -91,12 +100,12 @@ function draw() {
         fill(0);
         text("you lost!", 150, 50)
         text(`your score is: ${savedScore}`, 50, 100)
-        text("continue", 250, 300)
-        text("exit", 100, 300)
+        text(`return to the garage?`, 25, 250);
+        goToGarageButton.show();
     }
     if (screenIndex == 5) {
         image(gameManager.getImage("OpenGarage"), 0, 0, 500, 500);
-        goToLevelButton.show();
+        goToLevel1Button.show();
     }
     noStroke();
 }
