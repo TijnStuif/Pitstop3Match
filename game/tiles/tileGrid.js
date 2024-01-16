@@ -19,7 +19,7 @@ class TileGrid {
                 [0, 0, 2, 3, 1, 1],
                 [0, 0, 0, 0, 0, 0]
             ],
-            pointsNeeded: 1000,
+            pointRequirement: 1000,
         },
         {
             grid: [
@@ -31,13 +31,12 @@ class TileGrid {
                 [0, 0, 2, 3, 2, 1],
                 [0, 0, 0, 0, 0, 0]
             ],
-            pointsNeeded: 1200,
+            pointRequirement: 1200,
         },
         // Follow this method for more levels
     ];
 
     currentLevel = 0    ; // Tracks the current level
-    //pointsNeeded = this.levels[this.currentLevel].pointsNeeded;
 
     //constructor that determines the size of every tile in the grid.
     constructor(width, height, tileSize) {
@@ -46,7 +45,7 @@ class TileGrid {
         this.#height = height;
         this.currentLevel = 0; // Start from level 1
         this.pointRequirementCheck();
-        this.pointsNeeded;
+        this.pointRequirement;
         this.#generateTileGrid();
         this.nextLevelButton = createButton('Continue');
         this.nextLevelButton.position(200, 200);
@@ -105,7 +104,6 @@ class TileGrid {
     // Add a function to move to the next level
     goToNextLevel() {
         this.nextLevelButton.hide();
-        this.setLevelIndex(this.getLevelIndex() + 1);
         screenIndex = 2;
         this.#generateTileGrid();
 
@@ -120,6 +118,7 @@ class TileGrid {
             this.pointRequirementCheck();
             this.#generateTileGrid();
         }
+        this.setLevelIndex(this.currentLevel)
     }
 
     checkIfNextLevelIsUnlocked() {
@@ -129,8 +128,8 @@ class TileGrid {
     }
 
     pointRequirementCheck() {
-        this.pointsNeeded = TileGrid.levels[this.currentLevel].pointsNeeded;
-        console.log(this.pointsNeeded);
+        this.pointRequirement = TileGrid.levels[this.currentLevel].pointRequirement;
+        console.log(this.pointRequirement);
     }
 
     //draw all the tiles
@@ -170,7 +169,8 @@ class TileGrid {
                 if (this.#tiles[x][y] != null)
                 this.#tiles[x][y].draw();
 
-                if (!this.#tiles[x][1] && !this.#tiles[x][2]) {
+                if (!this.#tiles[x][1] && !this.#tiles[x][2] || !this.#tiles[x][1] && !this.#tiles[x][2] && this.#tiles[x][3] ||
+                    !this.#tiles[x][1] && !this.#tiles[x][2] && this.#tiles[x][3] && this.#tiles[x][4]) {
                     let randomTileType;
                     randomTileType = Math.floor(random(1,5))
                     switch (randomTileType) {

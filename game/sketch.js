@@ -55,7 +55,7 @@ function draw() {
     }
 
     if (screenIndex == 2) {
-        console.log(TileGrid.pointsNeeded)
+        console.log(TileGrid.pointRequirement);
         image(gameManager.getImage("GameBackground"), 0, 0, 500, 500);
         textSize(100);
         fill(255);
