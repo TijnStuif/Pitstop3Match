@@ -11,11 +11,11 @@ class TileGrid {
     static levels = [
         {
             grid: [
-                [0, 0, 1, 4, 2, 2],
+                [0, 0, 1, 3, 2, 2],
                 [0, 0, 1, 1, 3, 2],
-                [0, 0, 3, 4, 1, 3],
-                [0, 0, 4, 1, 3, 4],
-                [0, 0, 1, 4, 1, 2],
+                [0, 0, 3, 3, 1, 3],
+                [0, 0, 3, 1, 3, 2],
+                [0, 0, 1, 2, 1, 2],
                 [0, 0, 2, 3, 1, 1],
                 [0, 0, 0, 0, 0, 0]
             ],
@@ -31,7 +31,7 @@ class TileGrid {
                 [0, 0, 2, 3, 2, 1],
                 [0, 0, 0, 0, 0, 0]
             ],
-            pointRequirement: 1200,
+            pointRequirement: 1000,
         },
         {
             grid: [
@@ -43,7 +43,7 @@ class TileGrid {
                 [0, 0, 5, 3, 1, 1],
                 [0, 0, 0, 0, 0, 0]
             ],
-            pointsNeeded: 1400,
+            pointRequirement: 1000,
         },
         {
             grid: [
@@ -55,7 +55,7 @@ class TileGrid {
                 [0, 0, 5, 4, 3, 5],
                 [0, 0, 0, 0, 0, 0]
             ],
-            pointsNeeded: 1800,
+            pointRequirement: 1000,
         },
         // Follow this method for more levels
     ];
