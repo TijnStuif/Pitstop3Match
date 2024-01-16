@@ -7,7 +7,6 @@ let score = 0;
 let savedScore = 0;
 let screenIndex;
 let startScreenTimer = 0;
-let turnCounter = 10;
 let openGarageButton;
 const tileWidth = 6, tileHeight = 6, tileSize = 80;
 
@@ -55,22 +54,22 @@ function draw() {
     }
 
     if (screenIndex == 2) {
-        console.log(TileGrid.pointRequirement);
         image(gameManager.getImage("GameBackground"), 0, 0, 500, 500);
         textSize(100);
         fill(255);
         text(score, 200, 150);
-        if (score >= 500) {
+        if (score >= tileGrid.pointRequirement) {
             switchScreen(3);
             savedScore = score;
             score = 0;
-        } else if (turnCounter == 0) {
+        } else if (tileGrid.turnCounter == 0) {
             switchScreen(4);
             savedScore = score;
             score = 0;  
         }
         textSize(30);
-        text(`turns left: ${turnCounter}`, 25, 50)
+        text(`turns left: ${tileGrid.turnCounter}`, 10, 50)
+        text(`score required: ${tileGrid.pointRequirement}`, 220, 50)
         tileGrid.draw();
     }
 

@@ -20,6 +20,7 @@ class TileGrid {
                 [0, 0, 0, 0, 0, 0]
             ],
             pointRequirement: 1000,
+            turnCounter: 10
         },
         {
             grid: [
@@ -31,7 +32,8 @@ class TileGrid {
                 [0, 0, 2, 3, 2, 1],
                 [0, 0, 0, 0, 0, 0]
             ],
-            pointRequirement: 1000,
+            pointRequirement: 1500,
+            turnCounter: 15
         },
         {
             grid: [
@@ -43,7 +45,8 @@ class TileGrid {
                 [0, 0, 5, 3, 1, 1],
                 [0, 0, 0, 0, 0, 0]
             ],
-            pointsNeeded: 1400,
+            pointRequirement: 1400,
+            turnCounter: 15
         },
         {
             grid: [
@@ -55,7 +58,8 @@ class TileGrid {
                 [0, 0, 5, 4, 3, 4],
                 [0, 0, 0, 0, 0, 0]
             ],
-            pointsNeeded: 1800,
+            pointRequirement: 1800,
+            turnCounter: 25
         },
         // Follow this method for more levels
     ];
@@ -68,15 +72,15 @@ class TileGrid {
         this.#width = width;
         this.#height = height;
         this.currentLevel = 1; // Start from level 1
-        this.pointRequirementCheck();
+        this.startLevelValueCheck();
         this.pointRequirement;
+        this.turnCounter;
         this.#generateTileGrid();
         this.nextLevelButton = createButton('Continue');
         this.nextLevelButton.position(200, 200);
         this.nextLevelButton.hide();
         this.nextLevelButton.mousePressed(() => {
                 this.goToNextLevel();
-                turnCounter = 10;
         })
         this.levelIndex = 1;
     }
@@ -133,13 +137,13 @@ class TileGrid {
 
         if (this.currentLevel < TileGrid.levels.length) {
             this.currentLevel++;
-            this.pointRequirementCheck();
+            this.startLevelValueCheck();
             this.#generateTileGrid();
         } else {
             // Handle game completion or loop back to the first level
             // For now, let's loop back to the first level
             this.currentLevel = 1;
-            this.pointRequirementCheck();
+            this.startLevelValueCheck();
             this.#generateTileGrid();
         }
         this.setLevelIndex(this.currentLevel)
@@ -151,9 +155,9 @@ class TileGrid {
         }
     }
 
-    pointRequirementCheck() {
+    startLevelValueCheck() {
         this.pointRequirement = TileGrid.levels[this.currentLevel - 1].pointRequirement;
-        console.log(this.pointRequirement);
+        this.turnCounter = TileGrid.levels[this.currentLevel - 1].turnCounter;
     }
 
     //draw all the tiles
@@ -281,7 +285,7 @@ class TileGrid {
                 temp = null;
                 if (this.#tiles[x1][y1] != null) {
                     this.#tiles[x1][y1].setPosition(createVector(x1, y1));
-                    turnCounter -= 1;
+                    tileGrid.turnCounter -= 1;
                 }
     
                 if (this.#tiles[x2][y2] != null) {
