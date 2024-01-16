@@ -36,14 +36,14 @@ class TileGrid {
         // Follow this method for more levels
     ];
 
-    currentLevel = 0    ; // Tracks the current level
+    currentLevel = 1    ; // Tracks the current level
 
     //constructor that determines the size of every tile in the grid.
     constructor(width, height, tileSize) {
         this.#tileSize = tileSize;
         this.#width = width;
         this.#height = height;
-        this.currentLevel = 0; // Start from level 1
+        this.currentLevel = 1; // Start from level 1
         this.pointRequirementCheck();
         this.pointRequirement;
         this.#generateTileGrid();
@@ -54,7 +54,7 @@ class TileGrid {
                 this.goToNextLevel();
                 turnCounter = 10;
         })
-        this.levelIndex = 0;
+        this.levelIndex = 1;
     }
 
     getLevelIndex() {
@@ -62,12 +62,12 @@ class TileGrid {
     }
 
     setLevelIndex(newLevelIndex) {
-        this.levelIndex = newLevelIndex;
+        this.levelIndex = newLevelIndex + 1;
     }
 
     //function that makes a tileMap, then loads an image for each respective tile
     #generateTileGrid() {
-        const currentLevelGrid = TileGrid.levels[this.currentLevel].grid;
+        const currentLevelGrid = TileGrid.levels[this.currentLevel - 1].grid;
 
         this.#tiles = new Array();
 
@@ -107,14 +107,14 @@ class TileGrid {
         screenIndex = 2;
         this.#generateTileGrid();
 
-        if (this.currentLevel < TileGrid.levels.length - 1) {
+        if (this.currentLevel < TileGrid.levels.length) {
             this.currentLevel++;
             this.pointRequirementCheck();
             this.#generateTileGrid();
         } else {
             // Handle game completion or loop back to the first level
             // For now, let's loop back to the first level
-            this.currentLevel = 0;
+            this.currentLevel = 1;
             this.pointRequirementCheck();
             this.#generateTileGrid();
         }
@@ -128,7 +128,7 @@ class TileGrid {
     }
 
     pointRequirementCheck() {
-        this.pointRequirement = TileGrid.levels[this.currentLevel].pointRequirement;
+        this.pointRequirement = TileGrid.levels[this.currentLevel - 1].pointRequirement;
         console.log(this.pointRequirement);
     }
 
