@@ -38,19 +38,6 @@ class Tile {
         this.#y = y;
         this.tileType = tileType;
     }  
-    
-    //functions that determine if a tile is moving or not
-    isDragging() {
-        return this.isDragging;
-    }
-
-    startDragging() {
-        this.isDragging = true;
-    }
-
-    stopDragging() {
-        this.isDragging = false;
-    }
 
     draw() {
         //tileGrid.getTileAtPosition(this.position);
