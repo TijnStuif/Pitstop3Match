@@ -64,8 +64,6 @@ class TileGrid {
         // Follow this method for more levels
     ];
 
-    currentLevel = 1    ; // Tracks the current level
-
     //constructor that determines the size of every tile in the grid.
     constructor(width, height, tileSize) {
         this.#tileSize = tileSize;

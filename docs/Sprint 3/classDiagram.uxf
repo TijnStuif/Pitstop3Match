@@ -1,0 +1,97 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>30</x><y>275</y><w>210</w><h>370</h></coordinates><panel_attributes>tileGrid
+--
++levels:array{object}
++gridPosX: int
++gridPosY: int
+-tileSize: int
+-tiles: array[array]
+-width: int
+-height: int
+--
++draw(): void
++getLevelIndex(): int
++setLevelIndex(newLevelIndex): void
++goToNextLevel(): void
++checkIfNextLevelIsUnlocked(): void
++startLevelValueCheck(): void
++distributePoints(x: int, y: int): void
++getGridX(x: int): int
++getGridY(y: int): int
++getTileAtPosition(position): int
++getTileAtGridIndex(x: int, y: int): int
++getDraggingTile(): object
++swapTiles(x1: int, y1: int, x2: int, y2: int): void
++tileGravity(x1: int, y1: int, x2: int, y2: int): void
+-generateTileGrid(): array[array{object}]
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>360</x><y>405</y><w>210</w><h>210</h></coordinates><panel_attributes>tile
+--
++isDragging: boolean
+-x: int
+-y: int
+-size: int
+-image: image
+--
++get x(): int
++set x(value): void
++get y(): int
++set y(value): void
++get position(): vector
++setPosition(position): void
++draw(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>610</x><y>415</y><w>210</w><h>190</h></coordinates><panel_attributes>normalTile
+--
+No extra attributes
+--
++isDragging(): boolean
++startDragging(): void
++stopDragging(): void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>610</x><y>645</y><w>210</w><h>190</h></coordinates><panel_attributes>specialTile
+--
+No extra attributes
+--
+No extra methods</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>610</x><y>185</y><w>210</w><h>190</h></coordinates><panel_attributes>staticTile
+--
+No extra attributes
+--
+No extra methods</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>360</x><y>205</y><w>210</w><h>190</h></coordinates><panel_attributes>car
+--
++x: int
++y: int
++speedMultiplier: int
+--
++checkEndLevel(): void
++checkBeginLevel(): void 
++hide(): void
++show(): void
++calculatePosition(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>360</x><y>645</y><w>210</w><h>190</h></coordinates><panel_attributes>button
+--
++x: int
++y: int
++text: string
++button: any
+--
+Methods are incorporated 
+into the constructor
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>30</x><y>665</y><w>210</w><h>190</h></coordinates><panel_attributes>dbConnection
+--
+No extra attributes
+--
++createUser(): void
++getPlayerInfo(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>30</x><y>75</y><w>210</w><h>190</h></coordinates><panel_attributes>assetManager
+--
+-images: array
+--
++getImage(assetName: string): image
+-loadImages(): void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>360</x><y>5</y><w>210</w><h>190</h></coordinates><panel_attributes>gameManager
+--
+-assetManager: object
+--
++getImage(assetname: string): image</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>230</x><y>435</y><w>150</w><h>90</h></coordinates><panel_attributes>lt=&lt;.
+contains</panel_attributes><additional_attributes>130;70;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>230</x><y>265</y><w>150</w><h>100</h></coordinates><panel_attributes>lt=&lt;.
+contains</panel_attributes><additional_attributes>130;10;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>230</x><y>575</y><w>150</w><h>180</h></coordinates><panel_attributes>lt=&lt;.
+contains</panel_attributes><additional_attributes>130;160;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>560</x><y>445</y><w>70</w><h>60</h></coordinates><panel_attributes>lt=&lt;.
+extends</panel_attributes><additional_attributes>50;10;10;40</additional_attributes></element><element><id>Relation</id><coordinates><x>560</x><y>215</y><w>90</w><h>250</h></coordinates><panel_attributes>lt=&lt;.
+extends</panel_attributes><additional_attributes>50;10;10;230</additional_attributes></element><element><id>Relation</id><coordinates><x>710</x><y>595</y><w>70</w><h>70</h></coordinates><panel_attributes>lt=&lt;.
+extends</panel_attributes><additional_attributes>10;50;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>230</x><y>75</y><w>150</w><h>60</h></coordinates><panel_attributes>lt=&lt;.
+creates</panel_attributes><additional_attributes>10;40;130;10</additional_attributes></element><element><id>Relation</id><coordinates><x>230</x><y>135</y><w>150</w><h>180</h></coordinates><panel_attributes>lt=&lt;.
+creates</panel_attributes><additional_attributes>130;10;10;160</additional_attributes></element></diagram>
