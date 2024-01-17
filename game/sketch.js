@@ -28,7 +28,7 @@ function setup() {
     level3 = new Button(375, 190, "Level 3", 2, true);
     level4 = new Button(375, 210, "Level 4", 2, true);
     //goToGarage = new Button(200, 300, "Go to garage", 5, true);
-    scrapCar = new Car(gameManager.getImage("ScrapCar"), 450, 50, 0.5);
+    scrapCar = new Car(gameManager.getImage("ScrapCar"), 450, 50);
 }
 
 //draws the background and activates the draw function from tileGrid

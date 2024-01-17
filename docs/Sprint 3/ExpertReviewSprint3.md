@@ -107,9 +107,80 @@ Door het overerven van variables en functies van andere classes, kunnen de opeen
 
 Encapsulation:
 
-Encapsulation is het verbergen van functies en onnodige variablen voor de gebruiker in een class. De gebruiker hoeft alleen te weten hoe de class heet, en welke variablen nodig zijn voor de constructor. Dit zorgt dat iemand een object uit een class kan maken, zonder dat deze persoon iets van de class begrijpt. 
+Encapsulation is het verbergen van functies en onnodige variablen voor de gebruiker in een class. De gebruiker hoeft alleen te weten hoe de class heet, en welke variablen nodig zijn voor de constructor. Dit zorgt dat iemand een object uit een class kan maken, zonder dat deze persoon iets van de class begrijpt. Ik heb 2 classes gemaakt die van dit concept gebruik maken.
 
+    ```javascript
+    class Button {
+        x;
+        y;
+        text;
+        button;
 
+        constructor(x, y, text, screenIndex, startsHidden) {
+            this.text = text;
+            this.button = createButton(text);
+            this.button.position(x,y);
+            if (startsHidden) {
+            this.button.hide();
+            }
+            this.button.mousePressed(() => {
+                if (tileGrid.levelCompleted) {
+                    tileGrid.goToNextLevel();
+                }
+                switchScreen(screenIndex);
+                this.button.hide();
+            });
+        }
+    }
+    ```
+
+Dit is een class die het maken van een button, enorm makkelijk maakt. Het stopt alle logica, zoals het maken van een button, het geven van een positie en een functie die gebruikt wordt als de knop gedrukt wordt, weg in de constructor waar de gebruiker voor de rest niks mee hoeft te kunnen. Om de button te maken hoeft de gebruiker alleen maar (als voorbeeld): let exitLevel = new Button(200, 200, "exit level", 5, true) neer te zetten (5 bij screenIndex omdat dat het scherm is van de garage). Hieronder volgt de 2e class:
+
+    ```javascript
+    class Car {
+        x;
+        y;
+        speedMultiplier;
+
+        constructor(image, x, y) {
+            this.image = image;
+            this.x = x;
+            this.y = y;
+            this.startX = x;
+            this.startY = y;
+            this.speedMultiplier = width / tileGrid.pointRequirement;
+            this.size = 100;
+        }
+
+        checkEndLevel() {
+            if (tileGrid.levelCompleted) {
+                this.hide();
+            }
+        }
+
+        checkBeginLevel() {
+            if (!tileGrid.levelCompleted) {
+                this.show();
+            }
+        }
+
+        hide() {
+            this.x = -1000;
+            this.y = -1000;
+        }
+
+        show() {
+            this.x = this.startX;
+            this.y = this.startY;
+        }
+
+        calculatePosition() {
+            this.x = 400 - (score * this.speedMultiplier);
+        }  
+    }
+    ```
+
+Deze class maakt meer gebruik van class-eigen functies. Dit maakt het gebruik van encapsulation nog nuttiger, omdat een gebruiker heel makkelijk de functies kan aanroepen ergens anders in de code. Deze zullen dan precies doen wat er in de naam van de functie staat (zoals de auto laten zien of weglaten). De auto instancen is ook heel erg simpel. De gebruiker hoeft alleen maar coordinaten en een plaatje door te voeren in de constructor.
 
 Rick:
 (Abstraction:

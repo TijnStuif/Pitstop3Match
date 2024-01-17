@@ -3,13 +3,13 @@ class Car {
     y;
     speedMultiplier;
 
-    constructor(image, x, y, speedMultiplier) {
+    constructor(image, x, y) {
         this.image = image;
         this.x = x;
         this.y = y;
         this.startX = x;
         this.startY = y;
-        this.speedMultiplier = speedMultiplier;
+        this.speedMultiplier = width / tileGrid.pointRequirement
         this.size = 100;
     }
 
