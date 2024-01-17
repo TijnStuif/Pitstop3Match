@@ -9,6 +9,7 @@ class AssetManager {
 
     #loadImages() {
         this.#images.set("FastCar", loadImage("assets/images/cars/FastCar.png"));
+        this.#images.set("RaceCar", loadImage("assets/images/cars/RaceCar.png"));
         this.#images.set("BeetleCar", loadImage("assets/images/cars/BeetleCar.png"));
         this.#images.set("ScrapCar", loadImage("assets/images/cars/ScrapCar.png"));
         this.#images.set("JerryCan", loadImage("assets/images/car_parts/JerryCan.png"));

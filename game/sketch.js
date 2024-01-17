@@ -22,16 +22,18 @@ function preload() {
 function setup() {
     createCanvas(500, 500);
     switchScreen(0);
-    openGarage = new Button(375, 150, "Open the garage", 1, false);
+    openGarage = new Button(350, 150, "Open the garage", 1, false);
     level1 = new Button(375, 150, "Level 1", 2, true);
     level2 = new Button(375, 170, "Level 2", 2, true);
     level3 = new Button(375, 190, "Level 3", 2, true);
     level4 = new Button(375, 210, "Level 4", 2, true);
     //goToGarage = new Button(200, 300, "Go to garage", 5, true);
+    scrapCar = new Car(gameManager.getImage("ScrapCar"), 450, 50, 0.5);
 }
 
 //draws the background and activates the draw function from tileGrid
 function draw() {
+    noStroke();
     if (screenIndex == 0) {
         image(gameManager.getImage("ClosedGarage"), 0, 0, 500, 500);
         openGarage.button.show();
@@ -47,6 +49,9 @@ function draw() {
 
     if (screenIndex == 2) {
         image(gameManager.getImage("GameBackground"), 0, 0, 500, 500);
+        image(scrapCar.image, scrapCar.x, scrapCar.y, scrapCar.size, scrapCar.size)
+        scrapCar.calculatePosition();
+        scrapCar.checkEndLevel();
         textSize(100);
         fill(255);
         text(score, 200, 150);
@@ -91,7 +96,6 @@ function draw() {
         level1.button.show();
         tileGrid.nextLevel.button.hide();
     }
-    noStroke();
 }
 
 //does all the logic for a touch start

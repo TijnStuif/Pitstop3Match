@@ -133,12 +133,16 @@ class TileGrid {
             this.currentLevel++;
             this.startLevelValueCheck();
             this.#generateTileGrid();
+            this.levelCompleted = false;
+                scrapCar.speedMultiplier = width / this.pointRequirement;
+
         } else {
             // Handle game completion or loop back to the first level
             // For now, let's loop back to the first level
             this.currentLevel = 1;
             this.startLevelValueCheck();
             this.#generateTileGrid();
+            scrapCar.speedMultiplier = 0.5;
         }
         this.setLevelIndex(this.currentLevel)
     }
@@ -220,13 +224,6 @@ class TileGrid {
         } else {
             score += 100;
         }
-    }
-
-    getRandomTileType() {
-        let randomTileType;
-        randomTileType = 0;
-        randomTileType = Math.floor(random(1,4));
-        return randomTileType;
     }
 
     getGridX(x) {

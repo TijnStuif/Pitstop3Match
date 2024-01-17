@@ -13,7 +13,7 @@ class Button {
         }
         this.button.mousePressed(() => {
             if (tileGrid.levelCompleted) {
-                tileGrid.goToNextLevel()
+                tileGrid.goToNextLevel();
             }
             switchScreen(screenIndex);
             this.button.hide();
