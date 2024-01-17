@@ -3,7 +3,7 @@ class Tile {
     #y;
     #size;
     #image;
-    isDragging;
+    isDragging = false;
 
     get x() {
         return this.#x;
@@ -36,7 +36,6 @@ class Tile {
         this.#size = size;
         this.#x = x;
         this.#y = y;
-        this.isDragging = false;
         this.tileType = tileType;
     }  
     

@@ -77,13 +77,7 @@ class TileGrid {
         this.pointRequirement;
         this.turnCounter;
         this.#generateTileGrid();
-        this.nextLevelButton = createButton('Continue');
-        this.nextLevelButton.position(200, 200);
-        this.nextLevelButton.hide();
-        this.nextLevelButton.mousePressed(() => {
-                this.goToNextLevel();
-                this.nextLevelButton.hide();
-        })
+        this.nextLevel = new Button(200, 200, "Continue", 2, true);
     }
 
     getLevelIndex() {
@@ -132,7 +126,7 @@ class TileGrid {
 
     // Add a function to move to the next level
     goToNextLevel() {
-        screenIndex = 2;
+        switchScreen(2);
         this.#generateTileGrid();
 
         if (this.currentLevel < TileGrid.levels.length && this.levelCompleted) {
@@ -151,7 +145,7 @@ class TileGrid {
 
     checkIfNextLevelIsUnlocked() {
         if(screenIndex == 3) {
-                this.nextLevelButton.show();
+                this.nextLevel.button.show();
         }
     }
 

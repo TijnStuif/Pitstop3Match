@@ -22,36 +22,19 @@ function preload() {
 function setup() {
     createCanvas(500, 500);
     switchScreen(0);
-    openGarageButton = createButton("Open the Garage!");
-    openGarageButton.position(350, 200);
-    openGarageButton.mousePressed(() => {
-        switchScreen(1);
-        openGarageButton.hide();
-    });
-    openGarageButton.hide();
-    goToLevel1Button = createButton("Level 1");
-    goToLevel1Button.position(375, 150);
-    goToLevel1Button.mousePressed(() => {
-        switchScreen(2);
-        goToLevel1Button.hide();
-    })
-    goToLevel1Button.hide();
-    goToGarageButton = createButton("Go back to the garage");
-    goToGarageButton.position(200, 300);
-    goToGarageButton.mousePressed(() => {
-        tileGrid.goToNextLevel();
-        switchScreen(5);
-        goToGarageButton.hide();
-        tileGrid.nextLevelButton.hide();
-    })
-    goToGarageButton.hide();
+    openGarage = new Button(375, 150, "Open the garage", 1, false);
+    level1 = new Button(375, 150, "Level 1", 2, true);
+    level2 = new Button(375, 170, "Level 2", 2, true);
+    level3 = new Button(375, 190, "Level 3", 2, true);
+    level4 = new Button(375, 210, "Level 4", 2, true);
+    //goToGarage = new Button(200, 300, "Go to garage", 5, true);
 }
 
 //draws the background and activates the draw function from tileGrid
 function draw() {
     if (screenIndex == 0) {
         image(gameManager.getImage("ClosedGarage"), 0, 0, 500, 500);
-        openGarageButton.show();
+        openGarage.button.show();
     }
 
     if (screenIndex == 1) {
@@ -90,8 +73,8 @@ function draw() {
         text("congratulations", 50, 50);
         text(`you beat level ${tileGrid.currentLevel}`, 50, 100);
         text(`continue to level ${tileGrid.currentLevel + 1}?`, 50, 150);
-        text(`return to the garage?`, 25, 250);
-        goToGarageButton.show();
+        //text(`return to the garage?`, 25, 250);
+        //goToGarage.button.show();
 
     }
     if (screenIndex == 4) {
@@ -100,12 +83,13 @@ function draw() {
         fill(0);
         text("you lost!", 150, 50)
         text(`your score is: ${savedScore}`, 50, 100)
-        text(`return to the garage?`, 25, 250);
-        goToGarageButton.show();
+        //text(`return to the garage?`, 25, 250);
+        //goToGarage.button.show();
     }
     if (screenIndex == 5) {
         image(gameManager.getImage("OpenGarage"), 0, 0, 500, 500);
-        goToLevel1Button.show();
+        level1.button.show();
+        tileGrid.nextLevel.button.hide();
     }
     noStroke();
 }
