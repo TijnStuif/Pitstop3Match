@@ -7,7 +7,6 @@ let score = 0;
 let savedScore = 0;
 let screenIndex;
 let startScreenTimer = 0;
-let openGarageButton;
 const tileWidth = 6, tileHeight = 6, tileSize = 80;
 
 //preloads GameManager and the tileGrid
@@ -23,6 +22,7 @@ function setup() {
     createCanvas(500, 500);
     switchScreen(0);
     openGarage = new Button(350, 150, "Open the garage", 1, false);
+    nextLevel = new Button(200, 200, "Continue", 2, true);
     level1 = new Button(375, 150, "Level 1", 2, true);
     level2 = new Button(375, 170, "Level 2", 2, true);
     level3 = new Button(375, 190, "Level 3", 2, true);
@@ -94,7 +94,7 @@ function draw() {
     if (screenIndex == 5) {
         image(gameManager.getImage("OpenGarage"), 0, 0, 500, 500);
         level1.button.show();
-        tileGrid.nextLevel.button.hide();
+        nextLevel.button.hide();
     }
 }
 

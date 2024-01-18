@@ -75,7 +75,6 @@ class TileGrid {
         this.pointRequirement;
         this.turnCounter;
         this.#generateTileGrid();
-        this.nextLevel = new Button(200, 200, "Continue", 2, true);
     }
 
     getLevelIndex() {
@@ -147,7 +146,7 @@ class TileGrid {
 
     checkIfNextLevelIsUnlocked() {
         if(screenIndex == 3) {
-                this.nextLevel.button.show();
+                nextLevel.button.show();
         }
     }
 
@@ -194,7 +193,7 @@ class TileGrid {
                 this.#tiles[x][y].draw();
 
                 if (!this.#tiles[x][1] && !this.#tiles[x][2] || 
-                    !this.#tiles[x][1] && !this.#tiles[x][2] && this.#tiles[x][3] && this.#tiles[x][4]) {
+                    !this.#tiles[x][1] && !this.#tiles[x][2] && !this.#tiles[x][3] && !this.#tiles[x][4]) {
                     let randomTileType;
                     randomTileType = Math.floor(random(1,5))
                     switch (randomTileType) {
