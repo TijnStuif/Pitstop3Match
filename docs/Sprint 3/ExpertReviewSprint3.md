@@ -240,15 +240,22 @@ Hierboven staat een stuk code wat voor ons het mogelijk maakt om de tilegrids te
 ```
 
 Deze is misschien een beetje vals spelen maar door de constructor werken er veel classes met een stuk minder code dan nodig is. zo zorgt de constructor er voor dat de tiles zonder al te veel code allemaal de goede grootte krijgen en zorgt dit ervoor dat wij makkelijk turns kunnen toevoegen en weg nemen van levels.
+---------------------------------
+Abstraction
+Bron Abstraction(https://stackify.com/oop-concept-abstraction/)
 
+De bron beschrijft dat bij abstraction de implementatie van class A niet belangrijk is voor class B. Het enige wat belangrijk is voor class B is dat class A bestaat en dat het de juiste methods en properties heeft.
+---------------------------------
 
 )
 (Inheritance:
- Inheritance is eigelijk het overzetten van bepaalde functies van en class om andere classes makkelijker te maken. zo is te zien in tijn zijn voorbeelden dat al onze tile classes. de tiles zijn natuurlijk allemaal tiles dus moeten ze allemaal de zelfde basis eigenschappen hebben. Laten we naar 2 andere voorbeelden kijken
+ Inheritance is eigelijk het overzetten van bepaalde functies van en class om andere classes makkelijker te maken. zo is te zien in tijn zijn voorbeelden dat al onze tile classes. de tiles zijn natuurlijk allemaal tiles dus moeten ze allemaal de zelfde basis eigenschappen hebben. tevens gezien hebben wij niet genoeg om hier 4 voorbeelden van te pakken.
+---------------------------------
+ Inheritance
+Bron Inheritance(https://www.w3schools.com/js/js_class_inheritance.asp)
 
- ```javascript
- 
- ```
+De bron beschrijft dat inheritance inhoudt dat een subclass methodes kan erven van de base class. Verder omschrijft de bron dat "extends" wordt gebruikt voor inheritance, en dat je met super() de constructor van de base class aan kan roepen vanuit de subclass.
+---------------------------------
 
 )
 (Encapsulation
@@ -314,20 +321,17 @@ Hierboven staat het stukje code wat voor ons de tiles maakt. deze code zorgt er 
             turnCounter: 10
 ```
 en ja, zelfs de tilemap is encapsulation. dit zorgt er voor dat wij zonder moeite in dit grid systeem een level kunnen maken en dit zonder moeite kunnen stoppen in andere code wat er voor zorgt dat het spel je automatisch brengt naar bijvoorbeeld een level 5 als je level 4 heb gehaald. 
+------------------------
+Encapsulation
+Bron Encapsulation(https://sebhastian.com/encapsulation-javascript/)
 
+De bron omschrijft dat encapsulation inhoudt dat data en methodes die de data veranderen gebundeld worden. Dit maakt het onmogelijk om de data te veranderen zonder de juiste methods daarvoor te gebruiken.
+------------------------
 )
+
 
 ## K6 Je hebt een genormaliseerde relationele database ontworpen en gebruikt om informatie uit je project in op te slaan, op te halen en te bewerken. 
 Tijn:
-Ik ga onze database relaties aantonen aan de hand van een EERD/ERD. Dit is een (Enhanced) entity-relation diagram. Dit toont de relaties aan tussen verschillende entities in een database, aan de hand van blokken van de entities, die verbonden staan met lijnen, en uiteinden van de lijnen die de relatie aantonen (bijvoorbeeld een 1 op veel relatie).
-
-![EERD blok 2](EERDblok2.png)
-
-Een ERD is eigenlijk hetzelfde als een EERD, behalve dat niet belangrijke informatie voor de gebruiker, achterwege gelaten wordt, net zoals de variablesoorten van de data in de entities. Hieronder volgt de ERD van dezelfde database.
-
-![ERD blok 2](ERDblok2.png)
-
-Zoals te zien is in het diagram, wordt de speler aangesloten op een meetpunt aan de hand van de speelsessie_id. Ook krijgt de speler een unieke speler_uniqueCode door een speelsessie te starten. 
 
 Rick:
 ## K7 Je hebt je werk beschreven met behulp van UML-technieken
