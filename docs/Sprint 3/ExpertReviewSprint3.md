@@ -319,6 +319,15 @@ en ja, zelfs de tilemap is encapsulation. dit zorgt er voor dat wij zonder moeit
 
 ## K6 Je hebt een genormaliseerde relationele database ontworpen en gebruikt om informatie uit je project in op te slaan, op te halen en te bewerken. 
 Tijn:
+Ik ga onze database relaties aantonen aan de hand van een EERD/ERD. Dit is een (Enhanced) entity-relation diagram. Dit toont de relaties aan tussen verschillende entities in een database, aan de hand van blokken van de entities, die verbonden staan met lijnen, en uiteinden van de lijnen die de relatie aantonen (bijvoorbeeld een 1 op veel relatie).
+
+![EERD blok 2](EERDblok2.png)
+
+Een ERD is eigenlijk hetzelfde als een EERD, behalve dat niet belangrijke informatie voor de gebruiker, achterwege gelaten wordt, net zoals de variablesoorten van de data in de entities. Hieronder volgt de ERD van dezelfde database.
+
+![ERD blok 2](ERDblok2.png)
+
+Zoals te zien is in het diagram, wordt de speler aangesloten op een meetpunt aan de hand van de speelsessie_id. Ook krijgt de speler een unieke speler_uniqueCode door een speelsessie te starten. 
 
 Rick:
 ## K7 Je hebt je werk beschreven met behulp van UML-technieken
