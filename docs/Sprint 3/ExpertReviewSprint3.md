@@ -1,4 +1,4 @@
-# Eerste expert review blok 2 Sprint 3.
+# Expert review blok 2 Sprint 3.
 
 ## K5 Je hebt object georiënteerd geprogrammeerd en maak gebruik van objectgeoriënteerde technieken zoals abstraction, inheritance en encapsulation. 
 
@@ -328,4 +328,7 @@ Ik heb een class diagram gemaakt van de gehele game, waarin verbanden en overerv
 ![Class diagram pitstop](blok2ClassDiagram.png)
 
 Rick:
+Ik heb een use case gemaakt van de game waarin je kan zien hoe de game specifiek werkt met alle functies van het spel.
+
+![UseCaseDiagram](useCaseDiagram.png)
 
