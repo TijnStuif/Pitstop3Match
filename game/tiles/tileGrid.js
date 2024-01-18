@@ -82,7 +82,7 @@ class TileGrid {
         this.#tileSize = tileSize;
         this.#width = width;
         this.#height = height;
-        this.currentLevel = 5; // Start from level 1
+        this.currentLevel = 1; // Start from level 1
         this.levelCompleted = false;
         this.startLevelValueCheck();
         this.pointRequirement;

@@ -42,14 +42,17 @@ function draw() {
     if (screenIndex == 1) {
         image(gameManager.getImage("OpeningGarageGif"), 0, 0, 500, 500);
         startScreenTimer += 1;
-        if (startScreenTimer > 280) {
-            switchScreen(5);
+        if (startScreenTimer > 130) {
+            image(scrapCar.image, 100, 200, scrapCar.size * 2, scrapCar.size * 2);
+            if (startScreenTimer > 280) {
+                switchScreen(5);
+            }
         }
     }
 
     if (screenIndex == 2) {
         image(gameManager.getImage("GameBackground"), 0, 0, 500, 500);
-        image(scrapCar.image, scrapCar.x, scrapCar.y, scrapCar.size, scrapCar.size)
+        image(scrapCar.image, scrapCar.x, scrapCar.y, scrapCar.size, scrapCar.size);
         scrapCar.calculatePosition();
         scrapCar.checkEndLevel();
         textSize(30);
@@ -93,6 +96,7 @@ function draw() {
     }
     if (screenIndex == 5) {
         image(gameManager.getImage("OpenGarage"), 0, 0, 500, 500);
+        image(scrapCar.image, 100, 200, scrapCar.size * 2, scrapCar.size * 2);
         level1.button.show();
         nextLevel.button.hide();
     }

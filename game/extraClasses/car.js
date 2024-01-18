@@ -7,8 +7,8 @@ class Car {
         this.image = image;
         this.x = x;
         this.y = y;
-        this.startX = x;
-        this.startY = y;
+        this.startLevelX = x;
+        this.startLevelY = y;
         this.speedMultiplier = width / tileGrid.pointRequirement
         this.size = 100;
     }
@@ -30,7 +30,7 @@ class Car {
         this.y = -1000;
     }
 
-    show() {
+    showInLevel() {
         this.x = this.startX;
         this.y = this.startY;
     }
