@@ -16,6 +16,7 @@ class Button {
                 tileGrid.goToNextLevel();
             }
             switchScreen(screenIndex);
+            //tileGrid.resetLevel();
             this.button.hide();
         });
     }

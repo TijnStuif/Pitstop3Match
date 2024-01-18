@@ -23,6 +23,7 @@ function setup() {
     switchScreen(0);
     openGarage = new Button(350, 150, "Open the garage", 1, false);
     nextLevel = new Button(200, 200, "Continue", 2, true);
+    backToGarage = new Button(200, 200, "Back to garage", 5, true);
     level1 = new Button(375, 150, "Level 1", 2, true);
     level2 = new Button(375, 170, "Level 2", 2, true);
     level3 = new Button(375, 190, "Level 3", 2, true);
@@ -60,13 +61,13 @@ function draw() {
         text(score, 430, 75);
         if (score >= tileGrid.pointRequirement) {
             tileGrid.levelCompleted = true;
-            switchScreen(3);
             savedScore = score;
             score = 0;
+            switchScreen(3);
         } else if (tileGrid.turnCounter == 0) {
-            switchScreen(4);
             savedScore = score;
-            score = 0;  
+            score = 0;
+            switchScreen(4);
         }
         textSize(30);
         text(`turns left: ${tileGrid.turnCounter}`, 10, 50)
@@ -91,8 +92,7 @@ function draw() {
         fill(0);
         text("you lost!", 150, 50)
         text(`your score is: ${savedScore}`, 50, 100)
-        //text(`return to the garage?`, 25, 250);
-        //goToGarage.button.show();
+        backToGarage.button.show();
     }
     if (screenIndex == 5) {
         image(gameManager.getImage("OpenGarage"), 0, 0, 500, 500);
@@ -120,7 +120,7 @@ function touchMoved(event) {
 //does all the logic for a touch ending
 function touchEnded(event) {
     if (draggingTile) {
-        tileGrid.swapTiles(tileGrid.getGridX(event.x), tileGrid.getGridY(event.y), draggingTileX, draggingTileY);
+        tileGrid.swap(tileGrid.getGridX(event.x), tileGrid.getGridY(event.y), draggingTileX, draggingTileY);
         draggingTile.stopDragging(event);
     }
 }

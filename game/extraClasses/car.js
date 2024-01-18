@@ -21,7 +21,7 @@ class Car {
 
     checkBeginLevel() {
         if (!tileGrid.levelCompleted) {
-            this.show();
+            this.show()
         }
     }
 
@@ -30,7 +30,7 @@ class Car {
         this.y = -1000;
     }
 
-    showInLevel() {
+    show() {
         this.x = this.startX;
         this.y = this.startY;
     }
