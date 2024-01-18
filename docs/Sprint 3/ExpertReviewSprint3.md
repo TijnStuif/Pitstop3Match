@@ -199,6 +199,9 @@ Tijn:
 Rick:
 ## K7 Je hebt je werk beschreven met behulp van UML-technieken
 Tijn:
+Ik heb een class diagram gemaakt van de gehele game, waarin verbanden en overervingen worden weergegeven, en alle attributes en methods staan bij de classes. 
+
+![Class diagram pitstop](blok2ClassDiagram.png)
 
 Rick:
 
