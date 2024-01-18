@@ -52,9 +52,9 @@ function draw() {
         image(scrapCar.image, scrapCar.x, scrapCar.y, scrapCar.size, scrapCar.size)
         scrapCar.calculatePosition();
         scrapCar.checkEndLevel();
-        textSize(100);
-        fill(255);
-        text(score, 200, 150);
+        textSize(30);
+        fill(0);
+        text(score, 430, 75);
         if (score >= tileGrid.pointRequirement) {
             tileGrid.levelCompleted = true;
             switchScreen(3);
