@@ -184,12 +184,136 @@ Deze class maakt meer gebruik van class-eigen functies. Dit maakt het gebruik va
 
 Rick:
 (Abstraction:
+Zoals Tijn hier boven al melde is Abstraction makkelijker gezegt, het verbergen van code die een gebruiker niet hoeft te snappen. Nu kan ik zijn 2 voorbeelden pakken maar ik denk dat het beter is als ik ook nog 2 voorbeelden noem.
+
+    ```javascript
+        #generateTileGrid() {
+        const currentLevelGrid = TileGrid.levels[this.currentLevel - 1].grid;
+
+        this.#tiles = new Array();
+
+        //generate tile grid here and place tiles in the 2D #tile array.
+        for (let x = 0; x < this.#width; x++) {
+            for (let y = 0; y < this.#height; y++) {
+                if (!this.#tiles[x]) {
+                    this.#tiles[x] = new Array();
+                }
+
+                const tileValue = currentLevelGrid[x][y];
+
+                switch (tileValue) {
+                    case 1:
+                        this.#tiles[x][y] = new NormalTile(gameManager.getImage("Wheel"), this.#tileSize, x, y, 1);
+                        break;
+                    case 2:
+                        this.#tiles[x][y] = new NormalTile(gameManager.getImage("SteeringWheel"), this.#tileSize, x, y, 2);
+                        break;
+                    case 3:
+                        this.#tiles[x][y] = new NormalTile(gameManager.getImage("JerryCan"), this.#tileSize, x, y, 3);
+                        break;
+                    case 4:
+                        this.#tiles[x][y] = new SpecialTile(gameManager.getImage("StopSign"), this.#tileSize, x, y, 4);
+                        break;
+                    case 5:
+                        this.#tiles[x][y] = new StaticTile(gameManager.getImage("YellowBlackSign"), this.#tileSize, x, y, 5);
+                        break;
+                }
+            }
+        }
+    }
+    ```
+Hierboven staat een stuk code wat voor ons het mogelijk maakt om de tilegrids te maken die wij gebruiken voor elk level. deze code gebruiken wij dan ook als wij bijvoorbeeld met gemak een nieuw level willen toevoegen aan het spel. Dit zorgt er ook voor dat wij gecombineerd met de "#goToNextLevel" Functie die Tijn heeft beschreven wij makkelijk nieuwe levels kunnen implementeren in de game.
+
+```javascript
+    constructor(width, height, tileSize) {
+        this.#tileSize = tileSize;
+        this.#width = width;
+        this.#height = height;
+        this.currentLevel = 1; // Start from level 1
+        this.levelCompleted = false;
+        this.startLevelValueCheck();
+        this.pointRequirement;
+        this.turnCounter;
+        this.#generateTileGrid();
+        this.nextLevel = new Button(200, 200, "Continue", 2, true);
+    }
+```
+
+Deze is misschien een beetje vals spelen maar door de constructor werken er veel classes met een stuk minder code dan nodig is. zo zorgt de constructor er voor dat de tiles zonder al te veel code allemaal de goede grootte krijgen en zorgt dit ervoor dat wij makkelijk turns kunnen toevoegen en weg nemen van levels.
+
 
 )
 (Inheritance:
+ Inheritance is eigelijk het overzetten van bepaalde functies van en class om andere classes makkelijker te maken. zo is te zien in tijn zijn voorbeelden dat al onze tile classes. de tiles zijn natuurlijk allemaal tiles dus moeten ze allemaal de zelfde basis eigenschappen hebben. Laten we naar 2 andere voorbeelden kijken
+
+ ```javascript
+ 
+ ```
 
 )
 (Encapsulation
+
+```javascript
+class Tile {
+    #x;
+    #y;
+    #size;
+    #image;
+    isDragging = false;
+
+    get x() {
+        return this.#x;
+    }
+
+    set x(value) {
+        this.#x = value;
+    }
+
+    get y() {
+        return this.#y;
+    }
+
+    set y(value) {
+        this.#y = value;
+    }
+
+    get position() {
+        return createVector(this.#x, this.#y).mult(this.#size);
+    }
+
+    setPosition(position) {
+        this.#x = position.x;
+        this.#y = position.y;
+    }
+    
+    //constructor voor een tegel die het positioneren, een afbeelding en een sleep-boolean geeft
+    constructor(image, size, x, y, tileType) {
+        this.#image = image;
+        this.#size = size;
+        this.#x = x;
+        this.#y = y;
+        this.tileType = tileType;
+    } 
+```
+Hierboven staat het stukje code wat voor ons de tiles maakt. deze code zorgt er voor dat als wij nog een tile willen maken. dit maakt het dan een stuk makkelijker om allemaal te coderen met locatie, grootte en welk plaatje het is dan dat wij het allemaal opnieuw moeten schrijven.
+
+```javascript
+    // Customizable levels and points needed to finish
+    static levels = [
+        {
+            grid: [
+                [0, 0, 1, 3, 2, 2],
+                [0, 0, 1, 1, 3, 2],
+                [0, 0, 3, 3, 1, 3],
+                [0, 0, 3, 1, 3, 2],
+                [0, 0, 1, 2, 1, 2],
+                [0, 0, 2, 3, 1, 1],
+                [0, 0, 0, 0, 0, 0]
+            ],
+            pointRequirement: 1000,
+            turnCounter: 10
+```
+en ja, zelfs de tilemap is encapsulation. dit zorgt er voor dat wij zonder moeite in dit grid systeem een level kunnen maken en dit zonder moeite kunnen stoppen in andere code wat er voor zorgt dat het spel je automatisch brengt naar bijvoorbeeld een level 5 als je level 4 heb gehaald. 
 
 )
 
