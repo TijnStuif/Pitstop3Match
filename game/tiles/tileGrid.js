@@ -61,6 +61,19 @@ class TileGrid {
             pointRequirement: 1800,
             turnCounter: 25
         },
+        {
+            grid: [
+                [0, 0, 2, 1, 3, 5],
+                [0, 0, 1, 4, 1, 5],
+                [0, 0, 3, 3, 4, 5],
+                [0, 0, 4, 3, 2, 5],
+                [0, 0, 3, 4, 1, 5],
+                [0, 0, 2, 4, 3, 5],
+                [0, 0, 0, 0, 0, 0]
+            ],
+            pointRequirement: 2000,
+            turnCounter: 25
+        },
         // Follow this method for more levels
     ];
 
@@ -69,7 +82,7 @@ class TileGrid {
         this.#tileSize = tileSize;
         this.#width = width;
         this.#height = height;
-        this.currentLevel = 1; // Start from level 1
+        this.currentLevel = 5; // Start from level 1
         this.levelCompleted = false;
         this.startLevelValueCheck();
         this.pointRequirement;
@@ -173,7 +186,8 @@ class TileGrid {
                     continue;
                 }
                 if (this.#tiles[x][y] && this.#tiles[x-1] && this.#tiles[x-1][y] && this.#tiles[x+1] && this.#tiles[x+1][y]) {
-                    if (this.#tiles[x][y].tileType == this.#tiles[x+1][y].tileType && this.#tiles[x][y].tileType == this.#tiles[x-1][y].tileType) {
+                    if (this.#tiles[x][y].tileType == this.#tiles[x+1][y].tileType 
+                        && this.#tiles[x][y].tileType == this.#tiles[x-1][y].tileType && this.#tiles[x][y].tileType !== 5) {
                         this.distributePoints(x, y);
                         this.#tiles[x][y] = null
                         this.#tiles[x+1][y] = null
@@ -181,7 +195,8 @@ class TileGrid {
                     }
                 }
                 if (this.#tiles[x][y] && this.#tiles[y-1] && this.#tiles[x][y-1] && this.#tiles[y+1] && this.#tiles[x][y+1]) {
-                    if (this.#tiles[x][y].tileType == this.#tiles[x][y+1].tileType && this.#tiles[x][y].tileType == this.#tiles[x][y-1].tileType) {
+                    if (this.#tiles[x][y].tileType == this.#tiles[x][y+1].tileType 
+                        && this.#tiles[x][y].tileType == this.#tiles[x][y-1].tileType && this.#tiles[x][y].tileType !== 5) {
                         this.distributePoints(x, y);
                         this.#tiles[x][y] = null
                         this.#tiles[x][y+1] = null
