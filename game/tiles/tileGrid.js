@@ -161,7 +161,7 @@ class TileGrid {
 
         for (let x = 0; x < this.#width; x++) {
             for (let y = this.#height - 2; y >= 0; y--) {
-                if (this.#tiles[x][y] != null && !this.#tiles[x][y + 1] && this.#tiles[x][y].tileType !== 5) {
+                if (this.#tiles[x][y] && !this.#tiles[x][y + 1] && this.#tiles[x][y].tileType !== 5) {
                     // Move the tile down if there is an empty space below
                     this.tileGravity(x, y, x, y + 1);
                 }
@@ -192,8 +192,7 @@ class TileGrid {
                 if (this.#tiles[x][y] != null)
                 this.#tiles[x][y].draw();
 
-                if (!this.#tiles[x][1] && !this.#tiles[x][2] || 
-                    !this.#tiles[x][1] && !this.#tiles[x][2] && !this.#tiles[x][3] && !this.#tiles[x][4]) {
+                if (!this.#tiles[x][2]) {
                     let randomTileType;
                     randomTileType = Math.floor(random(1,5))
                     switch (randomTileType) {
