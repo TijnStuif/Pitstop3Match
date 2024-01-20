@@ -17,7 +17,7 @@ function preload() {
     dbConnection.createUser();
 }
 
-//sets up the canvas
+//sets up the canvas, and all the buttons
 function setup() {
     createCanvas(500, 500);
     switchScreen(0);
@@ -28,7 +28,6 @@ function setup() {
     level2 = new Button(375, 170, "Level 2", 2, true);
     level3 = new Button(375, 190, "Level 3", 2, true);
     level4 = new Button(375, 210, "Level 4", 2, true);
-    //goToGarage = new Button(200, 300, "Go to garage", 5, true);
     scrapCar = new Car(gameManager.getImage("ScrapCar"), 450, 50);
 }
 
@@ -82,8 +81,6 @@ function draw() {
         text("congratulations", 50, 50);
         text(`you beat level ${tileGrid.currentLevel}`, 50, 100);
         text(`continue to level ${tileGrid.currentLevel + 1}?`, 50, 150);
-        //text(`return to the garage?`, 25, 250);
-        //goToGarage.button.show();
 
     }
     if (screenIndex == 4) {

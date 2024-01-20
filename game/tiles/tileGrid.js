@@ -59,7 +59,7 @@ class TileGrid {
                 [0, 0, 0, 0, 0, 0]
             ],
             scoreRequirement: 2500,
-            turnCounter: 25
+            turnCounter: 20
         },
         {
             grid: [
@@ -72,7 +72,7 @@ class TileGrid {
                 [0, 0, 0, 0, 0, 0]
             ],
             scoreRequirement: 2500,
-            turnCounter: 25
+            turnCounter: 20
         },
         // Follow this method for more levels
     ];
