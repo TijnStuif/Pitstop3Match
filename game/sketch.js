@@ -22,8 +22,8 @@ function setup() {
     createCanvas(500, 500);
     switchScreen(0);
     openGarage = new Button(350, 150, "Open the garage", 1, false);
-    nextLevel = new Button(200, 200, "Continue", 2, true);
-    backToGarage = new Button(200, 200, "Back to garage", 5, true);
+    nextLevel = new Button(300, 200, "Continue", 2, true, true);
+    backToGarage = new Button(100, 200, "Back to garage", 5, true, false);
     level1 = new Button(375, 150, "Level 1", 2, true, 1);
     level2 = new Button(375, 170, "Level 2", 2, true, 2);
     level3 = new Button(375, 190, "Level 3", 2, true, 3);
@@ -34,7 +34,6 @@ function setup() {
 
 //draws the background and activates the draw function from tileGrid
 function draw() {
-    console.log(tileGrid.currentLevel)
     noStroke();
     if (screenIndex == 0) {
         image(gameManager.getImage("ClosedGarage"), 0, 0, 500, 500);
@@ -84,7 +83,8 @@ function draw() {
         text("congratulations", 50, 50);
         text(`you beat level ${tileGrid.currentLevel}`, 50, 100);
         text(`continue to level ${tileGrid.currentLevel + 1}?`, 50, 150);
-
+        nextLevel.button.show();
+        backToGarage.button.show();
     }
     if (screenIndex == 4) {
         clear();
@@ -127,11 +127,12 @@ function draw() {
 }
 
 function hideButtons() {
-    level1.button.hide()
-    level2.button.hide()
-    level3.button.hide()
-    level4.button.hide()
-    level5.button.hide()
+    backToGarage.button.hide();
+    level1.button.hide();
+    level2.button.hide();
+    level3.button.hide();
+    level4.button.hide();
+    level5.button.hide();
 }
 
 //does all the logic for a touch start

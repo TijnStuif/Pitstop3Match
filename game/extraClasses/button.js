@@ -12,8 +12,12 @@ class Button {
             this.button.hide();
         }
         this.button.mousePressed(() => {
-            if (tileGrid.levelCompleted) {
+            if (tileGrid.levelCompleted && mouseX > 250) {
+                console.log("we going to the next level")
                 tileGrid.goToNextLevel();
+            } else if (tileGrid.levelCompleted && mouseX < 250) {
+                console.log("no")
+                tileGrid.levelCompleted = false;
             }
             if (screenIndex === 5) {
                 tileGrid.currentLevel = currentLevel;
