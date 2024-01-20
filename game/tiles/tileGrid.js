@@ -7,7 +7,7 @@ class TileGrid {
     #width;
     #height;
 
-    // Customizable levels and points needed to finish
+    // Customizable levels and scores needed to finish
     static levels = [
         {
             grid: [
@@ -19,7 +19,7 @@ class TileGrid {
                 [0, 0, 2, 3, 1, 1],
                 [0, 0, 0, 0, 0, 0]
             ],
-            pointRequirement: 1000,
+            scoreRequirement: 1500,
             turnCounter: 10
         },
         {
@@ -32,7 +32,7 @@ class TileGrid {
                 [0, 0, 2, 3, 2, 1],
                 [0, 0, 0, 0, 0, 0]
             ],
-            pointRequirement: 1500,
+            scoreRequirement: 2000,
             turnCounter: 15
         },
         {
@@ -45,7 +45,7 @@ class TileGrid {
                 [0, 0, 5, 3, 1, 1],
                 [0, 0, 0, 0, 0, 0]
             ],
-            pointRequirement: 1400,
+            scoreRequirement: 1750,
             turnCounter: 15
         },
         {
@@ -58,7 +58,7 @@ class TileGrid {
                 [0, 0, 5, 4, 3, 5],
                 [0, 0, 0, 0, 0, 0]
             ],
-            pointRequirement: 1800,
+            scoreRequirement: 2500,
             turnCounter: 25
         },
         {
@@ -71,7 +71,7 @@ class TileGrid {
                 [0, 0, 2, 4, 3, 5],
                 [0, 0, 0, 0, 0, 0]
             ],
-            pointRequirement: 2000,
+            scoreRequirement: 2500,
             turnCounter: 25
         },
         // Follow this method for more levels
@@ -85,7 +85,7 @@ class TileGrid {
         this.currentLevel = 1; // Start from level 1
         this.levelCompleted = false;
         this.startLevelValueCheck();
-        this.pointRequirement;
+        this.scoreRequirement;
         this.turnCounter;
         this.#generateTileGrid();
     }
@@ -155,7 +155,7 @@ class TileGrid {
             this.#generateTileGrid();
             scrapCar.checkBeginLevel();
             this.levelCompleted = false;
-            scrapCar.speedMultiplier = width / this.pointRequirement;
+            scrapCar.speedMultiplier = width / this.scoreRequirement;
 
         } else {
             // Handle game completion or loop back to the first level
@@ -177,7 +177,7 @@ class TileGrid {
     }
 
     startLevelValueCheck() {
-        this.pointRequirement = TileGrid.levels[this.currentLevel - 1].pointRequirement;
+        this.scoreRequirement = TileGrid.levels[this.currentLevel - 1].scoreRequirement;
         this.turnCounter = TileGrid.levels[this.currentLevel - 1].turnCounter;
     }
 
@@ -198,19 +198,12 @@ class TileGrid {
         }
     }
 
-    distributePoints(x, y) {
-        if (this.#tiles[x][y].tileType == 4) {
-            score -= 50;
-        } else {
-            score += 100;
-        }
-    }
 
-    givePoints(matchAmount, tileType) {
+    distributeScore(matchAmount, tileType) {
         if (tileType === 4) {
-            score -= 10 * matchAmount;
+            score -= 25 * matchAmount;
         } else {
-            score += 20 * matchAmount;
+            score += 50 * matchAmount;
         }
     }
 
@@ -308,14 +301,14 @@ class TileGrid {
                 this.clearTile(tile.x, tile.y);
             }
             matchFound = true;
-            this.givePoints(horizontalMatchLength, tileType)
+            this.distributeScore(horizontalMatchLength, tileType)
         }
         if (verticalMatchLength >= 3) {
             for (const tile of verticalMatchedTiles) {
                 this.clearTile(tile.x, tile.y);
             }
             matchFound = true;
-            this.givePoints(verticalMatchLength, tileType)
+            this.distributeScore(verticalMatchLength, tileType)
         }
         if (matchFound) {
             this.clearTile(x, y)
@@ -392,6 +385,7 @@ class TileGrid {
     checkGravity(x, y) {
         if (y >= 5) return;
         if (!this.doesTileExist(x, y)) return;
+        if (this.#tiles[x][y].tileType === 5) return;
         while (!this.doesTileExist(x, y + 1) && y < 6) {
             this.#tiles[x][y].setPosition(createVector(x, y + 1))
             this.#tiles[x][y + 1] = this.#tiles[x][y];

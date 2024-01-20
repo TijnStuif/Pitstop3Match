@@ -9,7 +9,7 @@ class Car {
         this.y = y;
         this.startLevelX = x;
         this.startLevelY = y;
-        this.speedMultiplier = width / tileGrid.pointRequirement
+        this.speedMultiplier = width / tileGrid.scoreRequirement
         this.size = 100;
     }
 

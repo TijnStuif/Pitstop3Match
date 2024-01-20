@@ -59,7 +59,7 @@ function draw() {
         textSize(30);
         fill(0);
         text(score, 430, 75);
-        if (score >= tileGrid.pointRequirement) {
+        if (score >= tileGrid.scoreRequirement) {
             tileGrid.levelCompleted = true;
             savedScore = score;
             score = 0;
@@ -71,7 +71,7 @@ function draw() {
         }
         textSize(30);
         text(`turns left: ${tileGrid.turnCounter}`, 10, 50)
-        text(`score required: ${tileGrid.pointRequirement}`, 220, 50)
+        text(`score required: ${tileGrid.scoreRequirement}`, 220, 50)
         tileGrid.draw();
     }
 
