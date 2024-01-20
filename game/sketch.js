@@ -7,6 +7,7 @@ let score = 0;
 let savedScore = 0;
 let screenIndex;
 let startScreenTimer = 0;
+let coinTotal = 0;
 const tileWidth = 6, tileHeight = 6, tileSize = 80;
 
 //preloads GameManager and the tileGrid
@@ -63,10 +64,12 @@ function draw() {
         if (score >= tileGrid.scoreRequirement) {
             tileGrid.levelCompleted = true;
             savedScore = score;
+            coinTotal += Math.floor(score / 10);
             score = 0;
             switchScreen(3);
         } else if (tileGrid.turnCounter == 0) {
             savedScore = score;
+            coinTotal += Math.floor(score / 10);
             score = 0;
             switchScreen(4);
         }
@@ -97,6 +100,9 @@ function draw() {
     if (screenIndex == 5) {
         image(gameManager.getImage("OpenGarage"), 0, 0, 500, 500);
         image(scrapCar.image, 100, 200, scrapCar.size * 2, scrapCar.size * 2);
+        fill(255);
+        textSize(30);
+        text(`total coins: ${coinTotal}`, 150, 200)
         if (tileGrid.currentLevel === 1) {
             level1.button.show();
         }
