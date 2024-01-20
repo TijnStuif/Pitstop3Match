@@ -24,15 +24,17 @@ function setup() {
     openGarage = new Button(350, 150, "Open the garage", 1, false);
     nextLevel = new Button(200, 200, "Continue", 2, true);
     backToGarage = new Button(200, 200, "Back to garage", 5, true);
-    level1 = new Button(375, 150, "Level 1", 2, true);
-    level2 = new Button(375, 170, "Level 2", 2, true);
-    level3 = new Button(375, 190, "Level 3", 2, true);
-    level4 = new Button(375, 210, "Level 4", 2, true);
+    level1 = new Button(375, 150, "Level 1", 2, true, 1);
+    level2 = new Button(375, 170, "Level 2", 2, true, 2);
+    level3 = new Button(375, 190, "Level 3", 2, true, 3);
+    level4 = new Button(375, 210, "Level 4", 2, true, 4);
+    level5 = new Button(375, 210, "Level 5", 2, true, 5);
     scrapCar = new Car(gameManager.getImage("ScrapCar"), 450, 50);
 }
 
 //draws the background and activates the draw function from tileGrid
 function draw() {
+    console.log(tileGrid.currentLevel)
     noStroke();
     if (screenIndex == 0) {
         image(gameManager.getImage("ClosedGarage"), 0, 0, 500, 500);
@@ -51,6 +53,7 @@ function draw() {
     }
 
     if (screenIndex == 2) {
+        hideButtons();
         image(gameManager.getImage("GameBackground"), 0, 0, 500, 500);
         image(scrapCar.image, scrapCar.x, scrapCar.y, scrapCar.size, scrapCar.size);
         scrapCar.calculatePosition();
@@ -94,9 +97,41 @@ function draw() {
     if (screenIndex == 5) {
         image(gameManager.getImage("OpenGarage"), 0, 0, 500, 500);
         image(scrapCar.image, 100, 200, scrapCar.size * 2, scrapCar.size * 2);
-        level1.button.show();
+        if (tileGrid.currentLevel === 1) {
+            level1.button.show();
+        }
+        if (tileGrid.currentLevel === 2) {
+            level1.button.show();
+            level2.button.show();
+        }
+        if (tileGrid.currentLevel === 3) {
+            level1.button.show();
+            level2.button.show();
+            level3.button.show();
+        }
+        if (tileGrid.currentLevel === 4) {
+            level1.button.show();
+            level2.button.show();
+            level3.button.show();
+            level4.button.show();
+        }
+        if (tileGrid.currentLevel === 5) {
+            level1.button.show();
+            level2.button.show();
+            level3.button.show();
+            level4.button.show();
+            level5.button.show();
+        }
         nextLevel.button.hide();
     }
+}
+
+function hideButtons() {
+    level1.button.hide()
+    level2.button.hide()
+    level3.button.hide()
+    level4.button.hide()
+    level5.button.hide()
 }
 
 //does all the logic for a touch start

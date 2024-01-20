@@ -87,6 +87,7 @@ class TileGrid {
         this.startLevelValueCheck();
         this.scoreRequirement;
         this.turnCounter;
+        this.gameCompleted = false;
         this.#generateTileGrid();
     }
 
@@ -135,13 +136,10 @@ class TileGrid {
     }
 
     resetLevel() {
-        if (screenIndex !== 2) {
-            return;
+        if (true) {
+            this.startLevelValueCheck();
+            this.#generateTileGrid();
         }
-        switchScreen(2);
-        this.startLevelValueCheck;
-        this.#generateTileGrid();
-        scrapCar.checkBeginLevel();
     }
 
     // Add a function to move to the next level
@@ -160,22 +158,20 @@ class TileGrid {
         } else {
             // Handle game completion or loop back to the first level
             // For now, let's loop back to the first level
-            this.currentLevel = 1;
-            this.startLevelValueCheck();
-            this.#generateTileGrid();
-            scrapCar.checkBeginLevel();
-            scrapCar.speedMultiplier = 0.5;
-            this.levelCompleted = false;
+            this.currentLevel = 0;
+            this.gameCompleted = true;
         }
         this.setLevelIndex(this.currentLevel)
     }
 
+    //checks if a level is completed, then shows the next level button
     checkIfNextLevelIsUnlocked() {
         if(screenIndex == 3 && this.levelCompleted) {
                 nextLevel.button.show();
         }
     }
 
+    //sets scoreRequirement and turnCounter to be the value given at the start of a level
     startLevelValueCheck() {
         this.scoreRequirement = TileGrid.levels[this.currentLevel - 1].scoreRequirement;
         this.turnCounter = TileGrid.levels[this.currentLevel - 1].turnCounter;
@@ -198,7 +194,7 @@ class TileGrid {
         }
     }
 
-
+    //function that determines the score given to the player based on the tile that is matched and the amount of tiles removed
     distributeScore(matchAmount, tileType) {
         if (tileType === 4) {
             score -= 25 * matchAmount;
@@ -232,7 +228,7 @@ class TileGrid {
         return this.#tiles[x][y];
     }
 
-    //function that gives tiles a moving function
+    //function that checks if a tile is getting dragged or not, and then returns the tile
     getDraggingTile() {
         for (let x = 0; x < this.#width; x++) {
             for (let y = 0; y < this.#height; y++) {
@@ -296,6 +292,8 @@ class TileGrid {
         }
 
         let matchFound = false;
+        //removes tiles from the grid if there's a match found in horizontal direction,
+        //then distributes score based on the amount of tiles cleared
         if (horizontalMatchLength >= 3) {
             for (const tile of horizontalMatchedTiles) {
                 this.clearTile(tile.x, tile.y);
@@ -303,6 +301,8 @@ class TileGrid {
             matchFound = true;
             this.distributeScore(horizontalMatchLength, tileType)
         }
+        //removes tiles from the grid if there's a match found in vertical direction, 
+        //then distributes score based on the amount of tiles cleared
         if (verticalMatchLength >= 3) {
             for (const tile of verticalMatchedTiles) {
                 this.clearTile(tile.x, tile.y);
@@ -316,10 +316,12 @@ class TileGrid {
         return matchFound;
     }
 
+    //function that makes removing tiles faster and more logical
     clearTile(x, y) {
         this.#tiles[x][y] = null;
     }
 
+    //function that checks if a tile exists, returns true if it exists, else it returns false
     doesTileExist(x, y) {
         try {
         return this.#tiles[x][y];
@@ -328,13 +330,14 @@ class TileGrid {
         }
     }
 
+    //function that checks if there's a match between the tiletype of 2 tiles next to each other
     doesTileMatch(x, y, tileType) {
         if (!this.doesTileExist(x, y)) return false;
         const otherTileType = this.#tiles[x][y].tileType;
         return otherTileType === tileType;
     }
 
-
+    //function that adds a swap to adjacent tiles
     swap(x1, y1, x2, y2) {
         const isAdjacentX = (x1 === x2) && (Math.abs(y1 - y2) === 1);
         const isAdjacentY = (y1 === y2) && (Math.abs(x1 - x2) === 1);
@@ -358,22 +361,7 @@ class TileGrid {
         this.checkForMatch(x2, y2);
     }
 
-    tileGravity(x1, y1, x2, y2) {
-        let temp = this.#tiles[x1][y1];
-        this.#tiles[x1][y1] = this.#tiles[x2][y2];
-        this.#tiles[x2][y2] = temp;
-        temp = null;
-        if (this.#tiles[x1][y1] != null) {
-            this.#tiles[x1][y1].setPosition(createVector(x1, y1));
-        }
-    
-        if (this.#tiles[x2][y2] != null) {
-            this.#tiles[x2][y2].setPosition(createVector(x2, y2));
-        }
-        this.checkForMatch(x1, y1);
-        this.checkForMatch(x2, y2);
-    }
-
+    //function that goes by every tile in the grid to check if they can be moved downwards
     simulateGravity() {
         for (let x = 0; x < this.#width; x++) {
             for (let y = this.#height - 1; y > 1; y--) {
@@ -382,6 +370,7 @@ class TileGrid {
         }
     }
 
+    //function that moves the tiles downwards if there's no tile below them
     checkGravity(x, y) {
         if (y >= 5) return;
         if (!this.doesTileExist(x, y)) return;
@@ -395,7 +384,8 @@ class TileGrid {
             y += 1;
         }
     }
-
+    
+    //function that spawns random tiles at the top of the screen if there's no tile there already
     spawnTile(x) {
         const randomTileType = Math.floor(random(1,5));
         let tile = null;
@@ -421,6 +411,7 @@ class TileGrid {
         }
     }
 
+    //function that checks the top row of the grid and then spawns tiles if there are no tiles there
     refillAllTiles() {
         for(let x = 0; x < this.#width; x++) {
             if (!this.doesTileExist(x, 2)) {

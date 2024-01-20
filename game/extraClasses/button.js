@@ -4,7 +4,7 @@ class Button {
     text;
     button;
 
-    constructor(x, y, text, screenIndex, startsHidden) {
+    constructor(x, y, text, buttonScreenIndex, startsHidden, currentLevel) {
         this.text = text;
         this.button = createButton(text);
         this.button.position(x,y);
@@ -15,8 +15,11 @@ class Button {
             if (tileGrid.levelCompleted) {
                 tileGrid.goToNextLevel();
             }
-            switchScreen(screenIndex);
-            //tileGrid.resetLevel();
+            if (screenIndex === 5) {
+                tileGrid.currentLevel = currentLevel;
+            }
+            tileGrid.resetLevel();
+            switchScreen(buttonScreenIndex);
             this.button.hide();
         });
     }

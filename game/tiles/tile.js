@@ -25,6 +25,7 @@ class Tile {
         return createVector(this.#x, this.#y).mult(this.#size);
     }
 
+    //sets position of a tile based on the x and y values given in the constructor
     setPosition(position) {
         this.#x = position.x;
         this.#y = position.y;
@@ -40,14 +41,12 @@ class Tile {
     }  
 
     draw() {
-        //tileGrid.getTileAtPosition(this.position);
         //static image that is displayed whenever a tile is not moving
         if (!this.isDragging) {
             image(this.#image, this.position.x, this.position.y, this.#size, this.#size);
         }
         //logic that gives tiles a grid-like movement, and displays it moving
         if (this.isDragging) {
-            // mouse coordinates, snapped to grid using math.floor
             const snappedX = Math.floor(mouseX / this.#size) * this.#size;
             const snappedY = Math.floor(mouseY / this.#size) * this.#size;
             image(this.#image, snappedX, snappedY, this.#size, this.#size);
