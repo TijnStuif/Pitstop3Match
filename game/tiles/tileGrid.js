@@ -83,6 +83,7 @@ class TileGrid {
         this.#width = width;
         this.#height = height;
         this.currentLevel = 1; // Start from level 1
+        this.highestLevelBeaten = 1;
         this.levelCompleted = false;
         this.startLevelValueCheck();
         this.scoreRequirement;
@@ -135,11 +136,10 @@ class TileGrid {
         }
     }
 
+    //resets the level when returning to the garage for example
     resetLevel() {
-        if (true) {
-            this.startLevelValueCheck();
-            this.#generateTileGrid();
-        }
+        this.startLevelValueCheck();
+        this.#generateTileGrid();
     }
 
     // Add a function to move to the next level
@@ -149,16 +149,15 @@ class TileGrid {
 
         if (this.currentLevel < TileGrid.levels.length && this.levelCompleted) {
             this.currentLevel++;
+            this.highestLevelBeaten++;
             this.startLevelValueCheck();
             this.#generateTileGrid();
             scrapCar.checkBeginLevel();
             this.levelCompleted = false;
             scrapCar.speedMultiplier = width / this.scoreRequirement;
-
         } else {
             // Handle game completion or loop back to the first level
             // For now, let's loop back to the first level
-            this.currentLevel = 0;
             this.gameCompleted = true;
         }
         this.setLevelIndex(this.currentLevel)

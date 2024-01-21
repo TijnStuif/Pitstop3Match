@@ -29,12 +29,13 @@ function setup() {
     level2 = new Button(375, 170, "Level 2", 2, true, 2);
     level3 = new Button(375, 190, "Level 3", 2, true, 3);
     level4 = new Button(375, 210, "Level 4", 2, true, 4);
-    level5 = new Button(375, 210, "Level 5", 2, true, 5);
+    level5 = new Button(375, 230, "Level 5", 2, true, 5);
     scrapCar = new Car(gameManager.getImage("ScrapCar"), 450, 50);
 }
 
 //draws the background and activates the draw function from tileGrid
 function draw() {
+    console.log(tileGrid.currentLevel)
     noStroke();
     if (screenIndex == 0) {
         image(gameManager.getImage("ClosedGarage"), 0, 0, 500, 500);
@@ -121,7 +122,7 @@ function draw() {
             level3.button.show();
             level4.button.show();
         }
-        if (tileGrid.currentLevel === 5) {
+        if (tileGrid.currentLevel === 5 || tileGrid.currentLevel === 0) {
             level1.button.show();
             level2.button.show();
             level3.button.show();
