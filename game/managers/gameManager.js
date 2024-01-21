@@ -11,4 +11,8 @@ class GameManager {
     getImage(assetname) {
         return this.#assetManager.getImage(assetname);
     }
+
+    getSound(assetname) {
+        return this.#assetManager.getSound(assetname);
+    }
 }

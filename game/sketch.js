@@ -16,6 +16,7 @@ function preload() {
     tileGrid = new TileGrid(tileWidth, tileHeight, tileSize);
     dbConnection = new DatabaseConnection();
     dbConnection.createUser();
+    mainMenuTheme = loadSound('assets/images/sound/Pitstop_main_menu.mp3');
 }
 
 //sets up the canvas, and all the buttons
@@ -31,17 +32,16 @@ function setup() {
     level4 = new Button(375, 210, "Level 4", 2, true, 4);
     level5 = new Button(375, 230, "Level 5", 2, true, 5);
     scrapCar = new Car(gameManager.getImage("ScrapCar"), 450, 50);
+    mainMenuTheme.onended(loopSound);
 }
 
 //draws the background and activates the draw function from tileGrid
 function draw() {
-    console.log(tileGrid.currentLevel)
     noStroke();
     if (screenIndex == 0) {
         image(gameManager.getImage("ClosedGarage"), 0, 0, 500, 500);
         openGarage.button.show();
     }
-
     if (screenIndex == 1) {
         image(gameManager.getImage("OpeningGarageGif"), 0, 0, 500, 500);
         startScreenTimer += 1;
@@ -168,3 +168,11 @@ function touchEnded(event) {
 function switchScreen (screenSwitcher) {
     screenIndex = screenSwitcher
 }
+
+function playSong (songName) {
+    songName.play();
+}
+
+function loopSound() {
+    mainMenuTheme.loop();
+  }

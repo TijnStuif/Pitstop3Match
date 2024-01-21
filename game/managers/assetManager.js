@@ -1,9 +1,12 @@
 class AssetManager {
     static #instance;
     #images;
+    #sound;
     constructor() {
         this.#images = new Map();
+        this.#sound = new Map();
         this.#loadImages();
+        this.#loadSound();
         window.assetManager = this;
     }
 
@@ -23,11 +26,23 @@ class AssetManager {
         this.#images.set("YellowBlackSign", loadImage("assets/images/car_parts/YellowBlackSign.png"));
     }
 
+    #loadSound() {
+        this.#sound.set("MainMenuTheme", loadSound("assets/images/sound/Pitstop_main_menu.mp3"))
+    }
+
     getImage(assetname) {
         try {
             return this.#images.get(assetname);
         } catch (exc) {
             throw new Error("file does not exist!");
+        }
+    }
+
+    getSound(assetname) {
+        try {
+            return this.#sound.get(assetname);
+        } catch (exc) {
+            throw new Error("sound file does not exist.")
         }
     }
 }

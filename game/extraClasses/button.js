@@ -15,6 +15,7 @@ class Button {
             if (tileGrid.gameCompleted) {
                 fill(0);
                 console.log("you won wahoo!");
+                return;
             }
             if (tileGrid.levelCompleted && mouseX > 250) {
                 tileGrid.goToNextLevel();
@@ -24,6 +25,9 @@ class Button {
             }
             if (screenIndex === 5) {
                 tileGrid.currentLevel = currentLevel;
+            }
+            if (screenIndex === 0) {
+                playSong(mainMenuTheme);
             }
             tileGrid.resetLevel();
             switchScreen(buttonScreenIndex);
