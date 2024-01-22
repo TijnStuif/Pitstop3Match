@@ -14,12 +14,11 @@ class Button {
         //all the logic when a button is pressed
         this.button.mousePressed(() => {
             //logs message when game is completed
-            if (tileGrid.gameCompleted) {
-                fill(0);
-                console.log("you won wahoo!");
+            //sends player to next level if continue button is pressed
+            if (tileGrid.currentLevel == 5 && screenIndex === 3) {
+                tileGrid.goToNextLevel();
                 return;
             }
-            //sends player to next level if continue button is pressed
             if (tileGrid.levelCompleted && mouseX > 250) {
                 tileGrid.goToNextLevel();
             //checks if player completed a level and went back to the garage, and then updates the highest level beaten accordingly

@@ -146,7 +146,6 @@ class TileGrid {
     goToNextLevel() {
         switchScreen(2);
         this.#generateTileGrid();
-
         if (this.currentLevel < TileGrid.levels.length && this.levelCompleted) {
             this.currentLevel++;
             this.highestLevelBeaten++;

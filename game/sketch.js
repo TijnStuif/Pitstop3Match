@@ -33,12 +33,20 @@ function setup() {
     level5 = new Button(375, 230, "Level 5", 2, true, 5);
     scrapCar = new Car(gameManager.getImage("ScrapCar"), 450, 50);
     checkEndSound(mainMenuTheme);
-    
 }
 
 //draws the background and activates the draw function from tileGrid
 function draw() {
     noStroke();
+    console.log(tileGrid.gameCompleted);
+    if (tileGrid.gameCompleted) {
+        clear();
+        hideButtons();
+        textSize(50);
+        text("YOU WON!", 100, 200);
+        image(gameManager.getImage("FastCar"), 150, 250, 100, 100);
+        return;
+    }
     if (screenIndex == 0) {
         image(gameManager.getImage("ClosedGarage"), 0, 0, 500, 500);
         openGarage.button.show();
@@ -141,6 +149,7 @@ function hideButtons() {
     level3.button.hide();
     level4.button.hide();
     level5.button.hide();
+    nextLevel.button.hide();
 }
 
 //does all the logic for a touch start
