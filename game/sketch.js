@@ -62,7 +62,7 @@ function draw() {
         scrapCar.checkEndLevel();
         textSize(30);
         fill(0);
-        text(score, 430, 75);
+        text(`score obtained: ${score}`, 220, 75);
         if (score >= tileGrid.scoreRequirement) {
             tileGrid.levelCompleted = true;
             savedScore = score;
