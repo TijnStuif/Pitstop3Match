@@ -38,6 +38,7 @@ function setup() {
 //draws the background and activates the draw function from tileGrid
 function draw() {
     noStroke();
+    console.log(draggingTile);
     if (tileGrid.gameCompleted) {
         clear();
         hideButtons();

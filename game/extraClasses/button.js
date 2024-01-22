@@ -19,10 +19,10 @@ class Button {
                 tileGrid.goToNextLevel();
                 return;
             }
-            if (tileGrid.levelCompleted && mouseX > 250) {
+            if (tileGrid.levelCompleted && x > 250) {
                 tileGrid.goToNextLevel();
             //checks if player completed a level and went back to the garage, and then updates the highest level beaten accordingly
-            } else if (tileGrid.levelCompleted && mouseX < 250) {
+            } else if (tileGrid.levelCompleted && x < 250) {
                 tileGrid.levelCompleted = false;
                 if (tileGrid.highestLevelBeaten <= tileGrid.currentLevel) {
                 tileGrid.highestLevelBeaten++;
