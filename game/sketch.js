@@ -32,7 +32,8 @@ function setup() {
     level4 = new Button(375, 210, "Level 4", 2, true, 4);
     level5 = new Button(375, 230, "Level 5", 2, true, 5);
     scrapCar = new Car(gameManager.getImage("ScrapCar"), 450, 50);
-    mainMenuTheme.onended(loopSound);
+    checkEndSound(mainMenuTheme);
+    
 }
 
 //draws the background and activates the draw function from tileGrid
@@ -173,6 +174,10 @@ function playSong (songName) {
     songName.play();
 }
 
-function loopSound() {
-    mainMenuTheme.loop();
+function checkEndSound (songName) {
+    songName.onended(loopSound)
+}
+
+function loopSound(songName) {
+    songName.loop();
   }
