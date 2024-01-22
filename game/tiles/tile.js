@@ -40,15 +40,15 @@ class Tile {
         this.tileType = tileType;
     }  
 
-    draw() {
+    draw(x, y) {
         //static image that is displayed whenever a tile is not moving
         if (!this.isDragging) {
-            image(this.#image, this.position.x, this.position.y, this.#size, this.#size);
+            image(this.#image, x, y, this.#size, this.#size);
         }
         //logic that gives tiles a grid-like movement, and displays it moving
         if (this.isDragging) {
-            const snappedX = Math.floor(mouseX / this.#size) * this.#size;
-            const snappedY = Math.floor(mouseY / this.#size) * this.#size;
+            const snappedX = Math.floor(x / this.#size) * this.#size;
+            const snappedY = Math.floor(y / this.#size) * this.#size;
             image(this.#image, snappedX, snappedY, this.#size, this.#size);
         }
     }
