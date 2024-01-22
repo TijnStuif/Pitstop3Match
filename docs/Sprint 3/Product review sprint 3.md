@@ -13,8 +13,8 @@ Testplan:
 
 Wat is je naam, en hoe oud ben je?
 <ul>
-    <li>-</li>
-    <li>-</li>
+    <li>-Lennon, 21</li>
+    <li>-Youri, 17</li>
     <li>-</li>
     <li>-</li>
     <li>-</li>
@@ -24,8 +24,8 @@ Wat is je naam, en hoe oud ben je?
 
 Wat vind je van het openingsscherm en de garage?
 <ul>
-    <li>-</li>
-    <li>-</li>
+    <li>-Geeft goed het thema weer van het spel, de stijl van het spel is duidelijk.</li>
+    <li>-Level knop placement is goed, coin counter staat een beetje random.</li>
     <li>-</li>
     <li>-</li>
     <li>-</li>
@@ -37,8 +37,8 @@ Je mag nu het spel spelen (max een paar minuten, afhankelijk van de persoon). Pr
 
 Wat vond je van de layout van de levels (waar staat alles op het scherm)?
 <ul>
-    <li>-</li>
-    <li>-</li>
+    <li>-Goede verdeling, boven alle info en beneden de grid.</li>
+    <li>-Wel goed te zien, alleen geef de tekst een soort achtergrond voor opvallendheid.</li>
     <li>-</li>
     <li>-</li>
     <li>-</li>
@@ -48,8 +48,8 @@ Wat vond je van de layout van de levels (waar staat alles op het scherm)?
 
 Wat vond je van de beweging van de tiles?
 <ul>
-    <li>-</li>
-    <li>-</li>
+    <li>-Tiles wisselen was duidelijk, maar de vallende tiles gaan te snel, niet duidelijk te zien waar ze heen gaan.</li>
+    <li>-Beweging is goed, alleen houd het wel bij beweging als er een match gemaakt wordt.</li>
     <li>-</li>
     <li>-</li>
     <li>-</li>
@@ -59,8 +59,8 @@ Wat vond je van de beweging van de tiles?
 
 Wat vond je van het matchen van de tiles?
 <ul>
-    <li>-</li>
-    <li>-</li>
+    <li>-De match die je zelf maakt is goed te zien, maar de rest van de matches zijn moeilijk te zien ivm snelheid.</li>
+    <li>-Matchen zelf is prima, alleen animatie toevoegen bij het naar beneden vallen.</li>
     <li>-</li>
     <li>-</li>
     <li>-</li>
@@ -70,8 +70,8 @@ Wat vond je van het matchen van de tiles?
 
 Wat vond je van het win/verliesscherm?
 <ul>
-    <li>-</li>
-    <li>-</li>
+    <li>-Handig om de coins die verdiend zijn, weer te geven op het eindscherm. Verder goed.</li>
+    <li>-Scherm is duidelijk, alleen als het spel gehaald is, moet dat wel duidelijk.</li>
     <li>-</li>
     <li>-</li>
     <li>-</li>
@@ -81,8 +81,8 @@ Wat vond je van het win/verliesscherm?
 
 Wat vond je van de soundtrack die wij hebben toegevoegd?
 <ul>
-    <li>-</li>
-    <li>-</li>
+    <li>-Goed en passend. Inspirerend en emotioneel.</li>
+    <li>-Goed nummer, chill nummer maar wel genoeg spanning.</li>
     <li>-</li>
     <li>-</li>
     <li>-</li>
@@ -92,8 +92,8 @@ Wat vond je van de soundtrack die wij hebben toegevoegd?
 
 Heb je nog punten waar je vastliep/gefrustreerd werd?
 <ul>
-    <li>-</li>
-    <li>-</li>
+    <li>-Nee.</li>
+    <li>-Het eindscherm werkte niet.</li>
     <li>-</li>
     <li>-</li>
     <li>-</li>
@@ -103,8 +103,8 @@ Heb je nog punten waar je vastliep/gefrustreerd werd?
 
 Heb je nog extra feedback die niet in een van de vorige kopjes past?
 <ul>
-    <li>-</li>
-    <li>-</li>
+    <li>-De knoppen kunnen styling gebruiken.</li>
+    <li>-Grotere en langere levels, met hogere scorevereisten en extra zetten. Voor hogere combo's van matches zou een powerup/extra effect fijn zijn.</li>
     <li>-</li>
     <li>-</li>
     <li>-</li>
@@ -114,8 +114,8 @@ Heb je nog extra feedback die niet in een van de vorige kopjes past?
 
 Zou je nog extra features willen zien in een volgende versie van het spel?
 <ul>
-    <li>-</li>
-    <li>-</li>
+    <li>-Shop voor coins.</li>
+    <li>-Combo-items voor extra diepte.</li>
     <li>-</li>
     <li>-</li>
     <li>-</li>
