@@ -17,6 +17,7 @@ function preload() {
     dbConnection = new DatabaseConnection();
     dbConnection.createUser();
     mainMenuTheme = loadSound('assets/images/sound/Pitstop_main_menu.mp3');
+    matchSound = loadSound('assets/images/sound/match_sound.wav');
 }
 
 //sets up the canvas, and all the buttons

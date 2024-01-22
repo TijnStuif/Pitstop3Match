@@ -35,6 +35,7 @@ class Button {
             }
             //starts the main theme when the second screen is entered
             if (screenIndex === 0) {
+                mainMenuTheme.setVolume(0.3, 0)
                 playSong(mainMenuTheme);
             }
             //resets level when any button is pressed, and switches screen to the buttonScreenIndex assigned with the constructor

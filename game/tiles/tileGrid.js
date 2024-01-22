@@ -197,6 +197,7 @@ class TileGrid {
         if (tileType === 4) {
             score -= 25 * matchAmount;
         } else {
+            matchSound.play();
             score += 50 * matchAmount;
         }
     }
