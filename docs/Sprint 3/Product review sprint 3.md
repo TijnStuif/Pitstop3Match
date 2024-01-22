@@ -1,6 +1,6 @@
 # Eerste Product review blok 2 Sprint 2.
 
-## K1 Je hebt (alle) user stories afgerond.
+## K1 Je hebt (een groot deel van) de user stories afgerond.
 
 ## K2 Je hebt de behoeftes van de doelgroep onderzocht en gebruikt om zelf een aantal user stories te schrijven.
 
