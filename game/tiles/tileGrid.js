@@ -187,7 +187,7 @@ class TileGrid {
                 } 
                 
                 if (this.#tiles[x][y] != null)
-                this.#tiles[x][y].draw(this.#tiles[x][y].position.x, this.#tiles[x][y].position.y);
+                this.#tiles[x][y].draw();
             }
         }
     }

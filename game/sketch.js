@@ -35,10 +35,9 @@ function setup() {
     checkEndSound(mainMenuTheme);
 }
 
-//draws the background and activates the draw function from tileGrid
+//draws the background and activates the draw function from tileGrid, also shows different screens depending on screenIndex's value
 function draw() {
     noStroke();
-    console.log(draggingTile);
     if (tileGrid.gameCompleted) {
         clear();
         hideButtons();
@@ -142,6 +141,7 @@ function draw() {
     }
 }
 
+//hides all buttons
 function hideButtons() {
     backToGarage.button.hide();
     level1.button.hide();
