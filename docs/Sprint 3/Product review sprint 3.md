@@ -1,4 +1,4 @@
-# Eerste Product review blok 2 Sprint 2.
+# Product review blok 2 Sprint 3.
 
 Link voor de game: <br>
 https://kuuyiiduugoo92-propedeuse-hbo-ict-onderwijs-2023-84efc2dba1f157.dev.hihva.nl/game/
