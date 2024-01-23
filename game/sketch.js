@@ -32,7 +32,7 @@ function setup() {
     level3 = new Button(375, 190, "Level 3", 2, true, 3);
     level4 = new Button(375, 210, "Level 4", 2, true, 4);
     level5 = new Button(375, 230, "Level 5", 2, true, 5);
-    scrapCar = new Car(gameManager.getImage("ScrapCar"), 450, 50);
+    beetleCar = new Car(gameManager.getImage("BeetleCar"), 450, 50);
     checkEndSound(mainMenuTheme);
 }
 
@@ -55,7 +55,7 @@ function draw() {
         image(gameManager.getImage("OpeningGarageGif"), 0, 0, 500, 500);
         startScreenTimer += 1;
         if (startScreenTimer > 130) {
-            image(scrapCar.image, 100, 200, scrapCar.size * 2, scrapCar.size * 2);
+            image(beetleCar.image, 100, 200, beetleCar.size * 2, beetleCar.size * 2);
             if (startScreenTimer > 280) {
                 switchScreen(5);
             }
@@ -65,9 +65,9 @@ function draw() {
     if (screenIndex == 2) {
         hideButtons();
         image(gameManager.getImage("GameBackground"), 0, 0, 500, 500);
-        image(scrapCar.image, scrapCar.x, scrapCar.y, scrapCar.size, scrapCar.size);
-        scrapCar.calculatePosition();
-        scrapCar.checkEndLevel();
+        image(beetleCar.image, beetleCar.x, beetleCar.y, beetleCar.size, beetleCar.size);
+        beetleCar.calculatePosition();
+        beetleCar.checkEndLevel();
         textSize(30);
         fill(0);
         text(`score obtained: ${score}`, 220, 75);
@@ -109,7 +109,7 @@ function draw() {
     }
     if (screenIndex == 5) {
         image(gameManager.getImage("OpenGarage"), 0, 0, 500, 500);
-        image(scrapCar.image, 100, 200, scrapCar.size * 2, scrapCar.size * 2);
+        image(beetleCar.image, 100, 200, beetleCar.size * 2, beetleCar.size * 2);
         fill(255);
         textSize(30);
         text(`total coins: ${coinTotal}`, 150, 200)

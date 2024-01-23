@@ -42,6 +42,7 @@ class Button {
             //also makes sure all buttons hide after being pressed
             tileGrid.resetLevel();
             switchScreen(buttonScreenIndex);
+            score = 0;
             this.button.hide();
         });
     }

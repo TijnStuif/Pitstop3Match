@@ -151,9 +151,9 @@ class TileGrid {
             this.highestLevelBeaten++;
             this.startLevelValueCheck();
             this.#generateTileGrid();
-            scrapCar.checkBeginLevel();
+            beetleCar.checkBeginLevel();
             this.levelCompleted = false;
-            scrapCar.speedMultiplier = width / this.scoreRequirement;
+            beetleCar.speedMultiplier = width / this.scoreRequirement;
         } else {
             // Handle game completion or loop back to the first level
             // For now, let's loop back to the first level
