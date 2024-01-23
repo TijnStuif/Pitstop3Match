@@ -38,6 +38,7 @@ function setup() {
 
 //draws the background and activates the draw function from tileGrid, also shows different screens depending on screenIndex's value
 function draw() {
+    console.log(beetleCar.speedMultiplier)
     noStroke();
     if (tileGrid.gameCompleted) {
         clear();

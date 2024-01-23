@@ -9,7 +9,7 @@ class Car {
         this.y = y;
         this.startLevelX = x;
         this.startLevelY = y;
-        this.speedMultiplier = width / tileGrid.scoreRequirement
+        this.speedMultiplier = width / tileGrid.scoreRequirement;
         this.size = 100;
     }
 
@@ -41,6 +41,7 @@ class Car {
 
     //moves the car based on the score achieved by the player and the level the player is on
     calculatePosition() {
+        this.speedMultiplier = width / tileGrid.scoreRequirement;
         this.x = 400 - (score * this.speedMultiplier);
     }  
 }
