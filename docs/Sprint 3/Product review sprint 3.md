@@ -1,5 +1,8 @@
 # Eerste Product review blok 2 Sprint 2.
 
+Link voor de game: <br>
+https://kuuyiiduugoo92-propedeuse-hbo-ict-onderwijs-2023-84efc2dba1f157.dev.hihva.nl/game/
+
 ## K1 Je hebt (een groot deel van) de user stories afgerond.
 Wij hebben in sprint 3 een groot deel van de user stories alsnog kunnen afronden, zelfs toen we in sprint 2 behoorlijk achterliepen op schema.
 
@@ -18,7 +21,7 @@ Voor K4 hebben wij een gebruikerstest uitgevoerd om de behoeftes van de gebruike
     <li>De gebruiker wilt combo-items als er 4/5 match wordt gevormd.</li>
     <li>De gebruiker wilt een shop om coins uit te geven.</li>
     <li>De gebruiker wilt graag animaties bij matches en vallen van tiles, om het spel overzichtelijker te maken.</li>
-    <li>De gebruiker vond het meer intuitief om alleen tiles te kunnen bewegen die dan ook een match vormen.
+    <li>De gebruiker vond het meer intuitief om alleen tiles te kunnen bewegen die dan ook een match vormen.</li>
 </ul>
 
 Aan de hand van deze inzichten hebben wij enkele user stories gevormd.
@@ -35,7 +38,7 @@ Aan de hand van deze inzichten hebben wij enkele user stories gevormd.
 Wij hebben ons in sprint 2 voorgenomen, om zo snel mogelijk een basis te leggen voor ons spel. Dat betekende voor ons: matches kunnen gecheckt worden, gematchde tiles worden verwijderd, tiles kunnen naar beneden vallen als er geen tile onder zich zit en nieuwe tiles kunnen inspawnen als er geen tile aanwezig is op de bovenste rij. Dit hebben wij in een redelijke tijd af kunnen werken, dus zijn wij toen begonnen aan ons tweede actiepunt: meerdere levels creeeren, en dan ook de criteria om een level te halen/te falen. Wij hebben uiteindelijk 5 levels kunnen toevoegen, met een oplopende moeilijkheid. Ook is het ons daarna gelukt om een wens van de gebruiker te kunnen realiseren; het systeem van een world map. Door terug naar de garage te kunnen gaan om je totale aantal coins te kunnen zien en om een level te selecteren (die al unlocked is), is dit geworden zoals de gebruiker die deze feature had gewilt, in gedachten had.  
 
 ## K4 Je hebt een testplan geschreven en gebruikt om een gebruikerstest uit te voeren. 
-Wij hebben een testplan geschreven voor een gebruikerstest, zodat wij inzicht krijgen in wat een speler van ons spel wilt en verwacht. 
+Wij hebben een testplan geschreven voor een gebruikerstest, zodat wij inzicht krijgen in wat een speler van ons spel wilt en verwacht. Wij hebben ervoor gekozen om de vragen specifiek te stellen over bepaalde features van ons spel, zodat wij de problemen die de gebruiker heeft, direct kunnen aanpakken.
 
 Testplan:
 <ul>
@@ -131,3 +134,6 @@ Wij hebben de gebruikerstest op verschillende manier afgenomen. Bij Lennon was h
 
 
 Wij hebben na dit gebruikersonderzoek een paar user stories geschreven aan de hand van de feedback/ideeen van de testpersonen. Deze laten wij zien in K2.
+
+Nogmaals link voor de game: <br>
+https://kuuyiiduugoo92-propedeuse-hbo-ict-onderwijs-2023-84efc2dba1f157.dev.hihva.nl/game/
