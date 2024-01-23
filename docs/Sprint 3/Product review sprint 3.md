@@ -34,6 +34,11 @@ Aan de hand van deze inzichten hebben wij enkele user stories gevormd.
     <li>Als speler wil ik dat tiles alleen bewogen kunnen worden als er een match wordt gemaakt, zodat ik niet per ongeluk een zet verspil.</li>
 </ol>
 
+Dit is het overzicht van de user stories die wij hebben toegevoegd aan sprint 4, aan de hand van de gebruikerstest.
+
+![User stories Sprint 4](UserStoriesSprint4.png)
+
+
 ## K3 Je hebt de gebruikersinterface van jouw product aangepast door prototyping toe te passen.
 Wij hebben ons in sprint 2 voorgenomen, om zo snel mogelijk een basis te leggen voor ons spel. Dat betekende voor ons: matches kunnen gecheckt worden, gematchde tiles worden verwijderd, tiles kunnen naar beneden vallen als er geen tile onder zich zit en nieuwe tiles kunnen inspawnen als er geen tile aanwezig is op de bovenste rij. Dit hebben wij in een redelijke tijd af kunnen werken, dus zijn wij toen begonnen aan ons tweede actiepunt: meerdere levels creeeren, en dan ook de criteria om een level te halen/te falen. Wij hebben uiteindelijk 5 levels kunnen toevoegen, met een oplopende moeilijkheid. Ook is het ons daarna gelukt om een wens van de gebruiker te kunnen realiseren; het systeem van een world map. Door terug naar de garage te kunnen gaan om je totale aantal coins te kunnen zien en om een level te selecteren (die al unlocked is), is dit geworden zoals de gebruiker die deze feature had gewilt, in gedachten had.  
 
