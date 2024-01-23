@@ -1,7 +1,7 @@
 # Product review blok 2 Sprint 3.
 
 Link voor de game: <br>
-https://kuuyiiduugoo92-propedeuse-hbo-ict-onderwijs-2023-84efc2dba1f157.dev.hihva.nl/game/
+[Link naar de game](https://kuuyiiduugoo92-propedeuse-hbo-ict-onderwijs-2023-84efc2dba1f157.dev.hihva.nl/game/)
 
 ## K1 Je hebt (een groot deel van) de user stories afgerond.
 Wij hebben in sprint 3 een groot deel van de user stories alsnog kunnen afronden, zelfs toen we in sprint 2 behoorlijk achterliepen op schema.
@@ -141,4 +141,4 @@ Wij hebben de gebruikerstest op verschillende manier afgenomen. Bij Lennon was h
 Wij hebben na dit gebruikersonderzoek een paar user stories geschreven aan de hand van de feedback/ideeen van de testpersonen. Deze laten wij zien in K2.
 
 Nogmaals link voor de game: <br>
-https://kuuyiiduugoo92-propedeuse-hbo-ict-onderwijs-2023-84efc2dba1f157.dev.hihva.nl/game/
+[Link naar de game](https://kuuyiiduugoo92-propedeuse-hbo-ict-onderwijs-2023-84efc2dba1f157.dev.hihva.nl/game/)
