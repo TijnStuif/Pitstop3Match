@@ -13,7 +13,6 @@ class Button {
         }
         //all the logic when a button is pressed
         this.button.mousePressed(() => {
-            //logs message when game is completed
             //sends player to next level if continue button is pressed
             if (tileGrid.currentLevel == 5 && screenIndex === 3) {
                 tileGrid.goToNextLevel();
